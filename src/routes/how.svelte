@@ -158,7 +158,7 @@
 						<h3 class="text-lg font-bold text-gray-800">Classification performance</h3>
 						<p>
 							Codeball's model performance is always evaluated using code contributions it has never
-							been trained on. The primary criteria optimized for for is <a
+							been trained on. The primary criteria optimized for is <a
 								class="text-black"
 								href="https://en.wikipedia.org/wiki/Precision_and_recall">precision</a
 							> — true_positives / (true_positives + false_positives). Codeball achieves precision greater
