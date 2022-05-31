@@ -2,9 +2,9 @@
 
 FROM node:18-bullseye AS web-builder
 WORKDIR /web
-ADD web/package.json web/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
-ADD web/ ./
+COPY . ./
 RUN npm run build --mode production
 
 
