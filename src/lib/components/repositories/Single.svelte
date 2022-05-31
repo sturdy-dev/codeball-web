@@ -5,6 +5,7 @@
 	import { isFinalStatus, type RepositoryJob } from '$lib/jobs';
 	import { Table } from '$lib/components/contributions';
 	import Button from '$lib/Button.svelte';
+	import AddAction from '$lib/AddAction.svelte';
 
 	export let job: RepositoryJob;
 
@@ -46,6 +47,6 @@
 <div class="flex flex-col items-center">
 	<div class="mt-8">
 		<Button href="/">Test another repository</Button>
-		<Button href="https://github.com/sturdy-dev/codeball-action">Set up GitHub Action</Button>
+		<AddAction {job} />
 	</div>
 </div>

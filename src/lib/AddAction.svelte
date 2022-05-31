@@ -20,12 +20,18 @@ jobs:
 
 	$: repoName = job.repository?.name;
 
+	$: branchName = job.repository?.default_branch_name || 'master';
+
 	$: params = new URLSearchParams({
 		filename: '.github/workflows/codeball.yml',
 		value: actionContents
 	});
 
-	$: addUrl = `https://github.com/${repoName}/new/master/?${params}`;
+	$: addUrl = `https://github.com/${repoName}/new/${branchName}/?${params}`;
 </script>
 
-<Button href={addUrl}>Add the Codeball GitHub Action to {repoName}</Button>
+{#if repoName}
+	<Button href={addUrl}>Add the Codeball GitHub Action to {repoName}</Button>
+{:else}
+	<Button href="https://github.com/sturdy-dev/codeball-action">Codeball GitHub Action</Button>
+{/if}

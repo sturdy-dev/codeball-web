@@ -26,6 +26,7 @@ export type RepositoryJob = job & {
 export type Repository = {
 	url: string;
 	name: string;
+	default_branch_name?: string;
 	contribution_jobs: ContributionJob[];
 };
 
