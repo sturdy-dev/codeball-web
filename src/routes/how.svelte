@@ -26,7 +26,7 @@
 				<div
 					class="col-span-2 inline-flex items-center justify-around p-4 text-4xl transition-all duration-1000 lg:text-8xl "
 				>
-				👉
+					👉
 				</div>
 				<div
 					class="col-span-3 row-span-2 inline-flex items-center justify-around bg-black p-4 p-2 text-center

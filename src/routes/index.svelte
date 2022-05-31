@@ -5,11 +5,11 @@
 <article class="font-mono">
 	<h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">AI-POWERED CODE REVIEW</h1>
 
-	<div class="my-8 flex flex-col gap-16 lg:flex-row justify-between">
+	<div class="my-8 flex flex-col justify-between gap-16 lg:flex-row">
 		<div class="flex flex-col gap-8">
 			<p class="text-xl text-gray-500 sm:max-w-xl">
-				Codeball approves Pull Requests that a human would have approved. Wait less for review, save time
-				and money.
+				Codeball approves Pull Requests that a human would have approved. Wait less for review, save
+				time and money.
 			</p>
 
 			<div class="flex flex-col gap-2">
@@ -28,7 +28,7 @@
 			<Logos />
 		</div>
 
-		<div class="w-[24rem] lg:block hidden">
+		<div class="hidden w-[24rem] lg:block">
 			<FakePulls />
 		</div>
 	</div>

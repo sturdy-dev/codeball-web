@@ -5,25 +5,27 @@
 		<div class="flex flex-col gap-8">
 			<div class="mx-auto max-w-prose text-base lg:max-w-none">
 				<p class="text-lg text-gray-500">
-					Codeball takes data privacy and security very seriously. This privacy policy will
-					explain how Codeball uses the personal data we collect from you when you are using the
-					website and service.
+					Codeball takes data privacy and security very seriously. This privacy policy will explain
+					how Codeball uses the personal data we collect from you when you are using the website and
+					service.
 				</p>
 			</div>
 
 			<div
 				class="prose prose-yellow mx-auto mt-5 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none"
 			>
-
 				<h2>Short Version</h2>
 				<ul>
 					<li>Codeball is hosted on AWS, with encryption in transit and at rest.</li>
-					<li>Codeball stores information about the repositories that it processes, which includes usernames, email addresses, and derived data from the repositories and change history.</li>
+					<li>
+						Codeball stores information about the repositories that it processes, which includes
+						usernames, email addresses, and derived data from the repositories and change history.
+					</li>
 					<li>
 						Content that you provide through the use of the service is used strictly for the purpose
 						of providing the service.
 					</li>
-                    <li>Codeball is a service provided by Sturdy Sweden AB</li>
+					<li>Codeball is a service provided by Sturdy Sweden AB</li>
 					<li>
 						If you want to exercise your data protection rights, contact us at
 						<a href="mailto:support@getsturdy.com">support@getsturdy.com</a>.
@@ -36,20 +38,23 @@
 				<ul>
 					<li>Repository data: name and link to the repository</li>
 					<li>
-						Content you provide through the use of the Services: When you use the SaaS, we
-                        store metadata about the repository, and derived data from the git repository and it's history. This information is accessed strictly for the purpose of providing the service. The raw data is never accessed by Codeball employees or shared with third parties.
+						Content you provide through the use of the Services: When you use the SaaS, we store
+						metadata about the repository, and derived data from the git repository and it's
+						history. This information is accessed strictly for the purpose of providing the service.
+						The raw data is never accessed by Codeball employees or shared with third parties.
 					</li>
 				</ul>
 
 				<h2>How do we collect your data?</h2>
 				<p>
-					You directly provide Codeball with most of the data we collect. We collect data and process
-					data when you:
+					You directly provide Codeball with most of the data we collect. We collect data and
+					process data when you:
 				</p>
 				<ul>
 					<li>Use the application on codeball.ai</li>
 					<li>
-                        Use the Codeball APIs, through integrations with Codeball such as the Codeball Action for GitHub.
+						Use the Codeball APIs, through integrations with Codeball such as the Codeball Action
+						for GitHub.
 					</li>
 				</ul>
 
@@ -83,8 +88,8 @@
 
 				<h2>How do we store your data?</h2>
 				<p>
-					Our Company securely stores your data in the United States of America. All data is encrypted in
-					transit between to and from the Codeball servers.
+					Our Company securely stores your data in the United States of America. All data is
+					encrypted in transit between to and from the Codeball servers.
 				</p>
 
 				<h2>What are your data protection rights?</h2>
