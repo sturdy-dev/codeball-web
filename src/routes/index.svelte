@@ -9,7 +9,7 @@
 		<div class="flex flex-col gap-8">
 			<p class="text-xl text-gray-500 sm:max-w-xl">
 				Codeball approves Pull Requests that a human would have approved. Wait less for review, save time
-				and $$$.
+				and money.
 			</p>
 
 			<div class="flex flex-col gap-2">
