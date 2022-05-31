@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/Button.svelte';
+	import AddAction from '$lib/AddAction.svelte';
 	import type { Job, ContributionJob } from '$lib/jobs';
 	import RangeSlider from 'svelte-range-slider-pips';
 
@@ -112,10 +113,11 @@
 		</li>
 	</ul>
 
-	<div class="flex flex-col items-center">
-		<div class="mt-4 mb-2">
-			<Button href="https://github.com/sturdy-dev/codeball-action">Set up GitHub Action</Button>
-		</div>
+	<div class="mt-4 mb-2 flex flex-col items-center gap-2">
+		<AddAction {job} />
+		<span>
+			[<a href="https://github.com/sturdy-dev/codeball-action">sturdy-dev/codeball-action</a>]
+		</span>
 	</div>
 
 	<table class="min-w-full divide-y divide-gray-900">
