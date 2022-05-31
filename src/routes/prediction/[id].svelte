@@ -83,7 +83,7 @@
 		</div>
 	{/if}
 
-	<div class="font-mono flex justify-around mt-8">
+	<div class="mt-8 flex justify-around font-mono">
 		<ul class="flex gap-2">
 			<li>[<a href="/faq">faq</a>]</li>
 			<li>[<a href="/how">how</a>]</li>
