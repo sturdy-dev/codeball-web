@@ -65,8 +65,9 @@
 		},
 
 		{
-			name: "Get in touch!",
-			description: "Chat with the humans behind Codeball <span class='text-gray-400'>(100% AI-free support)</span><br> [<a href='https://github.com/sturdy-dev/codeball-action/issues/new' class='text-black'>open a new issue</a>] [<a href='mailto:support@getsturdy.com' class='text-black'>email us</a>]"
+			name: 'Get in touch!',
+			description:
+				"Chat with the humans behind Codeball <span class='text-gray-400'>(100% AI-free support)</span><br> [<a href='https://github.com/sturdy-dev/codeball-action/issues/new' class='text-black'>open a new issue</a>] [<a href='mailto:support@getsturdy.com' class='text-black'>email us</a>]"
 		}
 	];
 </script>
