@@ -2,11 +2,13 @@
 	import AthenianLogo from '$lib/assets/logo-athenian.svg';
 	import SturdyLogo from '$lib/assets/logo-sturdy.svg';
 	import OryLogo from '$lib/assets/logo-ory.png';
+	import KitemakerLogo from '$lib/assets/logo-kitemaker.png';
 
 	const logos = [
 		{ src: SturdyLogo, alt: 'Sturdy' },
 		{ src: AthenianLogo, alt: 'Athenian' },
-		{ src: OryLogo, alt: 'Ory' }
+		{ src: OryLogo, alt: 'Ory' },
+		{ src: KitemakerLogo, alt: 'Kitemaker' },
 	];
 </script>
 
