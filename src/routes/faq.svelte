@@ -31,8 +31,10 @@
 
 		{
 			name: 'Is this shit accurate?',
-			description:
-				'It turns out programmers are super boring and extremely predictable &mdash; think about it, review is mostly pattern matching. Codeball has a false positive rate of under 1%.'
+			description: `It turns out programmers are super boring and extremely predictable &mdash; think about it, review is mostly pattern matching. Codeball has a false positive rate of under 1%.<br><br>
+Codeballs precision is ~99%, and has a recall of ~25%.<br>
+This means that Codeball doesn't approve all the potentially "approvable" PRs, but when it does, it's really confident that it should be approved.<br><br>
+These numbers might be higher or lower <span class="text-gray-400">(hopefully higher)</span> depending on your ways of working and what your repository looks like.`
 		},
 
 		{
