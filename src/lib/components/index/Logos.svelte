@@ -15,7 +15,7 @@
 <div class="flex flex-col gap-2">
 	<span class="text-md text-gray-500">Used by</span>
 
-	<div class="flex gap-8 grayscale">
+	<div class="flex flex-wrap gap-x-8 gap-y-2 grayscale">
 		{#each logos as { src, alt }}
 			<img class="h-6" {src} {alt} />
 		{/each}
