@@ -4,8 +4,8 @@ type job = {
 	id: string;
 	parent?: string;
 	created_at: string;
-	started_at: string;
-	completed_at: any;
+	started_at?: string;
+	completed_at?: string;
 	status: Status;
 	error?: Error;
 };
@@ -38,8 +38,9 @@ export type Contribution = {
 	url: string;
 	number: number;
 	title: string;
+	author: string;
 	merged_without_objections: boolean;
 	created_at: string;
-	merged_at: any;
+	merged_at: string;
 	result: 'inconclusive' | 'approved' | 'not_approved' | null;
 };
