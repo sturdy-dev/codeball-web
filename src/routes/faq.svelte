@@ -62,8 +62,8 @@ These numbers might be higher or lower <span class="text-gray-400">(hopefully hi
 		},
 
 		{
-			name: 'Where is the Privacy policy?',
-			description: "It's here! [<a href='/privacy' class='text-black'>privacy</a>]"
+			name: 'Where is the legal stuff?',
+			description: "Check this out! [<a href='/privacy' class='text-black'>privacy policy</a>] [<a href='/tos' class='text-black'>terms of service</a>] "
 		},
 
 		{
