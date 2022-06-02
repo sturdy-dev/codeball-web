@@ -1,3 +1,30 @@
+<script lang="ts">
+	const collectedData = [
+		['Repository Metadata', 'Name and URL', 'Used for analytics and billing'],
+		['Contribution Metadata', 'Name and URL', 'Used for analytics and billing'],
+		[
+			'Derived data from the contribution/PR',
+			'Number of lines added, last time the affected files where changed, shape about the contribution, file types, email addresses',
+			'Predictions'
+		],
+		[
+			'Derived data from the repository',
+			'Code frequency, historical authors, and changes over time',
+			'Predictions'
+		],
+		[
+			'GitHub Actions Usage',
+			'Name of the action (such as baller or approver), repository URL',
+			'Analytics'
+		]
+	];
+
+	const subProcessors = [
+		['Amazon Web Services', 'Cloud service provider', 'United States of America'],
+		['PostHog', 'Metrics and analytics', 'United States of America']
+	];
+</script>
+
 <article class="font-mono">
 	<h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">Privacy Policy</h1>
 
@@ -12,7 +39,7 @@
 			</div>
 
 			<div
-				class="prose prose-yellow mx-auto mt-5 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none"
+				class="prose prose-red mx-auto mt-5 text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none"
 			>
 				<h2>Short Version</h2>
 				<ul>
@@ -25,25 +52,48 @@
 						Content that you provide through the use of the service is used strictly for the purpose
 						of providing the service.
 					</li>
-					<li>Codeball is a service provided by Sturdy Sweden AB</li>
+					<li>Codeball is a service provided by Sturdy Sweden AB (in Stockholm, Sweden)</li>
 					<li>
 						If you want to exercise your data protection rights, contact us at
 						<a href="mailto:support@getsturdy.com">support@getsturdy.com</a>.
 					</li>
 				</ul>
 
+				<h2>Long Version</h2>
+
 				<h2>What data do we collect?</h2>
 
+				<p>
+					This information is accessed strictly for the purpose of providing the service.<br />
+					The raw data (such as the git history) is never accessed by Codeball employees or shared with
+					third parties.
+				</p>
+
+				<p>
+					Repository contents is accessed only to generate derived data, and is completely deleted
+					from Codeball systems after a period of inactivity.
+				</p>
+
 				<p>Codeball collects the following data:</p>
-				<ul>
-					<li>Repository data: name and link to the repository</li>
-					<li>
-						Content you provide through the use of the Services: When you use the SaaS, we store
-						metadata about the repository, and derived data from the git repository and it's
-						history. This information is accessed strictly for the purpose of providing the service.
-						The raw data is never accessed by Codeball employees or shared with third parties.
-					</li>
-				</ul>
+
+				<table class="table-auto">
+					<thead>
+						<tr>
+							<th class="p-2">Datapoint</th>
+							<th class="p-2">Example</th>
+							<th class="p-2">What it's used for</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#each collectedData as data}
+							<tr class="even:bg-gray:400 odd:bg-gray-200">
+								{#each data as d}
+									<td class="p-2">{d}</td>
+								{/each}
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 
 				<h2>How do we collect your data?</h2>
 				<p>
@@ -74,16 +124,22 @@
 				</p>
 
 				<table class="table-auto">
-					<tr class="even:bg-gray:400 odd:bg-gray-200">
-						<th class="font-med">Sub-processor</th>
-						<th class="font-med">Service provided</th>
-						<th class="font-med">Location of the sub-processor</th>
-					</tr>
-					<tr class="even:bg-gray:400 odd:bg-gray-200">
-						<td><strong>Amazon Web Services</strong></td>
-						<td>Cloud service provider</td>
-						<td>United States of America</td>
-					</tr>
+					<thead>
+						<tr>
+							<th class="p-2">Sub-processor</th>
+							<th class="p-2">Service provided</th>
+							<th class="p-2">Location of the sub-processor</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#each subProcessors as data}
+							<tr class="even:bg-gray:400 odd:bg-gray-200">
+								{#each data as d}
+									<td class="p-2">{d}</td>
+								{/each}
+							</tr>
+						{/each}
+					</tbody>
 				</table>
 
 				<h2>How do we store your data?</h2>
@@ -181,7 +237,7 @@
 				<h2>Changes to our privacy policy</h2>
 				<p>
 					Codeball keeps its privacy policy under regular review and places any updates on this web
-					page. This privacy policy was last updated on the 27th of May, 2022.
+					page. This privacy policy was last updated on the 2 of June, 2022.
 				</p>
 
 				<h2>How to contact us</h2>
@@ -199,7 +255,7 @@
 					<a href="mailto:support@getsturdy.com">support@getsturdy.com</a>. You may also contact the
 					Swedish Data Protection Authority (Integritetsskyddsmyndigheten,
 					<a href="https://www.imy.se">www.imy.se</a>,
-					<a href="mailto:imy@imy.se"> imy@imy.se </a>).
+					<a href="mailto:imy@imy.se"> imy@imy.se</a>).
 				</p>
 			</div>
 		</div>
