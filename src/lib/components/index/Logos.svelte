@@ -8,7 +8,7 @@
 		{ src: SturdyLogo, alt: 'Sturdy' },
 		{ src: AthenianLogo, alt: 'Athenian' },
 		{ src: OryLogo, alt: 'Ory' },
-		{ src: KitemakerLogo, alt: 'Kitemaker' },
+		{ src: KitemakerLogo, alt: 'Kitemaker' }
 	];
 </script>
 
