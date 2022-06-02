@@ -1,12 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/Button.svelte';
 	import AddAction from '$lib/AddAction.svelte';
-	import type { Job, ContributionJob } from '$lib/jobs';
+	import type { ContributionJob, RepositoryJob } from '$lib/jobs';
 	import RangeSlider from 'svelte-range-slider-pips';
 
-	export let job: Job;
+	export let job: RepositoryJob;
 
-	$: jobs = job.repository?.contribution_jobs || [];
+	$: jobs = job.repository.contribution_jobs || [];
 
 	$: contributionsCount = jobs.length;
 	$: correctlyApprovedContributionsCount = jobs.filter(
@@ -74,7 +73,7 @@
 
 <section class="flex flex-col items-center gap-4">
 	<h1 class="text-center text-xl font-semibold text-gray-900">
-		Results for {job.repository?.name}:
+		Results for <a href={job.repository.url}>{job.repository.name}</a>:
 	</h1>
 
 	<h2 class="text-center text-4xl font-semibold text-gray-900">

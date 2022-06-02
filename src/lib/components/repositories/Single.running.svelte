@@ -13,7 +13,10 @@
 		<div class="inline-flex items-center justify-around text-2xl text-gray-700">
 			<Spinner />
 			{#if job.repository?.name}
-				<span>chrunching the numbers for {job.repository.name}...</span>
+				<span
+					>chrunching the numbers for <a href={job.repository.url}>{job.repository.name}</a
+					>...</span
+				>
 			{:else}
 				<span>chrunching the numbers...</span>
 			{/if}
