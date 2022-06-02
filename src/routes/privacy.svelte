@@ -71,7 +71,7 @@
 
 				<p>
 					Repository contents is accessed only to generate derived data, and is completely deleted
-					from Codeball systems after a period of inactivity.
+					from Codeball systems after a week of inactivity.
 				</p>
 
 				<p>Codeball collects the following data:</p>
