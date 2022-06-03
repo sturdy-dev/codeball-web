@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Job } from '$lib/jobs';
-	export let job: Job;
+	import type { ContributionJob } from '$lib/jobs';
+	export let job: ContributionJob;
 </script>
 
 <div class="sm:flex sm:items-center">
@@ -9,7 +9,7 @@
 			Codeball could not analyze the repository
 		</h1>
 		<p class="mt-2 text-sm text-gray-700">
-			{job.error.message}
+			{job.error?.message}
 		</p>
 	</div>
 </div>
