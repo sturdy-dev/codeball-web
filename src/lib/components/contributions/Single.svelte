@@ -11,7 +11,7 @@
 	{#if job.status === 'failure'}
 		<Failed {job} />
 	{:else if !isFinalStatus(job.status)}
-		<Running />
+		<Running {job} />
 	{:else if job.contribution}
 		<div class="flex flex-col items-center space-y-2">
 			<h1 class="text-center text-2xl font-semibold text-gray-900">
