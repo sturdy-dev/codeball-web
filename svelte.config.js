@@ -20,6 +20,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		prerender: {
+			default: true
+		},
 		vite: {
 			plugins: [
 				imagePresets({
