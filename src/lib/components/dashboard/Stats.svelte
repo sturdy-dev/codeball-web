@@ -21,32 +21,31 @@
 
 	$: statNumberOfContributions = jobsByContributionURL.size;
 	$: statNumberOfJobs = jobsWithPrediction.length;
-	$: statApprovedContributions = 12
-	$: statAvgTimeToMerge = 12
-	$: statMeanTimeToMerge = 12
-	$: statTimeSaved = 12
+	$: statApprovedContributions = 12;
+	$: statAvgTimeToMerge = 12;
+	$: statMeanTimeToMerge = 12;
+	$: statTimeSaved = 12;
 </script>
-
 
 <div>
 	<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 		<span class="text-center font-bold uppercase">PRs</span>
 		<div class="space-x-1 text-center">
-			<span class="text-6xl text-white">{statNumberOfContributions}</span><span></span>
+			<span class="text-6xl text-white">{statNumberOfContributions}</span><span />
 		</div>
 	</div>
 
 	<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 		<span class="text-center font-bold uppercase">Codeball Jobs</span>
 		<div class="space-x-1 text-center">
-			<span class="text-6xl text-white">{statNumberOfJobs}</span><span></span>
+			<span class="text-6xl text-white">{statNumberOfJobs}</span><span />
 		</div>
 	</div>
 
 	<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 		<span class="text-center font-bold uppercase">Approvals</span>
 		<div class="space-x-1 text-center">
-			<span class="text-6xl text-white">{statApprovedContributions}</span><span></span>
+			<span class="text-6xl text-white">{statApprovedContributions}</span><span />
 		</div>
 	</div>
 
@@ -70,5 +69,4 @@
 			<span class="text-6xl text-white">{statTimeSaved}</span><span>m</span>
 		</div>
 	</div>
-
 </div>
