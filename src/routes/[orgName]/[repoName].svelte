@@ -10,10 +10,15 @@
 	let loaded = false;
 
 	const load = () => {
-		listInOrganizationAndRepository($page.params.orgName, $page.params.repoName).then((data) => {
-			jobs = data.jobs;
-			loaded = true;
-		});
+		listInOrganizationAndRepository($page.params.orgName, $page.params.repoName)
+			.then((data) => {
+				jobs = data.jobs;
+				loaded = true;
+			})
+			.catch((err) => {
+				loaded = true;
+				console.error(err);
+			});
 	};
 	onMount(load);
 </script>

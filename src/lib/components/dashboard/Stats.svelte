@@ -19,9 +19,27 @@
 		(j: ContributionJob) => j.contribution.url
 	);
 
+	const byPredictedAt = (a: ContributionJob, b: ContributionJob) =>
+		b.contribution.predicted_outcome.predicted_at.localeCompare(
+			a.contribution.predicted_outcome.predicted_at
+		);
+
+	const getLatestByURL = (jobsMap: Map<string, ContributionJob[]>): ContributionJob[] => {
+		let res = [];
+		for (const [url, jobs] of jobsMap) {
+			const first = jobs.sort(byPredictedAt)[0];
+			res.push(first);
+		}
+		return res;
+	};
+
+	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAt);
+
 	$: statNumberOfContributions = jobsByContributionURL.size;
 	$: statNumberOfJobs = jobsWithPrediction.length;
-	$: statApprovedContributions = 12;
+	$: statApprovedContributions = latestJobsForContribution.filter(
+		(j) => j.contribution.predicted_outcome.prediction === 'approved'
+	).length;
 	$: statAvgTimeToMerge = 12;
 	$: statMeanTimeToMerge = 12;
 	$: statTimeSaved = 12;
@@ -49,6 +67,7 @@
 		</div>
 	</div>
 
+	<!--
 	<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 		<span class="text-center font-bold uppercase">avg Lead Time</span>
 		<div class="space-x-1 text-center">
@@ -68,5 +87,5 @@
 		<div class="space-x-1 text-center">
 			<span class="text-6xl text-white">{statTimeSaved}</span><span>m</span>
 		</div>
-	</div>
+	</div>-->
 </div>
