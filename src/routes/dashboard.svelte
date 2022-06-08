@@ -26,4 +26,6 @@
 	{#if jobs.length > 0}
 		<Jobs {jobs} />
 	{/if}
+
+	<pre>{JSON.stringify(jobs, null, '  ')}</pre>
 </div>
