@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { type ContributionJob, list } from '$lib/jobs';
+	import { type Job, list } from '$lib/jobs';
 	import { onMount } from 'svelte';
 	import { Jobs } from '$lib/components/dashboard';
 
-	let jobs: ContributionJob[] = [];
+	let jobs: Job[] = [];
 
 	const load = () => {
 		list().then((data) => {
-			jobs = data;
+			jobs = data.jobs;
 		});
 	};
 	onMount(load);
@@ -26,6 +26,4 @@
 	{#if jobs.length > 0}
 		<Jobs {jobs} />
 	{/if}
-
-	<pre>{JSON.stringify(jobs, null, '  ')}</pre>
 </div>
