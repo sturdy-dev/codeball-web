@@ -9,23 +9,22 @@
 		isContributionJob,
 		isFinalStatus,
 		isRepositoryJob,
-		type ContributionJob,
-		type RepositoryJob
+		type Job
 	} from '$lib/jobs';
 	import { writable } from 'svelte/store';
 	import { onDestroy, onMount } from 'svelte';
 
-	export let id: string;
+	export let job: Job;
 
-	const job = writable(null as RepositoryJob | ContributionJob | null);
+	const store = writable(job);
 	$: error = null;
 	let timeout: ReturnType<typeof setTimeout> | null = null;
 
 	const reload = () =>
-		get(id)
+		get(job.id)
 			.then((result) => {
+				store.set(result);
 				if (isRepositoryJob(result)) {
-					job.set(result as RepositoryJob);
 					const isCrawling = !isFinalStatus(result.status);
 					const isDeriving = result.repository?.contribution_jobs?.some(
 						({ status }) => !isFinalStatus(status)
@@ -35,7 +34,6 @@
 						timeout = setTimeout(reload, 1000);
 					}
 				} else if (isContributionJob(result)) {
-					job.set(result as ContributionJob);
 					const isDeriving = !isFinalStatus(result.status);
 					const shouldUpdate = isDeriving;
 					if (shouldUpdate) {
@@ -64,20 +62,20 @@
 				<div class="inline-flex items-center text-2xl text-gray-700">
 					<p>Something went wrong...</p>
 				</div>
-				{#if $job?.error?.message}
+				{#if $store?.error?.message}
 					<div class="inline-flex items-center text-lg text-gray-700">
-						<p>{$job.error.message}</p>
+						<p>{$store.error.message}</p>
 					</div>
 				{/if}
 			</div>
 		</div>
-	{:else if $job === null}
+	{:else if $store === null}
 		<div class="inline-flex items-center justify-around text-2xl text-gray-700">
 			<span class="inline-flex"><Spinner /> loading...</span>
 		</div>
-	{:else if isContributionJob($job)}
-		<Contribution job={toContributionJob($job)} />
-	{:else if isRepositoryJob($job)}
-		<Repository job={toRepositoryJob($job)} />
+	{:else if isContributionJob($store)}
+		<Contribution job={toContributionJob($store)} />
+	{:else if isRepositoryJob($store)}
+		<Repository job={toRepositoryJob($store)} />
 	{/if}
 </div>
