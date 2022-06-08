@@ -1,5 +1,10 @@
 export type Status = 'registered' | 'running' | 'failure' | 'success' | 'unknown';
 
+export type JobsList = {
+	jobs: Job[];
+	next?: string;
+};
+
 type job = {
 	id: string;
 	parent?: string;
@@ -52,10 +57,9 @@ export type PredictedOutcome = {
 	prediction: 'inconclusive' | 'approved' | 'not_approved';
 	predicted_at: string;
 	model_name: string;
-}
-
+};
 
 export type ActualOutcome = {
 	merged_without_objections: boolean;
 	closed_at: string;
-}
+};
