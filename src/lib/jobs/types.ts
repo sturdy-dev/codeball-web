@@ -61,5 +61,6 @@ export type PredictedOutcome = {
 
 export type ActualOutcome = {
 	merged_without_objections: boolean;
-	closed_at: string;
+	closed_at?: string;
+	merged_at?: string;
 };

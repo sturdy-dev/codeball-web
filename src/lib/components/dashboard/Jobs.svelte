@@ -47,6 +47,10 @@
 
 	{#each showJobs as job}
 		{@const codeballApproved = job.contribution.predicted_outcome.prediction === 'approved'}
+		{@const haveActualOutcome = !!job.contribution.actual_outcome}
+		{@const isMerged = job.contribution.actual_outcome?.merged_at}
+		{@const isClosed = job.contribution.actual_outcome?.closed_at}
+		{@const isOpen = !job.contribution.actual_outcome}
 
 		<div class="flex flex-col items-center gap-6 p-3 sm:flex-row">
 			<div class="flex grow flex-col">
@@ -65,6 +69,26 @@
 					class:text-green-800={codeballApproved}
 				>
 					{codeballApproved ? 'APPROVED' : 'NOT APPROVED'}
+				</span>
+			</div>
+
+			<div>
+				<span
+					class="block w-32 py-2 text-center text-xs font-semibold leading-5"
+					class:bg-purple-100={isMerged}
+					class:text-purple-800={isMerged}
+					class:bg-red-100={isClosed}
+					class:text-red-800={isClosed}
+					class:bg-green-100={isOpen}
+					class:text-green-800={isOpen}
+				>
+					{#if isMerged}
+						MERGED
+					{:else if isClosed}
+						CLOSED
+					{:else}
+						OPEN
+					{/if}
 				</span>
 			</div>
 		</div>
