@@ -38,8 +38,24 @@ export type Contribution = {
 	url: string;
 	number: number;
 	title: string;
-	merged_without_objections: boolean;
 	created_at: string;
-	merged_at: any;
-	result: 'inconclusive' | 'approved' | 'not_approved' | null;
+
+	predicted_outcome?: PredictedOutcome;
+	actual_outcome?: ActualOutcome;
+
+	merged_without_objections: boolean; // Deprecated
+	merged_at: any; // Deprecated
+	result: 'inconclusive' | 'approved' | 'not_approved' | null; // Deprecated
 };
+
+export type PredictedOutcome = {
+	prediction: 'inconclusive' | 'approved' | 'not_approved';
+	predicted_at: string;
+	model_name: string;
+}
+
+
+export type ActualOutcome = {
+	merged_without_objections: boolean;
+	closed_at: string;
+}
