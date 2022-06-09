@@ -12,7 +12,7 @@
 		}, new Map<Q, T[]>());
 
 	$: jobsWithPrediction = jobs.filter(
-		(j) => j?.contribution?.predicted_outcome as ContributionJob
+		(j) => j?.contribution?.predicted_outcome
 	) as ContributionJob[];
 
 	$: jobsByContributionURL = groupByToMap(
@@ -60,11 +60,11 @@
 	$: showJobs = latestJobsForContribution;
 </script>
 
-<section class="flex flex-col divide-y divide-gray-900 bg-white">
+<section class="flex flex-col  bg-white">
 	<div
 		class="flex w-full items-center gap-6 bg-gray-900 p-3 text-center text-sm font-semibold text-white"
 	>
-		<span class="hidden grow sm:block"> PULL REQUEST </span>
+		<span class="hidden grow sm:block"> PULL REQUESTS </span>
 	</div>
 
 	{#each showJobs as job}
@@ -75,7 +75,7 @@
 		{@const isOpen = !job.contribution.actual_outcome}
 		{@const events = gitHubActionEvents(job)}
 
-		<div class="space-y-2 p-3">
+		<div class="space-y-2 border-b-2 border-gray-900 p-3">
 			<div class="flex flex-col items-start gap-6 sm:flex-row">
 				<div class="flex grow flex-col">
 					<a class="overflow-hidden text-sm text-gray-900" href={job.contribution.url}>
