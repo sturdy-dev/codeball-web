@@ -3,6 +3,7 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = ({ error, status }) => {
+		console.error(error);
 		if (error?.name === NotFoundError.name) return { props: { title: 'Not Found' } };
 		if (error?.name === BadRequestError.name)
 			return { props: { title: 'Bad Request', message: error.message } };

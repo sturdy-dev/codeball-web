@@ -13,6 +13,7 @@ type job = {
 	completed_at: any;
 	status: Status;
 	error?: Error;
+	events?: Event[];
 };
 
 export type Job = job & {
@@ -63,4 +64,15 @@ export type ActualOutcome = {
 	merged_without_objections: boolean;
 	closed_at?: string;
 	merged_at?: string;
+};
+
+export type Event = {
+	type: string;
+	created_at: string;
+	github_action?: GitHubActionEvent;
+};
+
+export type GitHubActionEvent = {
+	name: string;
+	error?: string;
 };
