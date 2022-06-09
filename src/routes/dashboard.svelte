@@ -18,10 +18,15 @@
 	let loaded = false;
 
 	const load = () => {
-		list().then((data) => {
-			jobs = data.jobs;
-			loaded = true;
-		});
+		list()
+			.then((data) => {
+				jobs = data.jobs;
+				loaded = true;
+			})
+			.catch((err) => {
+				loaded = true;
+				console.error(err);
+			});
 	};
 	onMount(load);
 </script>
