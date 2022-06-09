@@ -1,12 +1,21 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'Codeball -> AI-powered code review'
+		}
+	});
+</script>
+
 <script lang="ts">
 	import '../app.css';
 	import favIcon from '$lib/assets/CodeballIcon-128.ico';
 	import ogImage from '$lib/assets/github_bg.png';
 	import { dev } from '$app/env';
+	import { page } from '$app/stores';
 </script>
 
 <svelte:head>
-	<title>Codeball -> AI-powered code review</title>
+	<title>{$page.stuff.title}</title>
 	<meta name="description" content="AI-powered code review" />
 	<meta name="og:image" content={ogImage} />
 	<link rel="icon" type="image/svg" href={favIcon} />

@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'Pricing'
+		}
+	});
+</script>
+
 <article class="font-mono">
 	<h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">Pricing</h1>
 

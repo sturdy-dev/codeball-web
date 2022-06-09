@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'Dashboard'
+		}
+	});
+</script>
+
 <script lang="ts">
 	import { type Job, list } from '$lib/jobs';
 	import { onMount } from 'svelte';

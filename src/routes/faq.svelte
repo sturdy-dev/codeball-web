@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'FAQ'
+		}
+	});
+</script>
+
 <script lang="ts">
 	const faq: Array<{ name: string; description: string }> = [
 		{
