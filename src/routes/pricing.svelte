@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="space-y-8 bg-gray-800 p-8 text-white">
-					<h2 class="text-6xl font-black">Deluxe edition</h2>
+					<h2 class="text-6xl font-black">Baller edition</h2>
 					<ul class="list-inside list-disc">
 						<li>Private repositories</li>
 						<li>Really nice dashboards</li>
@@ -32,7 +32,7 @@
 
 			<div class="text-gray-600">
 				<p>
-					Get started with the <strong>Deluxe edition</strong> by adding the Codeball GitHub Action to
+					Get started with the <strong>Baller edition</strong> by adding the Codeball GitHub Action to
 					your private repository.
 				</p>
 				<p>
