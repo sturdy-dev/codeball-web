@@ -50,13 +50,13 @@
 	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAt);
 
 	$: mergedContributionJobs = latestJobsForContribution.filter(
-		(j) => j.contribution.actual_outcome
+		(j: ContributionJob) => j.contribution.actual_outcome?.merged_at
 	);
 	$: mergedContributionJobsApprovedByCodeball = mergedContributionJobs.filter(
-		(j) => j.contribution.predicted_outcome.prediction === 'approved'
+		(j: ContributionJob) => j.contribution.predicted_outcome.prediction === 'approved'
 	);
 	$: mergedContributionJobsRejectedByCodeball = mergedContributionJobs.filter(
-		(j) => j.contribution.predicted_outcome.prediction !== 'approved'
+		(j: ContributionJob) => j.contribution.predicted_outcome.prediction !== 'approved'
 	);
 
 	const avgTimeToMergeSeconds = (jobs: ContributionJob[]) => {
@@ -118,7 +118,7 @@
 			<div class="space-x-1 text-center">
 				<Time seconds={timeToMergeAvgSeconds} />
 			</div>
-			<span class="text-center text-sm">Total</span>
+			<span class="text-center text-sm">All</span>
 		</div>
 
 		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
@@ -135,7 +135,7 @@
 			<div class="space-x-1 text-center">
 				<Time seconds={timeToMergeMedianSeconds} />
 			</div>
-			<span class="text-center text-sm">Total</span>
+			<span class="text-center text-sm">All</span>
 		</div>
 
 		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
