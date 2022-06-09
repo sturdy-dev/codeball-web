@@ -11,9 +11,10 @@
 			return map;
 		}, new Map<Q, T[]>());
 
-	$: jobsWithPrediction = jobs?.filter(
-		(j) => j?.contribution?.predicted_outcome as ContributionJob
-	) as ContributionJob[] || [];
+	$: jobsWithPrediction =
+		(jobs?.filter(
+			(j) => j?.contribution?.predicted_outcome as ContributionJob
+		) as ContributionJob[]) || [];
 
 	$: jobsByContributionURL = groupByToMap(
 		jobsWithPrediction,
