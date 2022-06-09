@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { type ContributionJob, type Job } from '$lib/jobs';
+	import { formatDistance } from 'date-fns';
 
 	export let jobs: Job[];
 
@@ -33,6 +34,21 @@
 		return res;
 	};
 
+	const getRelativeTime = (date: Date, baseDate = new Date(), addSuffix = true): string =>
+		formatDistance(date, baseDate, { addSuffix });
+
+	const contributionOpenDuration = (c: ContributionJob) => {
+		return getRelativeTime(
+			new Date(c.contribution.created_at),
+			new Date(c.contribution.actual_outcome.merged_at),
+			false
+		);
+	};
+
+	const contributionCreatedAtDuration = (c: ContributionJob) => {
+		return getRelativeTime(new Date(c.contribution.created_at));
+	};
+
 	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAt);
 
 	$: showJobs = latestJobsForContribution;
@@ -52,14 +68,14 @@
 		{@const isClosed = job.contribution.actual_outcome?.closed_at}
 		{@const isOpen = !job.contribution.actual_outcome}
 
-		<div class="flex flex-col items-center gap-6 p-3 sm:flex-row">
+		<div class="flex flex-col items-start gap-6 p-3 sm:flex-row">
 			<div class="flex grow flex-col">
 				<a class="overflow-hidden text-sm text-gray-900" href={job.contribution.url}>
 					<code class="text-gray-500">#{job.contribution.number}</code>
 					{job.contribution.title}
 				</a>
 
-				<span class="text-sm text-gray-500">{job.contribution.predicted_outcome.predicted_at}</span>
+				<span class="text-sm text-gray-500">{contributionCreatedAtDuration(job)}</span>
 			</div>
 
 			<div class="">
@@ -68,11 +84,11 @@
 					class:bg-green-100={codeballApproved}
 					class:text-green-800={codeballApproved}
 				>
-					{codeballApproved ? 'APPROVED' : 'NOT APPROVED'}
+					{codeballApproved ? 'CODEBALL 👍' : 'NOT APPROVED'}
 				</span>
 			</div>
 
-			<div>
+			<div class="space-y-1">
 				<span
 					class="block w-32 py-2 text-center text-xs font-semibold leading-5"
 					class:bg-purple-100={isMerged}
@@ -90,6 +106,11 @@
 						OPEN
 					{/if}
 				</span>
+				{#if isMerged}
+					<span class="block text-center text-xs text-gray-400">
+						{contributionOpenDuration(job)}
+					</span>
+				{/if}
 			</div>
 		</div>
 	{/each}
