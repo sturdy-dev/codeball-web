@@ -2,11 +2,10 @@
 
 FROM node:18-bullseye AS web-builder
 WORKDIR /web
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 COPY . ./
-RUN npm run build --mode production
-
+RUN yarn run build
 
 FROM node:18-bullseye AS web-runner
 WORKDIR /web
