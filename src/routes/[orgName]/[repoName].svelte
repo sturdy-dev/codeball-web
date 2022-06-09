@@ -31,7 +31,7 @@
 	onMount(load);
 </script>
 
-<div class="flex flex-col space-y-16 font-mono">
+<div class="flex flex-col space-y-2 font-mono">
 	{#if !loaded}
 		<div class="flex justify-around">
 			<Spinner />
