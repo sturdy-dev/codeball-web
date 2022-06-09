@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'Privacy Policy'
+		}
+	});
+</script>
+
 <script lang="ts">
 	const collectedData = [
 		['Repository Metadata', 'Name and URL', 'Used for analytics and billing'],

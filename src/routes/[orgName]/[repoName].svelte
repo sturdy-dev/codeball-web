@@ -1,9 +1,17 @@
+<script context="module" lang="ts">
+	export const load = ({ params }) => ({
+		stuff: {
+			title: params.orgName + '/' + params.repoName
+		}
+	});
+</script>
+
 <script lang="ts">
 	import { type Job, listInOrganizationAndRepository } from '$lib/jobs';
 	import { onMount } from 'svelte';
 	import { Jobs, Stats } from '$lib/components/dashboard';
-	import { page } from '$app/stores';
 	import Spinner from '$lib/Spinner.svelte';
+	import { page } from '$app/stores';
 	import { GitHubLoginButton } from '$lib/components/index';
 
 	let jobs: Job[] = [];
