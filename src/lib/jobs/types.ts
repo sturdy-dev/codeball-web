@@ -1,10 +1,5 @@
 export type Status = 'registered' | 'running' | 'failure' | 'success' | 'unknown';
 
-export type JobsList = {
-	jobs: Job[];
-	next?: string;
-};
-
 type job = {
 	id: string;
 	parent?: string;

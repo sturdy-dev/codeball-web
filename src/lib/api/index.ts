@@ -26,8 +26,8 @@ const handleResponse = async (response: Response) => {
 	}
 };
 
-export const get = async (url: string) =>
-	fetch(`${BASE_URL}${url}`, {
+export const get = async (url: string, params = new URLSearchParams()) =>
+	fetch(`${BASE_URL}${url}?${params.toString()}`, {
 		mode: 'cors',
 		credentials: 'include',
 		redirect: 'follow'
