@@ -1,9 +1,10 @@
 <script lang="ts" context="module">
-	import { BadRequestError, NotFoundError } from '$lib/api';
+	import { BadRequestError, NotFoundError, Unauthorized } from '$lib/api';
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = ({ error, status }) => {
 		console.error(error);
+		if (error?.name === Unauthorized.name) return { props: { title: 'Unauthorized' } };
 		if (error?.name === NotFoundError.name) return { props: { title: 'Not Found' } };
 		if (error?.name === BadRequestError.name)
 			return { props: { title: 'Bad Request', message: error.message } };
