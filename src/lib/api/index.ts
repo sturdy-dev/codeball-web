@@ -1,15 +1,22 @@
 export const BASE_URL = import.meta.env.VITE_CODEBALL_API_HOST;
 
+export class Unauthorized extends Error {
+	constructor(message?: string) {
+		super(message ?? 'Unauthorized');
+		this.name = 'Unauthorized';
+	}
+}
+
 export class BadRequestError extends Error {
-	constructor(message: string) {
-		super(message);
+	constructor(message?: string) {
+		super(message ?? 'Bad request');
 		this.name = 'BadRequestError';
 	}
 }
 
 export class NotFoundError extends Error {
-	constructor() {
-		super('Not found');
+	constructor(message?: string) {
+		super(message ?? 'Not found');
 		this.name = 'NotFoundError';
 	}
 }
@@ -17,8 +24,10 @@ export class NotFoundError extends Error {
 const handleResponse = async (response: Response) => {
 	if (response.ok) {
 		return await response.json();
+	} else if (response.status === 401) {
+		throw new Unauthorized(await response.text());
 	} else if (response.status === 404) {
-		throw new NotFoundError();
+		throw new NotFoundError(await response.text());
 	} else if (response.status === 400) {
 		throw new BadRequestError(await response.text());
 	} else {

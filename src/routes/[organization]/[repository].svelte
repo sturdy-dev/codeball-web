@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { list } from '$lib/jobs';
 	import type { Job } from '$lib/jobs';
-	import { Jobs, Stats, BeforeAfter } from '$lib/components/dashboard';
+	import { Jobs, Stats } from '$lib/components/dashboard';
+	import { Subscribe } from '$lib/components/subscriptions';
 	import { page } from '$app/stores';
 	import { GitHubLoginButton } from '$lib/components/index';
 	import { onMount } from 'svelte';
@@ -19,20 +20,14 @@
 		for (let i = 0; i < 10; i++) {
 			let stop = false;
 
-			await list({ organization, repository, cursor })
-				.then((data) => {
-					jobs = jobs.concat(data.jobs);
-					cursor = data.next;
-					loaded = true;
-					if (!data.jobs) {
-						stop = true;
-					}
-				})
-				.catch((err) => {
-					loaded = true;
+			await list({ organization, repository, cursor }).then((data) => {
+				jobs = jobs.concat(data.jobs);
+				cursor = data.next ?? '';
+				loaded = true;
+				if (!data.next) {
 					stop = true;
-					console.error(err);
-				});
+				}
+			});
 
 			if (stop) {
 				break;
@@ -57,6 +52,7 @@
 			</div>
 		{/if}
 
+		<Subscribe {organization} />
 		<Stats {jobs} />
 		<!-- <BeforeAfter {jobs} /> -->
 		<Jobs {jobs} />
