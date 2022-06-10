@@ -1,25 +1,64 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	import { list } from '$lib/jobs';
-	export const load: Load = async ({ params }) => {
-		const { organization, repository } = params;
-		const { jobs } = await list({ organization, repository });
-		return { props: { jobs } };
-	};
-</script>
-
 <script lang="ts">
+	import { list } from '$lib/jobs';
 	import type { Job } from '$lib/jobs';
-	import { Jobs, Stats } from '$lib/components/dashboard';
+	import { Jobs, Stats, BeforeAfter } from '$lib/components/dashboard';
 	import { page } from '$app/stores';
 	import { GitHubLoginButton } from '$lib/components/index';
+	import { onMount } from 'svelte';
+	import Spinner from '$lib/Spinner.svelte';
 
-	export let jobs: Job[];
+	const { organization, repository } = $page.params;
+
+	let jobs: Job[] = [];
+	let loaded = false;
+	let loading = false;
+
+	const loadJobs = async () => {
+		let cursor = '';
+		loading = true;
+		for (let i = 0; i < 10; i++) {
+			let stop = false;
+
+			await list({ organization, repository, cursor })
+				.then((data) => {
+					jobs = jobs.concat(data.jobs);
+					cursor = data.next;
+					loaded = true;
+					if (!data.jobs) {
+						stop = true;
+					}
+				})
+				.catch((err) => {
+					loaded = true;
+					stop = true;
+					console.error(err);
+				});
+
+			if (stop) {
+				break;
+			}
+		}
+
+		loading = false;
+	};
+
+	onMount(loadJobs);
 </script>
 
 <div class="flex flex-col space-y-2 font-mono">
-	{#if jobs.length > 0}
+	{#if !loaded}
+		<div class="flex justify-around">
+			<Spinner />
+		</div>
+	{:else if jobs?.length > 0}
+		{#if loading}
+			<div class="flex justify-around">
+				<Spinner />
+			</div>
+		{/if}
+
 		<Stats {jobs} />
+		<!-- <BeforeAfter {jobs} /> -->
 		<Jobs {jobs} />
 	{:else}
 		<div class="space-y-2 text-gray-600">

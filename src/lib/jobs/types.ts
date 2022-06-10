@@ -9,6 +9,7 @@ type job = {
 	status: Status;
 	error?: Error;
 	events?: Event[];
+	meta: Meta;
 };
 
 export type Job = job & {
@@ -70,4 +71,8 @@ export type Event = {
 export type GitHubActionEvent = {
 	name: string;
 	error?: string;
+};
+
+export type Meta = {
+	user_agent: string;
 };

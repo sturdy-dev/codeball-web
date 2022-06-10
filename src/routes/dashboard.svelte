@@ -16,19 +16,38 @@
 
 	let jobs: Job[] = [];
 	let loaded = false;
+	let loading = false;
 
-	const load = () => {
-		list()
-			.then((data) => {
-				jobs = data.jobs;
-				loaded = true;
-			})
-			.catch((err) => {
-				loaded = true;
-				console.error(err);
-			});
+	const loadJobs = async () => {
+		let cursor = '';
+		loading = true;
+		for (let i = 0; i < 10; i++) {
+			let stop = false;
+
+			await list({ cursor })
+				.then((data) => {
+					jobs = jobs.concat(data.jobs);
+					cursor = data.next;
+					loaded = true;
+					if (!data.jobs) {
+						stop = true;
+					}
+				})
+				.catch((err) => {
+					loaded = true;
+					stop = true;
+					console.error(err);
+				});
+
+			if (stop) {
+				break;
+			}
+		}
+
+		loading = false;
 	};
-	onMount(load);
+
+	onMount(loadJobs);
 </script>
 
 <div class="flex flex-col space-y-2 font-mono">

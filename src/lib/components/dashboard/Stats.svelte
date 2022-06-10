@@ -13,7 +13,7 @@
 
 	$: jobsWithPrediction =
 		(jobs?.filter(
-			(j) => j?.contribution?.predicted_outcome as ContributionJob
+			(j) => j?.contribution?.predicted_outcome && j.meta.user_agent === 'github-actions'
 		) as ContributionJob[]) || [];
 
 	$: jobsByContributionURL = groupByToMap(

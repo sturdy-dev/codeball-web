@@ -12,7 +12,7 @@
 		}, new Map<Q, T[]>());
 
 	$: jobsWithPrediction = jobs.filter(
-		(j) => j?.contribution?.predicted_outcome
+		(j) => j?.contribution?.predicted_outcome && j.meta.user_agent === 'github-actions'
 	) as ContributionJob[];
 
 	$: jobsByContributionURL = groupByToMap(
@@ -20,7 +20,7 @@
 		(j: ContributionJob) => j.contribution.url
 	);
 
-	const byPredictedAt = (a: ContributionJob, b: ContributionJob) =>
+	const byPredictedAtDesc = (a: ContributionJob, b: ContributionJob) =>
 		b.contribution.predicted_outcome.predicted_at.localeCompare(
 			a.contribution.predicted_outcome.predicted_at
 		);
@@ -28,7 +28,7 @@
 	const getLatestByURL = (jobsMap: Map<string, ContributionJob[]>): ContributionJob[] => {
 		let res = [];
 		for (const [url, jobs] of jobsMap) {
-			const first = jobs.sort(byPredictedAt)[0];
+			const first = jobs.sort(byPredictedAtDesc)[0];
 			res.push(first);
 		}
 		return res;
@@ -55,7 +55,7 @@
 		return events.sort((a, b) => a.created_at.localeCompare(b.created_at));
 	};
 
-	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAt);
+	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAtDesc);
 
 	$: showJobs = latestJobsForContribution;
 </script>
