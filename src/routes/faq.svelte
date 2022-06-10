@@ -98,12 +98,6 @@ These numbers might be higher or lower <span class="text-gray-400">(hopefully hi
 					</div>
 				{/each}
 			</div>
-
-			<ul class="flex gap-2">
-				<li>[<a href="/">index</a>]</li>
-				<li>[<a href="/how">how</a>]</li>
-				<li>[<a href="https://github.com/sturdy-dev/codeball-action">github action</a>]</li>
-			</ul>
 		</div>
 	</div>
 </article>

@@ -1,3 +1,13 @@
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+
+	export const load: Load = ({ params: { organization, repository } }) => ({
+		stuff: {
+			title: `${organization}/${repository}`
+		}
+	});
+</script>
+
 <script lang="ts">
 	import { list } from '$lib/jobs';
 	import type { Job } from '$lib/jobs';

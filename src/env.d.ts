@@ -13,3 +13,9 @@ declare module '*?preset=logo' {
 	const src: import('vite-plugin-image-presets').ImageAttrs[];
 	export default src;
 }
+
+declare namespace App {
+	interface Stuff {
+		title: string;
+	}
+}
