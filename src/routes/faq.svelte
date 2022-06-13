@@ -66,7 +66,8 @@ These numbers might be higher or lower <span class="text-gray-400">(hopefully hi
 		{
 			name: 'Does this cost $$$?',
 			description:
-				"Codeball is free while in <span class='text-red-500'>beta</span>. Commercial projects will have to pay for Codeball once it's out of beta.<br><br>It will be free for OSS, because we're so cool! <span class='text-gray-400 text-sm'>(totally not because it's free marketing).</span>"
+				"Codeball is free for open-source repositories. Private repositories can enjoy a 14-day free trial, and you only ever have to pay if Codeball ends up saving you money.<br><br>For more info see [<a href='/pricing' class='text-black'>pricing</a>]." +
+				"<br><br>Codeball will always be free for OSS, because we're so cool! <span class='text-gray-400 text-sm'>(totally not because it's free marketing).</span>"
 		},
 
 		{
