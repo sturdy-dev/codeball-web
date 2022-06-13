@@ -10,7 +10,7 @@
 <script lang="ts">
 	import { list } from '$lib/jobs';
 	import type { Job } from '$lib/jobs';
-	import { Jobs, Stats } from '$lib/components/dashboard';
+	import { Jobs, Stats, BeforeAfter } from '$lib/components/dashboard';
 	import { Subscribe } from '$lib/components/subscriptions';
 	import { page } from '$app/stores';
 	import { GitHubLoginButton } from '$lib/components/index';
@@ -58,14 +58,16 @@
 		</div>
 	{:else if jobs?.length > 0}
 		{#if loading}
-			<div class="flex justify-around">
+			<div class="flex justify-around flex-col">
+
 				<Spinner />
+				<span>Loading more historical data...</span>
 			</div>
 		{/if}
 
 		<Subscribe {organization} />
 		<Stats {jobs} />
-		<!-- <BeforeAfter {jobs} /> -->
+		<BeforeAfter {jobs} />
 		<Jobs {jobs} />
 	{:else}
 		<div class="space-y-2 text-gray-600">
