@@ -2,7 +2,7 @@
 	import { get } from '$lib/github';
 	import { NotFoundError } from '$lib/api';
 
-	const getLogin = async (): Promise<string | undefined> =>
+	export const load: Load = async () =>
 		get()
 			.then(({ login }) => login)
 			.catch((err) => {
@@ -10,14 +10,11 @@
 					return undefined;
 				}
 				throw err;
-			});
-
-	export const load: Load = async () => ({
-		stuff: {
-			title: 'Codeball -> AI-powered code review',
-			login: await getLogin()
-		}
-	});
+			})
+			.then((login) => ({
+				stuff: { title: 'Codeball -> AI-powered code review', login },
+				props: { login }
+			}));
 </script>
 
 <script lang="ts">
@@ -27,6 +24,8 @@
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	import type { Load } from '@sveltejs/kit';
+
+	export let login: string | null;
 
 	const header = [
 		{ href: '/how', title: 'how' },
@@ -62,6 +61,14 @@
 					{href}>[{title}]</a
 				>
 			{/each}
+			<div class="flex-1" />
+			{#if login}
+				<a
+					class:text-red-700={$page.url.pathname === '/dashboard'}
+					class:font-semibold={$page.url.pathname === '/dashboard'}
+					href="/dashboard">[dashboard]</a
+				>
+			{/if}
 		</header>
 
 		<slot />
