@@ -16,6 +16,11 @@ jobs:
       # For customizations and more documentation, see https://github.com/sturdy-dev/codeball-action
       - name: Codeball
         uses: sturdy-dev/codeball-action@v2
+        with:
+          approvePullRequests: "true"
+          labelPullRequestsWhenApproved: "true"
+          labelPullRequestsWhenReviewNeeded: "false"
+          failJobsWhenReviewNeeded: "false"
 `;
 
 	$: repoName = job.repository?.name;
