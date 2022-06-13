@@ -13,7 +13,7 @@
 		<div class="flex flex-col gap-8">
 			<p class="text-xl text-gray-500 sm:max-w-xl">What does an AI even cost these days?</p>
 
-			<div class="flex space-x-8">
+			<div class="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8">
 				<div class="space-y-8 bg-gray-800 p-8 text-white">
 					<h2 class="text-6xl font-light">Free</h2>
 					<ul class="list-inside list-disc">

@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
 	import { get } from '$lib/github';
 	import { NotFoundError } from '$lib/api';
+	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async () =>
 		get()
@@ -23,7 +24,6 @@
 	import ogImage from '$lib/assets/github_bg.png';
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
-	import type { Load } from '@sveltejs/kit';
 
 	export let login: string | null;
 
@@ -52,25 +52,32 @@
 
 <main class="min-h-screen bg-stone-100">
 	<div class="p-4 md:mx-auto md:max-w-7xl">
-		<header class="flex items-center gap-4 bg-stone-100 pb-4 font-mono text-black">
-			<a class="pr-12 text-2xl" href="/">Codeball<sup class="text-red-700">beta</sup></a>
-			{#each header as { href, title }}
-				<a
-					class:text-red-700={$page.url.pathname === href}
-					class:font-semibold={$page.url.pathname === href}
-					{href}>[{title}]</a
-				>
-			{/each}
-			<div class="flex-1" />
-			{#if login}
-				<a
-					class:text-red-700={$page.url.pathname === '/dashboard'}
-					class:font-semibold={$page.url.pathname === '/dashboard'}
-					href="/dashboard">[dashboard]</a
-				>
-			{:else}
-				<a href={`/github/oauth`}>[login]</a>
-			{/if}
+		<header
+			class="mb-4 flex flex-col items-center gap-4 border-b-2 border-gray-400 bg-stone-100 pb-4 font-mono text-black md:mb-0 md:flex-row md:border-b-0"
+		>
+			<a class="text-2xl md:pr-12" href="/">Codeball<sup class="text-red-700">beta</sup></a>
+			<div class="grid flex-1 grid-cols-3 md:flex md:space-x-2 ">
+				{#each header as { href, title }}
+					<a
+						class:text-red-700={$page.url.pathname === href}
+						class:font-semibold={$page.url.pathname === href}
+						class="whitespace-nowrap"
+						{href}>[{title}]</a
+					>
+				{/each}
+
+				<div class="hidden flex-1 md:block" />
+
+				{#if login}
+					<a
+						class:text-red-700={$page.url.pathname === '/dashboard'}
+						class:font-semibold={$page.url.pathname === '/dashboard'}
+						href="/dashboard">[dashboard]</a
+					>
+				{:else}
+					<a href={`/github/oauth`}>[login]</a>
+				{/if}
+			</div>
 		</header>
 
 		<slot />

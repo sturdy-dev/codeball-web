@@ -4,7 +4,7 @@
 
 	const githubAppName = import.meta.env.VITE_GITHUB_APP_NAME;
 
-	export let showText: Boolean = false;
+	export let showText: boolean = false;
 	export let login: string | null;
 </script>
 
