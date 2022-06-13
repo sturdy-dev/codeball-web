@@ -68,6 +68,8 @@
 					class:font-semibold={$page.url.pathname === '/dashboard'}
 					href="/dashboard">[dashboard]</a
 				>
+			{:else}
+				<a href={`/github/oauth`}>[login]</a>
 			{/if}
 		</header>
 
