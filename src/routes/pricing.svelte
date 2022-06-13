@@ -24,6 +24,7 @@
 
 				<div class="space-y-8 bg-gray-800 p-8 text-white">
 					<h2 class="text-6xl font-black">Baller edition</h2>
+
 					<ul class="list-inside list-disc">
 						<li>Private repositories</li>
 						<li>Really nice dashboards</li>
@@ -34,18 +35,25 @@
 					<div>
 						<p>$10 / user / month</p>
 						<p class="text-gray-300">14 day free trial, no credit card required</p>
+						<p class="text-gray-300">Pay only if Codeball saves you money</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="text-gray-600">
+			<div class="space-y-4 text-gray-600">
 				<p>
 					Get started with the <strong>Baller edition</strong> by adding the Codeball GitHub Action to
 					your private repository.
 				</p>
 				<p>
-					When the free trial is about to end, we'll send you a payment link to take your hard
-					earned cash.
+					<br />
+					You'll only have to pay if Codeball ends up saving you time or money.
+					<br />
+					When the free trial is about to end, we'll send you a payment link to take your hard earned
+					cash.
+					<br />
+					Go to the [<a class="text-black" href="/dashboard">dashboard</a>] to manage your
+					subscriptions.
 				</p>
 			</div>
 
