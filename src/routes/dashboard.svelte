@@ -49,7 +49,12 @@
 </script>
 
 <div class="flex flex-col space-y-2 font-mono">
-	{#if !loaded}
+	{#if !login}
+		<div class="mt-8 flex flex-col items-center space-y-2 text-gray-600">
+			<p>You need to login to access this page</p>
+			<GitHubLoginButton {login} />
+		</div>
+	{:else if !loaded}
 		<div class="flex justify-around">
 			<Spinner />
 		</div>
@@ -62,9 +67,8 @@
 			</div>
 		</div>
 	{:else}
-		<div class="space-y-2 text-gray-600">
-			<p>No jobs found (or access denied).</p>
-			<GitHubLoginButton showText={true} {login} />
+		<div class="mt-8 flex flex-col items-center space-y-2 text-gray-600">
+			<p>Something went wrong, or no jobs found? Please come back later.</p>
 		</div>
 	{/if}
 </div>
