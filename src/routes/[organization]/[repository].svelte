@@ -8,14 +8,14 @@
 </script>
 
 <script lang="ts">
-	import { list } from '$lib/jobs';
-	import type { Job } from '$lib/jobs';
+	import { isPublic as isJobPublic, list, type Job } from '$lib/jobs';
 	import { Jobs, Stats } from '$lib/components/dashboard';
 	import { Subscribe } from '$lib/components/subscriptions';
 	import { page } from '$app/stores';
 	import { GitHubLoginButton } from '$lib/components/index';
 	import { onMount } from 'svelte';
 	import Spinner from '$lib/Spinner.svelte';
+	import { compareAsc } from 'date-fns';
 
 	export let login: string | null;
 
@@ -48,6 +48,11 @@
 		loading = false;
 	};
 
+	$: latestJob = jobs
+		.sort((a, b) => compareAsc(new Date(a.created_at), new Date(b.created_at)))
+		.slice(-1)[0];
+	$: isPublic = latestJob ? isJobPublic(latestJob) : false;
+
 	onMount(loadJobs);
 </script>
 
@@ -63,7 +68,13 @@
 			</div>
 		{/if}
 
-		<Subscribe {organization} />
+		{#if isPublic}
+			<h2>Thank you for being open source!</h2>
+			<p>Codeball is free for open source projects.</p>
+		{:else}
+			<Subscribe {organization} />
+		{/if}
+
 		<Stats {jobs} />
 		<!-- <BeforeAfter {jobs} /> -->
 		<Jobs {jobs} />

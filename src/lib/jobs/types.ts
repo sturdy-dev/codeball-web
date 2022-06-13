@@ -28,6 +28,7 @@ export type RepositoryJob = job & {
 export type Repository = {
 	url: string;
 	name: string;
+	is_public: boolean;
 	default_branch_name?: string;
 	contribution_jobs: ContributionJob[];
 };
@@ -41,6 +42,7 @@ export type Contribution = {
 	number: number;
 	title: string;
 	created_at: string;
+	is_public: boolean;
 
 	predicted_outcome?: PredictedOutcome;
 	actual_outcome?: ActualOutcome;

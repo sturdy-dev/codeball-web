@@ -19,3 +19,6 @@ export const toRepositoryJob = (job: Job): RepositoryJob => {
 	}
 	return { ...job, repository: job.repository! };
 };
+
+export const isPublic = (job: Job) =>
+	isRepositoryJob(job) ? job.repository?.is_public ?? false : job.contribution?.is_public ?? false;
