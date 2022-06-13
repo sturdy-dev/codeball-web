@@ -5,7 +5,7 @@
 	$: hours = minutes / 60;
 </script>
 
-{#if hours > 1}
+{#if hours > 2}
 	<span class="text-6xl text-white">{hours.toFixed(1)}</span><span>h</span>
 {:else if minutes > 0}
 	<span class="text-6xl text-white">{minutes.toFixed(0)}</span><span>min</span>

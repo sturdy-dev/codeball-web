@@ -31,7 +31,7 @@
 		for (let i = 0; i < 10; i++) {
 			let stop = false;
 
-			await list({ organization, repository, cursor }).then((data) => {
+			await list({ organization, repository, cursor, onlyRootJobs: true }).then((data) => {
 				jobs = jobs.concat(data.jobs);
 				cursor = data.next ?? '';
 				loaded = true;

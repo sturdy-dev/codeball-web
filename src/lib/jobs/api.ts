@@ -10,5 +10,6 @@ export const list = (
 		organization?: string;
 		repository?: string;
 		cursor?: string;
+		onlyRootJobs?: boolean;
 	} = {}
 ): Promise<{ jobs: Job[]; next?: string }> => apiGET(`/jobs`, new URLSearchParams(params));
