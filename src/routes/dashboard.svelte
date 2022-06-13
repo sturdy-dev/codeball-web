@@ -16,20 +16,18 @@
 
 	let jobs: Job[] = [];
 	let loaded = false;
-	let loading = false;
 
 	const loadJobs = async () => {
-		let cursor = '';
-		loading = true;
+		let cursor = undefined as string | undefined;
 		for (let i = 0; i < 10; i++) {
 			let stop = false;
 
-			await list({ cursor })
+			await list(cursor ? { cursor } : {})
 				.then((data) => {
 					jobs = jobs.concat(data.jobs);
 					cursor = data.next;
 					loaded = true;
-					if (!data.jobs) {
+					if (!data.next) {
 						stop = true;
 					}
 				})
@@ -43,8 +41,6 @@
 				break;
 			}
 		}
-
-		loading = false;
 	};
 
 	onMount(loadJobs);
