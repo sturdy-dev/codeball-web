@@ -47,7 +47,7 @@
 				</p>
 				<p>
 					<br />
-					You'll only have to pay if Codeball ends up saving you time or money.
+					You'll only have to pay if Codeball saves you time and money.
 					<br />
 					When the free trial is about to end, we'll send you a payment link to take your hard earned
 					cash.
