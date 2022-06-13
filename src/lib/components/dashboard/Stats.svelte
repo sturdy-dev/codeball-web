@@ -99,17 +99,17 @@
 	</div>
 
 	<div class=" flex min-w-[12rem] grow flex-col gap-2">
-		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
-			<span class="text-center font-bold uppercase">Median Lead Time</span>
+		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
+			<span class="text-center font-bold uppercase">Avg. Lead Time</span>
 			<div class="space-x-1 text-center">
-				<Time seconds={timeToMergeMedianSeconds} />
+				<Time seconds={timeToMergeAvgSeconds} />
 			</div>
 			<span class="text-center text-sm">All PRs</span>
 		</div>
 
-		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
+		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 			<div class="space-x-1 text-center">
-				<Time seconds={timeToMergeApprovedByCodeballMedianSeconds} />
+				<Time seconds={timeToMergeApprovedByCodeballAvgSeconds} />
 			</div>
 			<span class="text-center text-sm">With Codeball</span>
 		</div>
