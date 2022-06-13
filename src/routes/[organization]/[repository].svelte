@@ -58,16 +58,13 @@
 		</div>
 	{:else if jobs?.length > 0}
 		{#if loading}
-			<div class="flex justify-around flex-col">
-
+			<div class="flex justify-around">
 				<Spinner />
-				<span>Loading more historical data...</span>
 			</div>
 		{/if}
 
 		<Subscribe {organization} />
 		<Stats {jobs} />
-		<BeforeAfter {jobs} />
 		<Jobs {jobs} />
 	{:else}
 		<div class="space-y-2 text-gray-600">
