@@ -17,5 +17,6 @@ declare module '*?preset=logo' {
 declare namespace App {
 	interface Stuff {
 		title: string;
+		login?: string;
 	}
 }

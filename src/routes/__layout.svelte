@@ -1,7 +1,21 @@
 <script context="module" lang="ts">
-	export const load = () => ({
+	import { get } from '$lib/github';
+	import { NotFoundError } from '$lib/api';
+
+	const getLogin = async (): Promise<string | undefined> =>
+		get()
+			.then(({ login }) => login)
+			.catch((err) => {
+				if (err instanceof NotFoundError) {
+					return undefined;
+				}
+				throw err;
+			});
+
+	export const load: Load = async () => ({
 		stuff: {
-			title: 'Codeball -> AI-powered code review'
+			title: 'Codeball -> AI-powered code review',
+			login: await getLogin()
 		}
 	});
 </script>
@@ -12,6 +26,7 @@
 	import ogImage from '$lib/assets/github_bg.png';
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
+	import type { Load } from '@sveltejs/kit';
 
 	const header = [
 		{ href: '/how', title: 'how' },

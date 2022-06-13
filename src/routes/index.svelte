@@ -1,5 +1,14 @@
+<script lang="ts" context="module">
+	import type { Load } from '@sveltejs/kit';
+
+	export const load: Load = async ({ stuff: { login } }) => ({
+		props: { login: login ?? null }
+	});
+</script>
+
 <script lang="ts">
 	import { FakePulls, GitHubLoginButton, AnalyzeForm, Logos } from '$lib/components/index';
+	export let login: string | null;
 </script>
 
 <article class="font-mono">
@@ -17,7 +26,7 @@
 				<AnalyzeForm />
 			</div>
 
-			<GitHubLoginButton showText={true} />
+			<GitHubLoginButton showText={true} {login} />
 
 			<Logos />
 		</div>

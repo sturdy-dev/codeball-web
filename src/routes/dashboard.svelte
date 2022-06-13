@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
-	export const load = () => ({
-		stuff: {
-			title: 'Dashboard'
-		}
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = async ({ stuff: { login } }) => ({
+		stuff: { title: 'Dashboard' },
+		props: { login }
 	});
 </script>
 
@@ -13,6 +13,8 @@
 	import Spinner from '$lib/Spinner.svelte';
 	import { GitHubLoginButton } from '$lib/components/index';
 	import OrganisationPicker from '../lib/components/dashboard/OrganisationPicker.svelte';
+
+	export let login: string | null;
 
 	let jobs: Job[] = [];
 	let loaded = false;
@@ -62,7 +64,7 @@
 	{:else}
 		<div class="space-y-2 text-gray-600">
 			<p>No jobs found (or access denied).</p>
-			<GitHubLoginButton showText={true} />
+			<GitHubLoginButton showText={true} {login} />
 		</div>
 	{/if}
 </div>

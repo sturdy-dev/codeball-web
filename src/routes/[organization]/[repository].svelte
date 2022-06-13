@@ -1,10 +1,9 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = ({ params: { organization, repository } }) => ({
-		stuff: {
-			title: `${organization}/${repository}`
-		}
+	export const load: Load = ({ params: { organization, repository }, stuff: { login } }) => ({
+		stuff: { title: `${organization}/${repository}` },
+		props: { login }
 	});
 </script>
 
@@ -17,6 +16,8 @@
 	import { GitHubLoginButton } from '$lib/components/index';
 	import { onMount } from 'svelte';
 	import Spinner from '$lib/Spinner.svelte';
+
+	export let login: string | null;
 
 	const { organization, repository } = $page.params;
 
@@ -74,7 +75,7 @@
 					{$page.params.organization}/{$page.params.repository}
 				</span> (or access denied).
 			</p>
-			<GitHubLoginButton showText={true} />
+			<GitHubLoginButton showText={true} {login} />
 		</div>
 	{/if}
 </div>
