@@ -45,7 +45,7 @@
 </div>
 
 <div class="flex flex-col items-center">
-	<div class="mt-8">
+	<div class="mt-8 space-y-2">
 		<Button href="/">Test another repository</Button>
 		<AddAction {job} />
 	</div>

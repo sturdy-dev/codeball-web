@@ -56,7 +56,7 @@
 			class="mb-4 flex flex-col items-center gap-4 border-b-2 border-gray-400 bg-stone-100 pb-4 font-mono text-black md:mb-0 md:flex-row md:border-b-0"
 		>
 			<a class="text-2xl md:pr-12" href="/">Codeball<sup class="text-red-700">beta</sup></a>
-			<div class="grid flex-1 grid-cols-3 md:flex md:space-x-2 ">
+			<div class="grid flex-1	grid-cols-2	 gap-x-4 md:flex md:space-x-2 ">
 				{#each header as { href, title }}
 					<a
 						class:text-red-700={$page.url.pathname === href}

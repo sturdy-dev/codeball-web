@@ -15,11 +15,13 @@
 				You are logged in as: {login}
 			{/if}
 
-			[<a
-				class="text-gray-800 hover:text-black"
-				href="https://github.com/apps/{githubAppName}/installations/new"
-				>add/update access to repos</a
-			>]
+			<span class="whitespace-nowrap">
+				[<a
+					class="text-gray-800 hover:text-black"
+					href="https://github.com/apps/{githubAppName}/installations/new"
+					>add/update access to repos</a
+				>]</span
+			>
 		</p>
 	{:else}
 		<p>
@@ -27,10 +29,12 @@
 				<span>Want to test a private repo?</span>
 			{/if}
 
-			[<a class="inline-flex items-center text-gray-800 hover:text-black" href={`/github/oauth`}>
-				<span>Login with GitHub</span>
-				<Image class="ml-1" src={gitHubLogo} alt="GitHub logo" />
-			</a>]
+			<span class="whitespace-nowrap">
+				[<a class="inline-flex items-center text-gray-800 hover:text-black" href={`/github/oauth`}>
+					<span>Login with GitHub</span>
+					<Image class="ml-1" src={gitHubLogo} alt="GitHub logo" />
+				</a>]
+			</span>
 		</p>
 	{/if}
 </div>
