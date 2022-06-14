@@ -12,7 +12,7 @@
 		{ src: OryLogo, alt: 'Ory' },
 		{ src: KitemakerLogo, alt: 'Kitemaker' },
 		{ src: GogsLogo, alt: 'Gogs' },
-		{ src: MasonLogo, alt: 'Mason' },
+		{ src: MasonLogo, alt: 'Mason' }
 	];
 </script>
 
