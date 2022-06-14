@@ -33,7 +33,7 @@
 					</ul>
 
 					<div>
-						<p>$10 / user / month</p>
+						<p>$10 / user<sup>1</sup> / month</p>
 						<p class="text-gray-300">14 day free trial, no credit card required</p>
 						<p class="text-gray-300">Pay only if Codeball saves you money</p>
 					</div>
@@ -54,6 +54,14 @@
 					<br />
 					Go to the [<a class="text-black" href="/dashboard">dashboard</a>] to manage your
 					subscriptions.
+				</p>
+			</div>
+
+			<div>
+				<p class="text-sm text-gray-400">
+					<sup>1</sup> Users is defined as the unique number of users opening a Pull Request that triggers
+					the Codeball GitHub Action within the GitHub organization. Usage of the website, dashboards,
+					etc. is free and does not count as a user.
 				</p>
 			</div>
 
