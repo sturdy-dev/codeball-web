@@ -128,12 +128,6 @@
 					<p>You are now unemployed.</p>
 				</div>
 			</div>
-
-			<ul class="flex gap-2">
-				<li>[<a href="/">index</a>]</li>
-				<li>[<a href="/faq">faq</a>]</li>
-				<li>[<a href="https://github.com/sturdy-dev/codeball-action">github action</a>]</li>
-			</ul>
 		</div>
 	</div>
 </article>

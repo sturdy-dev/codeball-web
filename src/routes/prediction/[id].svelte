@@ -15,10 +15,4 @@
 
 <div class="m-auto flex max-w-6xl flex-col justify-around">
 	<Single {job} />
-	<div class="mt-8 flex justify-around font-mono">
-		<ul class="flex gap-2">
-			<li>[<a href="/faq">faq</a>]</li>
-			<li>[<a href="/how">how</a>]</li>
-		</ul>
-	</div>
 </div>
