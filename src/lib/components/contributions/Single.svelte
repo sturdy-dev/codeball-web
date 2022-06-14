@@ -13,7 +13,7 @@
 	{:else if !isFinalStatus(job.status)}
 		<Running {job} />
 	{:else if job.contribution}
-		<div class="flex flex-col items-center space-y-2">
+		<div class="flex flex-col items-center space-y-8">
 			<h1 class="text-center text-2xl font-semibold text-gray-900">
 				<a href={job.contribution.url}>#{job.contribution.number} {job.contribution.title}</a>
 			</h1>
@@ -28,6 +28,14 @@
 				>
 					{isApproved ? 'APPROVED' : 'NOT APPROVED'}
 				</span>
+			</div>
+
+			<div class="flex justify-around font-mono">
+				<ul class="flex gap-2">
+					<li>
+						[<a href="/{job.contribution.organization}/{job.contribution.repository}">stats</a>]
+					</li>
+				</ul>
 			</div>
 		</div>
 	{/if}

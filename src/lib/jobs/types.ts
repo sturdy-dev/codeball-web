@@ -43,6 +43,8 @@ export type Contribution = {
 	title: string;
 	created_at: string;
 	is_public: boolean;
+	organization: string;
+	repository: string;
 
 	predicted_outcome?: PredictedOutcome;
 	actual_outcome?: ActualOutcome;
