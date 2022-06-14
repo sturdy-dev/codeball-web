@@ -4,13 +4,15 @@
 	import OryLogo from '$lib/assets/logo-ory.png';
 	import KitemakerLogo from '$lib/assets/logo-kitemaker.png';
 	import GogsLogo from '$lib/assets/logo-gogs.png';
+	import MasonLogo from '$lib/assets/logo-mason.svg';
 
 	const logos = [
 		{ src: SturdyLogo, alt: 'Sturdy' },
 		{ src: AthenianLogo, alt: 'Athenian' },
 		{ src: OryLogo, alt: 'Ory' },
 		{ src: KitemakerLogo, alt: 'Kitemaker' },
-		{ src: GogsLogo, alt: 'Gogs' }
+		{ src: GogsLogo, alt: 'Gogs' },
+		{ src: MasonLogo, alt: 'Mason' },
 	];
 </script>
 
