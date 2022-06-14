@@ -13,7 +13,7 @@
 				throw err;
 			})
 			.then((login) => ({
-				stuff: { title: 'Codeball -> AI-powered code review', login },
+				stuff: { title: 'Codeball | AI-powered code review', login },
 				props: { login }
 			}));
 </script>
@@ -21,7 +21,6 @@
 <script lang="ts">
 	import '../app.css';
 	import favIcon from '$lib/assets/CodeballIcon-128.ico';
-	import ogImage from '$lib/assets/github_bg.png';
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 
@@ -38,8 +37,10 @@
 <svelte:head>
 	<title>{$page.stuff.title}</title>
 	<meta name="description" content="AI-powered code review" />
-	<meta name="og:image" content={ogImage} />
 	<link rel="icon" type="image/svg" href={favIcon} />
+	<meta property="og:image" content="https://codeball.ai/og-image.png" />
+	<meta property="og:title" content={$page.stuff.title} />
+	<meta property="og:description" content="AI-powered code review" />
 
 	{#if !dev}
 		<script
