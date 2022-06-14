@@ -9,6 +9,7 @@
 <script lang="ts">
 	import { FakePulls, GitHubLoginButton, AnalyzeForm, Logos } from '$lib/components/index';
 	import { dev } from '$app/env';
+
 	export let login: string | null;
 </script>
 
@@ -31,17 +32,28 @@
 
 			<Logos />
 
-			<a
-				href="https://www.producthunt.com/posts/codeball?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-codeball"
-				target="_blank"
-				><img
-					src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=349391&theme=neutral"
-					alt="Codeball - AI&#0032;code&#0032;review&#0044;&#0032;wait&#0032;less&#0032;for&#0032;review&#0044;&#0032;save&#0032;time&#0032;and&#0032;money | Product Hunt"
-					style="width: 250px; height: 54px;"
-					width="250"
-					height="54"
-				/></a
-			>
+			<div class="flex flex-col items-center gap-4 md:flex-row">
+				<a
+					href="https://www.producthunt.com/posts/codeball?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-codeball"
+					target="_blank"
+					><img
+						src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=349391&theme=neutral"
+						alt="Codeball - AI&#0032;code&#0032;review&#0044;&#0032;wait&#0032;less&#0032;for&#0032;review&#0044;&#0032;save&#0032;time&#0032;and&#0032;money | Product Hunt"
+						style="width: 250px; height: 54px;"
+						width="250"
+						height="54"
+					/></a
+				>
+
+				<iframe
+					src="https://ghbtns.com/github-btn.html?user=sturdy-dev&repo=codeball-action&type=star&count=true&size=large"
+					frameborder="0"
+					scrolling="0"
+					width="170"
+					height="30"
+					title="Star codeball-action on GitHub"
+				/>
+			</div>
 		</div>
 
 		<div class="hidden w-[24rem] lg:block">
