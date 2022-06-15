@@ -5,11 +5,12 @@ export const get = (id: string): Promise<Job> => apiGET(`/jobs/${id}`);
 
 export const create = ({ url }: { url: string }): Promise<Job> => post('/jobs', { url });
 
-export const list = (
-	params: {
-		organization?: string;
-		repository?: string;
-		cursor?: string;
-		onlyRootJobs?: boolean;
-	} = {}
-): Promise<{ jobs: Job[]; next?: string }> => apiGET(`/jobs`, new URLSearchParams(params));
+export type ListOptions = {
+	organization?: string;
+	repository?: string;
+	cursor?: string;
+	onlyRootJobs?: boolean;
+};
+
+export const list = (params: ListOptions = {}): Promise<{ jobs: Job[]; next?: string }> =>
+	apiGET(`/jobs`, new URLSearchParams(params));
