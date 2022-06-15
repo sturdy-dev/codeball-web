@@ -41,7 +41,7 @@
 	<meta property="og:image" content="https://codeball.ai/og-image.png" />
 	<meta property="og:title" content={$page.stuff.title} />
 	<meta property="og:description" content="AI-powered code review" />
-	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:card" content="summary_large_image" />
 
 	{#if !dev}
 		<script
