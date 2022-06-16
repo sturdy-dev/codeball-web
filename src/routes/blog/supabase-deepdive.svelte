@@ -254,8 +254,9 @@
 		to reviewing, and then back again.
 	</p>
 
-	<p class="border-l-4 border-black py-1 pl-4">
-		Thanks for reading.
+	<p>
+		By Gustav and the Codeballers<br>
+		16th of June 2022
 	</p>
 
 	<hr />
