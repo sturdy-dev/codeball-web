@@ -12,14 +12,14 @@
 
 	<p>
 		What happens when you add Codeball to your project, is it safe, and can it even save you money?
-		Let's dig into the numbers from the default Codeball demo from the Codeball index page.
+		Let's dig into the numbers from the default Codeball demo from the index page.
 	</p>
 
 	<p>
 		Supabase is a well-known open-source project mainly built and maintained by employees of the
 		company with the same name. We've used Supabase as the default example for the Codeball demo
-		site, because Supabase is an open-source project that's largely run like any project at
-		closed-source companies <span class="text-gray-500">(business === money)</span>
+		site, because is an open-source project that's largely run like any project at closed-source
+		companies <span class="text-gray-500">(business === money)</span>
 		<span class="text-gray-500">(and because the results are pretty good)</span>.
 	</p>
 
@@ -52,7 +52,7 @@
 	</ul>
 
 	<div class="flex w-full items-center">
-		<div class="bg-green-300 text-center text-green-800" style="width: 72%">Approved – 72%</div>
+		<div class="bg-green-300 text-center text-green-800" style="width: 72%">Approved (72%)</div>
 		<div class="flex-1 bg-red-300 text-center text-red-800">Got feedback</div>
 	</div>
 
@@ -62,8 +62,9 @@
 	</p>
 
 	<div class="flex w-full items-center">
-		<div class="bg-green-300 text-center text-green-800" style="width: 28%">Approved – 28%</div>
-		<div class="flex-1 bg-blue-300 text-center text-blue-800">Not Approved</div>
+		<div class="bg-green-300 text-center text-green-800" style="width: 28%">Approved (28%)</div>
+		<div class="text-blue-480 bg-blue-300 text-center" style="width: 44%">Not Approved</div>
+		<div class="flex-1 bg-red-300 text-center text-red-800">Not Approved</div>
 	</div>
 
 	<p>
