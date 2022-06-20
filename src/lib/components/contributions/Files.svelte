@@ -29,12 +29,12 @@
 	{#each files as file}
 		<div
 			class="flex justify-between gap-x-8"
-			class:text-green-800={file.confidence > 0.95}
-			class:text-yellow-800={file.confidence > 0.8 && file.confidence <= 0.95}
+			class:text-green-800={file.confidence > 0.92}
+			class:text-yellow-800={file.confidence > 0.8 && file.confidence <= 0.92}
 			class:text-red-800={file.confidence < 0.2}
 		>
-			<span>{file.name}</span>
-			<span>{file.confidence.toFixed(2)}</span>
+			<span class="overflow-hidden truncate" style="direction: rtl;">{file.name}</span>
+			<span class="shrink-0">{file.confidence.toFixed(2)}</span>
 		</div>
 	{:else}
 		<div class="text-center">No files found :-(</div>
