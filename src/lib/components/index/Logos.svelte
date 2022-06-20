@@ -16,7 +16,7 @@
 		{ src: GogsLogo, alt: 'Gogs' },
 		{ src: MasonLogo, alt: 'Mason' },
 		{ src: EMQXLogo, alt: 'EMQX' },
-		{ src: SimplepollLogo, alt: 'Simplepoll' },
+		{ src: SimplepollLogo, alt: 'Simplepoll' }
 	];
 </script>
 
