@@ -1,10 +1,16 @@
 <script lang="ts">
 	import Failed from './Single.failed.svelte';
 	import Running from './Single.running.svelte';
-	import { isFinalStatus, type ContributionJob } from '$lib/jobs';
+	import { type ContributionJob, isFinalStatus } from '$lib/jobs';
+	import Files from './Files.svelte';
 
 	export let job: ContributionJob;
 	$: isApproved = job.contribution.result === 'approved';
+
+	let showConfidence = true;
+	const toggleShowFileConfidence = () => {
+		showConfidence = !showConfidence;
+	};
 </script>
 
 <div class="flex flex-col gap-12 font-mono">
@@ -33,10 +39,18 @@
 			<div class="flex justify-around font-mono">
 				<ul class="flex gap-2">
 					<li>
-						[<a href="/{job.contribution.organization}/{job.contribution.repository}">stats</a>]
+						[<a href="/{job.contribution.organization}/{job.contribution.repository}">dashboard</a>]
+					</li>
+					<li>
+						[<a class="cursor-pointer" on:click={toggleShowFileConfidence}>
+							{showConfidence ? 'hide confidence' : 'show confidence'}</a>]
 					</li>
 				</ul>
 			</div>
+
+			{#if showConfidence}
+				<Files {job} />
+			{/if}
 		</div>
 	{/if}
 </div>
