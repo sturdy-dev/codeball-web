@@ -43,7 +43,8 @@
 					</li>
 					<li>
 						[<a class="cursor-pointer" on:click={toggleShowFileConfidence}>
-							{showConfidence ? 'hide confidence' : 'show confidence'}</a>]
+							{showConfidence ? 'hide confidence' : 'show confidence'}</a
+						>]
 					</li>
 				</ul>
 			</div>
