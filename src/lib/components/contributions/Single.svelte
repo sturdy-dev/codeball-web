@@ -48,10 +48,10 @@
 					</li>
 				</ul>
 			</div>
-
-			{#if showConfidence}
-				<Files {job} />
-			{/if}
 		</div>
+	{/if}
+
+	{#if showConfidence}
+		<Files {job} />
 	{/if}
 </div>

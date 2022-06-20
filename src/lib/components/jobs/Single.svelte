@@ -55,7 +55,7 @@
 	});
 </script>
 
-<div class="m-auto flex max-w-6xl flex-col justify-around">
+<div class="m-auto flex w-full max-w-6xl flex-col justify-around">
 	{#if error}
 		<div class="flex justify-around">
 			<div class="flex flex-col">
