@@ -7,7 +7,7 @@
 	export let job: ContributionJob;
 	$: isApproved = job.contribution.result === 'approved';
 
-	let showConfidence = true;
+	let showConfidence = false;
 	const toggleShowFileConfidence = () => {
 		showConfidence = !showConfidence;
 	};
