@@ -46,6 +46,8 @@ export type Contribution = {
 	organization: string;
 	repository: string;
 
+	files?: ContributionFile[];
+
 	predicted_outcome?: PredictedOutcome;
 	actual_outcome?: ActualOutcome;
 
@@ -58,6 +60,7 @@ export type PredictedOutcome = {
 	prediction: 'inconclusive' | 'approved' | 'not_approved';
 	predicted_at: string;
 	model_name: string;
+	file_probabilities?: number[];
 };
 
 export type ActualOutcome = {
@@ -79,4 +82,8 @@ export type GitHubActionEvent = {
 
 export type Meta = {
 	user_agent: string;
+};
+
+export type ContributionFile = {
+	name: string;
 };
