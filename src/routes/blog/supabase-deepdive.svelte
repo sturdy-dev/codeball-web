@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+	export const load = () => ({
+		stuff: {
+			title: 'Codeball AI Code Review, a deepdive into the numbers'
+		}
+	});
+</script>
+
 <script lang="ts">
 	import Button from '$lib/Button.svelte';
 </script>
