@@ -42,7 +42,10 @@
 						[<a href="/{job.contribution.organization}/{job.contribution.repository}">dashboard</a>]
 					</li>
 					<li>
-						[<a class="cursor-pointer" on:click={toggleShowFileConfidence}>
+						[<a
+							class="cursor-pointer"
+							on:click|preventDefault|stopPropagation={toggleShowFileConfidence}
+						>
 							{showConfidence ? 'hide confidence' : 'show confidence'}</a
 						>]
 					</li>
