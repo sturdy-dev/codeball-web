@@ -91,14 +91,14 @@
 </script>
 
 <div class="flex gap-2">
-	<div class="inline-flex min-w-[12rem] grow flex-col space-y-2 bg-gray-400 p-4">
+	<div class="inline-flex grow flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem]">
 		<span class="text-center font-bold uppercase">PRs</span>
 		<div class="space-x-1 text-center">
-			<span class="text-6xl text-white">{statNumberOfContributions}</span><span />
+			<span class="text-2xl text-white md:text-6xl">{statNumberOfContributions}</span><span />
 		</div>
 	</div>
 
-	<div class=" flex min-w-[12rem] grow flex-col gap-2">
+	<div class="flex grow flex-col gap-2 md:min-w-[12rem]">
 		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
 			<span class="text-center font-bold uppercase">Avg. Lead Time</span>
 			<div class="space-x-1 text-center">
@@ -107,7 +107,7 @@
 			<span class="text-center text-sm">All PRs</span>
 		</div>
 
-		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
+		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem]">
 			<div class="space-x-1 text-center">
 				<Time seconds={timeToMergeApprovedByCodeballAvgSeconds} />
 			</div>
@@ -115,18 +115,22 @@
 		</div>
 	</div>
 
-	<div class=" flex min-w-[12rem] grow flex-col gap-2">
+	<div class=" flex grow flex-col gap-2 md:min-w-[12rem]">
 		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
 			<span class="text-center font-bold uppercase">Codeball</span>
 			<div class="space-x-1 text-center">
-				<span class="text-6xl text-white">{mergedContributionJobsApprovedByCodeball.length}</span>
+				<span class="text-2xl text-white md:text-6xl"
+					>{mergedContributionJobsApprovedByCodeball.length}</span
+				>
 			</div>
 			<span class="text-center text-sm">Approved</span>
 		</div>
 
-		<div class="inline-flex  flex-col space-y-2 bg-gray-400 p-4">
+		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
 			<div class="space-x-1 text-center">
-				<span class="text-6xl text-white">{mergedContributionJobsRejectedByCodeball.length}</span>
+				<span class="text-2xl text-white md:text-6xl"
+					>{mergedContributionJobsRejectedByCodeball.length}</span
+				>
 			</div>
 			<span class="text-center text-sm">Not Approved</span>
 		</div>

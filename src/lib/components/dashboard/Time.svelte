@@ -6,9 +6,9 @@
 </script>
 
 {#if hours > 2}
-	<span class="text-6xl text-white">{hours.toFixed(1)}</span><span>h</span>
+	<span class="text-2xl text-white md:text-6xl">{hours.toFixed(1)}</span><span>h</span>
 {:else if minutes > 0}
-	<span class="text-6xl text-white">{minutes.toFixed(0)}</span><span>min</span>
+	<span class="text-2xl text-white md:text-6xl">{minutes.toFixed(0)}</span><span>min</span>
 {:else}
-	<span class="text-6xl text-white">???</span><span />
+	<span class="text-2xl text-white md:text-6xl">???</span><span />
 {/if}
