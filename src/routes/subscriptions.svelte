@@ -45,7 +45,9 @@
 			{#each subscriptions as s}
 				<div class="flex flex-row items-center space-x-4 bg-gray-200 p-2">
 					<div class="min-w-[15rem]">
-						<div class="font-medium text-black">{s.github_organization}</div>
+						<a class="font-medium text-black" href="https://github.com/{s.github_organization}"
+							>{s.github_organization}</a
+						>
 						<div class="text-sm text-gray-800">Managed by {s.customer.github_login}</div>
 					</div>
 
@@ -64,7 +66,9 @@
 			{#each nonSubscribedOrganizations as organization}
 				<div class="flex flex-row items-center space-x-4 bg-gray-200 p-2">
 					<div class="min-w-[15rem]">
-						<div class="font-medium text-black">{organization}</div>
+						<a class="font-medium text-black" href="https://github.com/{organization}"
+							>{organization}</a
+						>
 					</div>
 					<div class="flex-1">FREE</div>
 					<SubscribeButton {organization} />
