@@ -83,5 +83,15 @@
 		</header>
 
 		<slot />
+
+		<!-- Start of HubSpot Embed Code -->
+		<script
+			type="text/javascript"
+			id="hs-script-loader"
+			async
+			defer
+			src="https://js-eu1.hs-scripts.com/26015417.js">
+		</script>
+		<!-- End of HubSpot Embed Code -->
 	</div>
 </main>
