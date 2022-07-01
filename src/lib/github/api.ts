@@ -7,4 +7,6 @@ export type Token = {
 
 export const get = (): Promise<Token> => apiGET('/github');
 
-export const listOrganizations = (): Promise<OrganizationsList> => apiGET('/github/organizations');
+export const listOrganizations = (
+	opts: { fetch?: typeof fetch } = {}
+): Promise<OrganizationsList> => apiGET('/github/organizations', new URLSearchParams(), opts);
