@@ -35,16 +35,20 @@ const handleResponse = async (response: Response) => {
 	}
 };
 
+const isBrowser = typeof window !== 'undefined';
+
 export const get = async (
 	url: string,
 	params = new URLSearchParams(),
 	opts: { fetch?: typeof fetch } = {}
-) =>
-	(opts.fetch ?? fetch)(`${BASE_URL}${url}?${params.toString()}`, {
-		mode: 'cors',
+) => {
+	return (opts.fetch ?? fetch)(`${BASE_URL}${url}?${params.toString()}`, {
+		// for server-side rendering, use same origin policy
+		mode: isBrowser ? 'cors' : 'same-origin',
 		credentials: 'include',
 		redirect: 'follow'
 	}).then(handleResponse);
+};
 
 export const post = async (url: string, body: any) =>
 	fetch(`${BASE_URL}${url}`, {
