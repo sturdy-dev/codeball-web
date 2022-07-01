@@ -23,6 +23,7 @@
 	import favIcon from '$lib/assets/CodeballIcon-128.ico';
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	export let login: string | null;
 
@@ -32,6 +33,13 @@
 		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'github action' },
 		{ href: '/faq', title: 'faq' }
 	];
+
+	let showHubspot = false;
+	onMount(() => {
+		if (!dev) {
+			showHubspot = true;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -84,14 +92,16 @@
 
 		<slot />
 
-		<!-- Start of HubSpot Embed Code -->
-		<script
-			type="text/javascript"
-			id="hs-script-loader"
-			async
-			defer
-			src="https://js-eu1.hs-scripts.com/26015417.js">
-		</script>
-		<!-- End of HubSpot Embed Code -->
+		{#if showHubspot}
+			<!-- Start of HubSpot Embed Code -->
+			<script
+				type="text/javascript"
+				id="hs-script-loader"
+				async
+				defer
+				src="https://js-eu1.hs-scripts.com/26015417.js">
+			</script>
+			<!-- End of HubSpot Embed Code -->
+		{/if}
 	</div>
 </main>
