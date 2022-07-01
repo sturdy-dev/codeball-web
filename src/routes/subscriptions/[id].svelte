@@ -1,4 +1,6 @@
 <script context="module" lang="ts">
+	export let prerender = false;
+
 	import type { Load } from '@sveltejs/kit';
 	import { upcoming } from '$lib/subscriptions';
 
