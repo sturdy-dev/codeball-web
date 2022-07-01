@@ -35,8 +35,12 @@ const handleResponse = async (response: Response) => {
 	}
 };
 
-export const get = async (url: string, params = new URLSearchParams()) =>
-	fetch(`${BASE_URL}${url}?${params.toString()}`, {
+export const get = async (
+	url: string,
+	params = new URLSearchParams(),
+	opts: { fetch?: typeof fetch } = {}
+) =>
+	(opts.fetch ?? fetch)(`${BASE_URL}${url}?${params.toString()}`, {
 		mode: 'cors',
 		credentials: 'include',
 		redirect: 'follow'
