@@ -24,6 +24,7 @@
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import posthog from 'posthog-js';
 
 	export let login: string | null;
 
@@ -34,10 +35,9 @@
 		{ href: '/faq', title: 'faq' }
 	];
 
-	let showHubspot = false;
 	onMount(() => {
 		if (!dev) {
-			showHubspot = true;
+			posthog.init('phc_5wtSq4CFj2AtKs04bAwFrP8ohmH0OKWmxy0QxZUMY1W');
 		}
 	});
 </script>
@@ -92,7 +92,7 @@
 
 		<slot />
 
-		{#if showHubspot}
+		{#if !dev}
 			<!-- Start of HubSpot Embed Code -->
 			<script
 				type="text/javascript"
