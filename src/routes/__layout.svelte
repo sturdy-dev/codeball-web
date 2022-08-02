@@ -38,6 +38,7 @@
 	onMount(() => {
 		if (!dev) {
 			posthog.init('phc_5wtSq4CFj2AtKs04bAwFrP8ohmH0OKWmxy0QxZUMY1W');
+			posthog.identify(login);
 		}
 	});
 </script>
