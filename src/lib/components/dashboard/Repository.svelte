@@ -1,13 +1,17 @@
 <script lang="ts">
-	import { isPublic as isJobPublic, list, type Job } from '$lib/jobs';
+	import type { Preference } from '$lib/preferences';
+	import { isPublic as isJobPublic, type Job } from '$lib/jobs';
 	import { Jobs, Stats } from '$lib/components/dashboard';
 	import { Subscribe } from '$lib/components/subscriptions';
 	import Spinner from '$lib/Spinner.svelte';
 	import { compareAsc } from 'date-fns';
+	import Preferences from './Preferences.svelte';
 
 	export let jobs: Job[] = [];
 	export let loading = false;
 	export let organization: string;
+	export let repository: string;
+	export let preference: Preference;
 
 	$: latestJob = jobs
 		.sort((a, b) => compareAsc(new Date(a.created_at), new Date(b.created_at)))
@@ -21,12 +25,17 @@
 	</div>
 {/if}
 
-{#if isPublic}
-	<h2>Thank you for being open source!</h2>
-	<p>Codeball is free for open source projects.</p>
-{:else}
-	<Subscribe {organization} />
-{/if}
+<div class="flex justify-between gap-4">
+	{#if isPublic}
+		<div>
+			<h2>Thank you for being open source!</h2>
+			<p>Codeball is free for open source projects.</p>
+		</div>
+	{:else}
+		<Subscribe {organization} />
+	{/if}
 
+	<Preferences {organization} {repository} {preference} />
+</div>
 <Stats {jobs} />
 <Jobs {jobs} />

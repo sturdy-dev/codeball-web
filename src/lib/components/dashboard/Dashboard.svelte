@@ -1,20 +1,15 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ stuff: { login } }) => ({
-		props: { login }
-	});
-</script>
-
 <script lang="ts">
+	import type { Preference } from '$lib/preferences';
 	import { type Job, list, type ListOptions } from '$lib/jobs';
 	import { onMount } from 'svelte';
 	import { All, Repository } from '$lib/components/dashboard';
 	import Spinner from '$lib/Spinner.svelte';
 	import { GitHubLoginButton } from '$lib/components/index';
 
-	export let login: string | null;
-	export let organization: string | null;
-	export let repository: string | null;
+	export let login: string | null = null;
+	export let organization: string | null = null;
+	export let repository: string | null = null;
+	export let preference: Preference | null = null;
 
 	let jobs: Job[] = [];
 	let loaded = false;
@@ -79,8 +74,8 @@
 			<p>Something went wrong. Please come back in a bit!</p>
 		</div>
 	{:else if jobs.length > 0}
-		{#if organization && repository}
-			<Repository {jobs} {organization} />
+		{#if organization && repository && preference}
+			<Repository {jobs} {organization} {repository} {preference} />
 		{:else}
 			<All {jobs} />
 		{/if}
