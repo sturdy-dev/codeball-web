@@ -65,7 +65,7 @@
 
     <Separator up="{true}"/>
 
-    <div class="flex items-center gap-16 justify-around">
+    <div class="flex items-center gap-4 lg:gap-16 justify-around flex-col lg:flex-row">
         <div class="space-y-4">
             <h1 class="text-6xl font-black tracking-tight font-mono"><span class="text-orange-600">Not</span> a
                 dashboard</h1>
@@ -80,7 +80,7 @@
 
     <Separator />
 
-    <div class="flex items-center gap-16 justify-around flex-row-reverse">
+    <div class="flex items-center gap-4 lg:gap-16 justify-around flex-col lg:flex-row-reverse">
         <div class="space-y-4">
             <h1 class="text-6xl font-black tracking-tight font-mono"><span class="text-orange-600">Real</span>-world-impact
             </h1>
