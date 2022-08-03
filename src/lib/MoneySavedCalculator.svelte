@@ -1,7 +1,8 @@
 <script lang="ts">
 	import AddAction from '$lib/AddAction.svelte';
-	import type { ContributionJob, RepositoryJob } from '$lib/jobs';
+	import type { RepositoryJob } from '$lib/jobs';
 	import RangeSlider from 'svelte-range-slider-pips';
+	import { differenceInMinutes, minutesToHours, compareAsc, differenceInDays } from 'date-fns';
 
 	export let job: RepositoryJob;
 
@@ -14,43 +15,35 @@
 	$: incorrectlyApprovedContributionsCount = jobs.filter(
 		(c) => c.contribution.result === 'approved' && !c.contribution.merged_without_objections
 	).length;
-	$: mergedWithoutObjectionCount = jobs.filter(
-		(c) => c.contribution.merged_without_objections
-	).length;
+	$: mergedWithoutObjection = jobs.filter((c) => c.contribution.merged_without_objections);
 
 	$: sortedContributionsByDate = jobs.sort((a, b) =>
-		a.contribution.created_at.localeCompare(b.contribution.created_at)
+		compareAsc(new Date(a.contribution.created_at), new Date(b.contribution.created_at))
 	);
 
 	$: firstContribution = sortedContributionsByDate[0];
 	$: lastContribution = sortedContributionsByDate[sortedContributionsByDate.length - 1];
 
-	const contributionOpenedAtUnixMillis = (c: ContributionJob): number => {
-		return Date.parse(c.contribution.created_at);
-	};
+	$: lgtmRatio = mergedWithoutObjection.length / jobs.length;
 
-	$: daysBetweenFirstAndLastPR =
-		(contributionOpenedAtUnixMillis(lastContribution) -
-			contributionOpenedAtUnixMillis(firstContribution)) /
-		1000 /
-		60 /
-		60 /
-		24;
+	$: daysBetweenFirstAndLastPR = differenceInDays(
+		new Date(lastContribution.contribution.created_at),
+		new Date(firstContribution.contribution.created_at)
+	);
 	$: approxPullsPerDay = jobs.length / daysBetweenFirstAndLastPR;
 	$: approxMonthlyPullRequestsCreated = daysBetweenFirstAndLastPR > 0 ? 31 * approxPullsPerDay : 1;
 
-	// sliders
-	let approvedPullRequestsPerMonth = [10];
-	let minutesSavedPerPullRequest = [20];
-	let developerHourlySalary = [120];
-
-	$: hoursSavedPerPullRequest = Math.ceil((minutesSavedPerPullRequest[0] / 60) * 100) / 100; // rounded to 2 decimals
+	$: hoursSavedPerPullRequest = minutesSavedPerPullRequest[0] / 60;
 	$: codeballSaved = Math.round(
 		approvedPullRequestsPerMonth[0] * hoursSavedPerPullRequest * developerHourlySalary[0]
 	);
 	$: approvalRatio = correctlyApprovedContributionsCount / jobs.length;
 	$: approxMonthlyApproved = Math.ceil(approxMonthlyPullRequestsCreated * approvalRatio);
-	$: approvedPullRequestsPerMonth[0] = approxMonthlyApproved;
+
+	// sliders
+	let developerHourlySalary = [120];
+	let minutesSavedPerPullRequest = [20];
+	$: approvedPullRequestsPerMonth = [approxMonthlyApproved];
 
 	const numberFormat = new Intl.NumberFormat('en-US');
 
@@ -91,14 +84,14 @@
 		</li>
 
 		<li>
-			<strong class="underline underline-offset-2">{mergedWithoutObjectionCount}</strong> where approved
-			without further feedback
+			<strong class="underline underline-offset-2">{mergedWithoutObjection.length} </strong> of them
+			({(lgtmRatio * 100).toFixed(0)}%) where approved without objections
 		</li>
 
 		<li>
-			Identified and correctly predicted that
+			Codeball would've approve
 			<strong class="underline underline-offset-2">{correctlyApprovedContributionsCount}</strong>
-			of the contributions would be approved right away
+			contributions right away
 		</li>
 
 		<li>
@@ -161,15 +154,17 @@
 				<td class="px-3  py-4 text-right text-sm text-gray-900">
 					<strong>*</strong>
 				</td>
-				<td class="px-3  py-4 text-left text-sm text-gray-900"> Time Saved / Pull Request </td>
+				<td class="px-3  py-4 text-left text-sm text-gray-900">
+					Average Pull Request review takes
+				</td>
 				<td class="w-1/2  px-3 py-4 text-left text-sm text-gray-900">
-					<strong>{numberFormat.format(minutesSavedPerPullRequest[0])}</strong> minutes
-					<i>(~{hoursSavedPerPullRequest} hours)</i><br />
+					<strong>{minutesSavedPerPullRequest[0]}</strong> minutes
+					<i>(~{Math.round(hoursSavedPerPullRequest)} hours)</i><br />
 					<div
 						class="text-base"
 						style="--range-slider: gray;  --range-handle-focus:gray;  --range-float: transparent;  --range-float-inactive: transparent;"
 					>
-						<RangeSlider bind:values={minutesSavedPerPullRequest} min={0} max={500} />
+						<RangeSlider bind:values={minutesSavedPerPullRequest} min={0} max={1000} />
 					</div>
 				</td>
 			</tr>
