@@ -4,6 +4,6 @@
 </script>
 
 <div
-	class={'h-1 bg-gradient-to-r from-transparent via-orange-200 to-transparent -ml-40 -mr-40 rounded-md ' +
+	class={'h-1 bg-gradient-to-r from-transparent via-orange-200 to-transparent xl:-ml-40 xl:-mr-40 rounded-md ' +
 		rotate}
 />
