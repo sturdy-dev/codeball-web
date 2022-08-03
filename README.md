@@ -7,6 +7,6 @@ This repository contains the sources for the website at [codeball.ai](https://co
 ## Development
 
 ```bash
-npm install
-npm run dev
+yarn
+yarn dev
 ```
