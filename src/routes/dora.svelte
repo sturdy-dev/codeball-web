@@ -8,13 +8,14 @@
 
 <script lang="ts">
     import Button from '$lib/Button.svelte';
+    import Separator from '$lib/Separator.svelte';
 </script>
 
 <div class="flex flex-col gap-32 p-12">
 
     <div class="flex items-start gap-32 justify-center flex-col lg:flex-row">
         <div>
-            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl"><span class="text-orange-400">DORA</span> metrics</h1>
+            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl font-mono"><span class="text-orange-400">DORA</span> metrics</h1>
         </div>
 
         <div class="lg:max-w-[24rem] space-y-4 text-gray-700 text-lg">
@@ -32,11 +33,11 @@
         </div>
     </div>
 
-    <div class="h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent -rotate-[4deg] -ml-40 -mr-40 rounded-md"></div>
+    <Separator up="{true}"/>
 
     <div class="flex items-end gap-32 justify-center flex-col lg:flex-row-reverse">
         <div>
-            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl"><span class="text-orange-600">Not</span> a dashboard</h1>
+            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl font-mono"><span class="text-orange-600">Not</span> a dashboard</h1>
         </div>
         <div class="lg:max-w-[24rem] space-y-4 text-gray-700 text-lg">
             <p>There are many companies that will sell you dashboards, but not doing much to <em>actually</em> help you
@@ -46,17 +47,19 @@
         </div>
     </div>
 
-    <div class="h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent rotate-[4deg] -ml-40 -mr-40 rounded-md"></div>
+    <Separator />
 
     <div class="flex items-start gap-32 justify-center flex-col lg:flex-row">
         <div class="space-y-8">
-            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">Using <span class="text-orange-400">AI</span></h1>
+            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl font-mono">
+                Using <span class="text-orange-400">AI</span>
+            </h1>
 
+            <div class="text-gray-400 text-center">(Add AI to your resume, comes with a free 20% promotion-guarantee!)</div>
 
             <div class="bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 rounded-xl shadow-x ">
                 <img src="./dora-lead-times.png" height="1080" width="1920"  />
             </div>
-
         </div>
         <div class="lg:max-w-[24rem] space-y-4 text-gray-700 text-lg">
             <p>
@@ -74,12 +77,11 @@
         </div>
     </div>
 
-
-    <div class="h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent -rotate-[4deg] -ml-40 -mr-40 rounded-md"></div>
+    <Separator up="{true}"/>
 
     <div class="flex items-start gap-32 justify-center flex-col lg:flex-row-reverse">
         <div class="space-y-8">
-            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">Start <span class="text-orange-600">now</span></h1>
+            <h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl font-mono">Start <span class="text-orange-600">now</span></h1>
         </div>
 
         <div class="lg:max-w-[24rem] space-y-4 text-gray-700 text-lg lg:mt-32">
