@@ -2,7 +2,10 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ stuff: { login } }) => ({
-		props: { login: login ?? null }
+		props: { login: login ?? null },
+		stuff: {
+			showAnnouncementBanner: true
+		}
 	});
 </script>
 

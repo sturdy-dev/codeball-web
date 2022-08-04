@@ -61,6 +61,12 @@
 	{/if}
 </svelte:head>
 
+{#if $page.stuff.showAnnouncementBanner}
+	<div class="bg-orange-400 p-2 text-center text-xl font-bold text-white">
+		<a href="/blog/one-point-zero"> 🧠📣 Codeball 1.0 is here! </a>
+	</div>
+{/if}
+
 <main class="min-h-screen bg-stone-100">
 	<div class="p-4 md:mx-auto md:max-w-7xl">
 		<header
