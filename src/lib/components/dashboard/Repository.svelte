@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Preference } from '$lib/preferences';
 	import { isPublic as isJobPublic, type Job } from '$lib/jobs';
 	import { Jobs, Stats } from '$lib/components/dashboard';
 	import { Subscribe } from '$lib/components/subscriptions';
@@ -11,7 +10,6 @@
 	export let loading = false;
 	export let organization: string;
 	export let repository: string;
-	export let preference: Preference;
 
 	$: latestJob = jobs
 		.sort((a, b) => compareAsc(new Date(a.created_at), new Date(b.created_at)))
@@ -35,7 +33,7 @@
 		<Subscribe {organization} />
 	{/if}
 
-	<Preferences {organization} {repository} {preference} />
+	<Preferences {organization} {repository} />
 </div>
 <Stats {jobs} />
 <Jobs {jobs} />
