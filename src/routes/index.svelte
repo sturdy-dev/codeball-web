@@ -100,6 +100,7 @@
 			<p class="space-y-4 text-lg text-gray-700 lg:max-w-[24rem]">
 				Codeball instantly reduces your code review workload by up to 25%.
 			</p>
+			<Button href="./blog/waiting-for-code-review">Learn more</Button>
 			<Button href="https://github.com/sturdy-dev/codeball-action">Add the GitHub Action</Button>
 		</div>
 		<img
