@@ -1,14 +1,17 @@
 <script lang="ts">
-	import { set, type SafetyLevel, type Preference } from '$lib/preferences';
+	import { get, set, type SafetyLevel } from '$lib/preferences';
 	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
 
-	export let preference: Preference;
-	const { organization, repository } = preference;
+	export let organization: string;
+	export let repository: string;
 
-	const selected = writable(preference.safety);
+	const selected = writable(-1);
+
+	onMount(() => get({ organization, repository }).then(({ safety }) => ($selected = safety)));
 
 	const update = (safety: SafetyLevel) => () =>
-		set({ organization, repository, safety }).then(() => ($selected = safety));
+		set({ organization, repository, safety }).then(({ safety }) => ($selected = safety));
 </script>
 
 <div>

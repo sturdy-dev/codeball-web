@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Preference } from '$lib/preferences';
 	import { type Job, list, type ListOptions } from '$lib/jobs';
 	import { onMount } from 'svelte';
 	import { All, Repository } from '$lib/components/dashboard';
@@ -9,7 +8,6 @@
 	export let login: string | null = null;
 	export let organization: string | null = null;
 	export let repository: string | null = null;
-	export let preference: Preference | null = null;
 
 	let jobs: Job[] = [];
 	let loaded = false;
@@ -74,8 +72,8 @@
 			<p>Something went wrong. Please come back in a bit!</p>
 		</div>
 	{:else if jobs.length > 0}
-		{#if organization && repository && preference}
-			<Repository {jobs} {organization} {repository} {preference} />
+		{#if organization && repository}
+			<Repository {jobs} {organization} {repository} />
 		{:else}
 			<All {jobs} />
 		{/if}
