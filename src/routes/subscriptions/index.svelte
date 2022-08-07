@@ -25,6 +25,7 @@
 
 	import type { Subscription } from '$lib/subscriptions';
 	import type { Organization } from '$lib/github';
+	import GitHubLoginButton from '../../lib/components/index/GitHubLoginButton.svelte';
 
 	export let login: string | null;
 	export let subscriptions: Subscription[];
@@ -34,10 +35,28 @@
 	const nonSubscribedOrganizations = organizations
 		.map((o) => o.name)
 		.filter((org) => !subscribedOrgs.has(org));
+
+	const haveAnyOrgs = subscribedOrgs.size > 0 || nonSubscribedOrganizations.length > 0;
 </script>
 
 <div class="font-mono">
 	<h1 class="text-4xl">Subscriptions</h1>
+
+	{#if !haveAnyOrgs}
+		<div class="mt-4 max-w-prose space-y-4 text-gray-600">
+			<p>You're not using Codeball in any repository yet.</p>
+
+			<p>
+				Start by setting up the <a
+					class="text-black"
+					href="https://github.com/sturdy-dev/codeball-action">[Codeball GitHub Action]</a
+				>, and come back here after you've run your first job with Codeball. :-)
+			</p>
+
+			<p>Already up and running? You might need to <GitHubLoginButton {login} /></p>
+		</div>
+	{/if}
+
 	<div class="mt-4 flex flex-col space-y-4">
 		{#each subscriptions as { id, github_organization, customer, deleted_at }}
 			<div class="flex flex-row items-center space-x-4 bg-gray-200 p-2">
