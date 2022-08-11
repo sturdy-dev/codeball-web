@@ -46,7 +46,8 @@
 	};
 
 	const minProbability = (c: ContributionJob) => {
-		return Math.min(...c.contribution.predicted_outcome.file_probabilities);
+		const probs = c.contribution?.predicted_outcome?.file_probabilities ?? [0];
+		return Math.min(...probs);
 	};
 
 	const contributionCreatedAtDuration = (c: ContributionJob) => {
