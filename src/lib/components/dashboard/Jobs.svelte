@@ -45,6 +45,10 @@
 		);
 	};
 
+	const minProbability = (c: ContributionJob) => {
+		return Math.min(...c.contribution.predicted_outcome.file_probabilities);
+	};
+
 	const contributionCreatedAtDuration = (c: ContributionJob) => {
 		return getRelativeTime(new Date(c.contribution.created_at));
 	};
@@ -55,10 +59,20 @@
 		return events.sort((a, b) => a.created_at.localeCompare(b.created_at));
 	};
 
+	let showProbabilities = false;
+
+	const handleKeydown = (e: KeyboardEvent) => {
+		if (e.key === '.' && (e.metaKey || e.ctrlKey)) {
+			showProbabilities = !showProbabilities;
+		}
+	};
+
 	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAtDesc);
 
 	$: showJobs = latestJobsForContribution;
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <section class="flex flex-col  bg-white">
 	<div
@@ -74,6 +88,7 @@
 		{@const isClosed = job.contribution.actual_outcome?.closed_at}
 		{@const isOpen = !job.contribution.actual_outcome}
 		{@const events = gitHubActionEvents(job)}
+		{@const prob = minProbability(job)}
 
 		<div class="space-y-2 border-b-2 border-gray-900 p-3">
 			<div class="flex flex-col items-start gap-6 sm:flex-row">
@@ -86,7 +101,7 @@
 					<span class="text-sm text-gray-500">{contributionCreatedAtDuration(job)}</span>
 				</div>
 
-				<div>
+				<div class="space-y-1">
 					<span
 						class="block w-32 py-2 text-center text-xs font-semibold leading-5"
 						class:bg-green-100={codeballApproved}
@@ -94,6 +109,10 @@
 					>
 						{codeballApproved ? 'CODEBALL 👍' : 'NOT APPROVED'}
 					</span>
+
+					{#if showProbabilities}
+						<span class="block text-center text-xs text-gray-400">{prob.toFixed(4)}</span>
+					{/if}
 				</div>
 
 				<div class="space-y-1">
