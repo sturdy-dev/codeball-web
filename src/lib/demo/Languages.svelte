@@ -2,7 +2,6 @@
 	import { createEventDispatcher } from 'svelte';
 	import Go from '$lib/demo/Go.svelte';
 	import JS from '$lib/demo/JS.svelte';
-	import Java from '$lib/demo/Java.svelte';
 	import Language from '$lib/demo/Language.svelte';
 
 	const dispatch = createEventDispatcher();
@@ -14,7 +13,7 @@
 	export let selectedFile;
 </script>
 
-<div class="mt-16 flex flex-col items-center space-x-8">
+<div>
 	<div class="font-bold">Pick your language</div>
 	<div class="flex space-x-4">
 		<div on:click={() => pickLanguage('db.go')}>
