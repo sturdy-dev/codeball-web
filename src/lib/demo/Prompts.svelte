@@ -11,11 +11,15 @@
 	export let prompts;
 </script>
 
-<div class="text-center font-bold">Pick your comment</div>
-{#each prompts as prompt}
-	<div on:click={() => pickPrompt(prompt.id)}>
-		<Prompt selected={selectedPrompt === prompt.id}>
-			"{prompt.text}"
-		</Prompt>
+<div>
+	<div class="font-bold">Pick your comment</div>
+	<div class="flex flex-col space-y-4">
+		{#each prompts as prompt}
+			<div on:click={() => pickPrompt(prompt.id)}>
+				<Prompt selected={selectedPrompt === prompt.id}>
+					"{prompt.text}"
+				</Prompt>
+			</div>
+		{/each}
 	</div>
-{/each}
+</div>
