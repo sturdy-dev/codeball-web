@@ -11,7 +11,7 @@
 	export let prompts;
 </script>
 
-<div>
+<div class="max-w-3xl">
 	<div class="font-bold">Pick your comment</div>
 	<div class="flex flex-col space-y-4">
 		{#each prompts as prompt}
