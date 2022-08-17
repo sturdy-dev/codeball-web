@@ -27,6 +27,7 @@
 
 					<ul class="list-inside list-disc">
 						<li>Private repositories</li>
+						<li><a href="/suggester" class="text-red-300">Codeball SUGGESTER</a></li>
 						<li>Really nice dashboards</li>
 						<li>Unlimited repositories</li>
 						<li>No usage limits</li>

@@ -90,9 +90,35 @@
 		</div>
 	</div>
 
+
 	<Separator />
 
 	<div class="flex flex-col items-center justify-around gap-4 lg:flex-row-reverse lg:gap-16">
+		<div class="space-y-4">
+			<h1 class="font-mono text-6xl font-black tracking-tight">
+				Code <span class="text-orange-600">SUGGESTER</span> <span class="text-red-800"></span>
+			</h1>
+			<p class="space-y-4 text-lg text-gray-700 lg:max-w-[24rem]">
+				Codeball SUGGESTER<sup class="text-red-500">beta</sup> turns code review comments into code suggestions.
+			</p>
+			<Button href="/suggester">Learn more</Button>
+		</div>
+		<div
+				class="shadow-x h-80 rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 "
+		>
+			<img
+					alt="Screenshot of the Codeball Suggester demo, mimicking the GitHub Code Review UI"
+					src="./suggester.png"
+					height="602"
+					width="1315"
+					class="h-full w-full"
+			/>
+		</div>
+	</div>
+
+	<Separator up={true} />
+
+	<div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-16">
 		<div class="space-y-4">
 			<h1 class="font-mono text-6xl font-black tracking-tight">
 				<span class="text-orange-600">Real</span>-world-impact
