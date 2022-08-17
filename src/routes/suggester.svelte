@@ -1,63 +1,100 @@
 <script context="module" lang="ts">
 	export const load = () => ({
 		stuff: {
-			title: 'Codeball Suggestions'
+			title: 'Codeball Suggester'
 		}
 	});
 </script>
 
 <script lang="ts">
-	const script = `on:
-  pull_request_review_comment:
-    types: [created, edited]
-name: Codeball
-jobs:
-  codeball_job:
-    runs-on: ubuntu-latest
-    name: Codeball
-    steps:
-    - name: Trigger Codeball
-      id: codeball_baller
-      uses: sturdy-dev/codeball-action/baller@beta
+	import Languages from '$lib/demo/Languages.svelte';
+	import Prompts from '$lib/demo/Prompts.svelte';
+	import Browser from '$lib/demo/Browser.svelte';
+	import Button from '$lib/Button.svelte';
 
-    - name: Get Status
-      id: codeball_status
-      uses: sturdy-dev/codeball-action/status@beta
-      with:
-        codeball-job-id: \${{ steps.codeball_baller.outputs.codeball-job-id }}
+	import { prompts, files } from '$lib/demo/data';
 
-    - name: Post Suggestions
-      uses: sturdy-dev/codeball-action/suggester@beta
-      if: \${{ steps.codeball_status.outputs.suggested == 'true' }}
-      with:
-        codeball-job-id: \${{ steps.codeball_baller.outputs.codeball-job-id }}`;
+	const comments = (fileName: string, promptID: number, line: number) => {
+		const p = prompts.find((prompt) => prompt.id === promptID && prompt.file === fileName);
+		if (!p) {
+			return [];
+		}
+
+		let res = [];
+
+		if (p.line === line) {
+			res.push({
+				username: 'FriendlyReviewer',
+				text: p.text,
+				isCodeball: false
+			});
+		}
+
+		for (const d of p.diffs) {
+			if (d.line === line) {
+				res.push({
+					username: 'Codeball',
+					html: d.diff,
+					isCodeball: true
+				});
+			}
+		}
+
+		return res;
+	};
+
+	let selectedPrompt = 3;
+	let selectedFile = 'db.go';
+
+	$: pickedPrompt = prompts.find((p) => p.id === selectedPrompt && selectedFile === p.file);
+	$: pickedFile = files.find((f) => f.name === selectedFile);
+
+	$: availablePrompts = prompts.filter((p) => p.file === pickedFile?.name);
+
+	$: lines = pickedFile?.content.split('\n').map((u, i) => ({
+		num: i + 1,
+		text: u,
+		comments: comments(selectedFile, selectedPrompt, i + 1)
+	}));
 </script>
 
-<article class="font-mono">
-	<h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">Codeball Suggestions</h1>
+<article class="mb-32 font-mono">
+	<h1 class="text-6xl font-black tracking-tight sm:text-8xl md:text-9xl">CODEBALL SUGGESTER</h1>
 
-	<div class="my-8 flex flex-col gap-16 lg:flex-row">
-		<div class="flex flex-col gap-8">
-			<p class="text-xl text-gray-500 sm:max-w-xl">
-				This documentation is upcoming an upcoming, <strong>unreleased</strong> Codeball feature
+	<div class="flex flex-col justify-around lg:flex-row lg:space-x-4">
+		<div class="space-y-4 lg:mt-32 lg:w-80">
+			<p class="mb-16 text-xl text-gray-500 lg:mb-32">
+				Codeball Suggester writes code for you using GitHub Code Reviews.
 			</p>
 
-			<div class="flex flex-col gap-12">
-				<div class="text-md prose text-gray-500">
-					<h3 class="text-xl text-gray-800">Installation</h3>
-					<ol>
-						<li>
-							Create a new file in your repository called <code
-								>.github/workflows/codeball-suggestion.yml</code
-							>
-							with the following content:
+			<p>Want to see something cool?</p>
 
-							<pre>{script}</pre>
-						</li>
-						<li>Commit and push this change to your repository, and you're done! 🎉</li>
-					</ol>
-				</div>
+			<Languages {selectedFile} on:pickedLanguage={(e) => (selectedFile = e.detail.selectedFile)} />
+
+			{#if availablePrompts.length > 0}
+				<Prompts
+					prompts={availablePrompts}
+					{selectedPrompt}
+					on:pickedPrompt={(e) => (selectedPrompt = e.detail.id)}
+				/>
+			{/if}
+
+			<div class="lg:pt-16">
+				<p>Impressed?!</p>
+				<Button href="/suggester-action">Install GitHub Action</Button>
 			</div>
 		</div>
+
+		<Browser file={pickedFile} {lines} />
+	</div>
+
+	<div class="mt-16">
+		<p>PS. The comments on this page might be simulated, but they are real.</p>
+	</div>
+
+	<div class="mt-16 flex items-center justify-center space-x-8">
+		<div class="text-4xl lg:text-8xl">👉👉👉</div>
+		<Button href="/suggester-action">Add to your repo</Button>
+		<div class="text-4xl lg:text-8xl">👈👈👈</div>
 	</div>
 </article>
