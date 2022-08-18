@@ -28,7 +28,7 @@ jobs:
           labelPullRequestsWhenApproved: "false" # Set to "true" to enable!
           labelPullRequestsWhenReviewNeeded: "false"
           failJobsWhenReviewNeeded: "false"
-`
+`;
 </script>
 
 <article class="font-mono">
@@ -45,8 +45,7 @@ jobs:
 					<h3 class="text-xl text-gray-800">Installation</h3>
 					<ol>
 						<li>
-							Create a new file in your repository called <code
-								>.github/workflows/codeball.yml</code
+							Create a new file in your repository called <code>.github/workflows/codeball.yml</code
 							>
 							with the following content:
 

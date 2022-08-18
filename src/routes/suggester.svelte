@@ -89,7 +89,10 @@
 	</div>
 
 	<div class="mt-16">
-		<p>P.S.: The suggestions on this page might be simulated, but they are from real examples. Just test it yourself ;)</p>
+		<p>
+			P.S.: The suggestions on this page might be simulated, but they are from real examples. Just
+			test it yourself ;)
+		</p>
 	</div>
 
 	<div class="mt-16 flex items-center justify-center space-x-8">
