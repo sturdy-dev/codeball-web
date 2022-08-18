@@ -67,32 +67,6 @@
 
 	<Separator up={true} />
 
-	<div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-16">
-		<div class="space-y-4">
-			<h1 class="font-mono text-6xl font-black tracking-tight">
-				<span class="text-orange-600">Not</span> a dashboard
-			</h1>
-			<p class="space-y-4 text-lg text-gray-700 lg:max-w-[24rem]">
-				Tracking the DORA metrics? Codeball will improve your metrics from day one.
-			</p>
-			<Button href="/dora">Learn more</Button>
-		</div>
-		<div
-			class="shadow-x h-80 rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 "
-		>
-			<img
-				alt="Graph of improved lead times after installing Codeball"
-				src="./dora-lead-times.png"
-				height="1080"
-				width="1920"
-				class="h-full w-full"
-			/>
-		</div>
-	</div>
-
-
-	<Separator />
-
 	<div class="flex flex-col items-center justify-around gap-4 lg:flex-row-reverse lg:gap-16">
 		<div class="space-y-4">
 			<h1 class="font-mono text-6xl font-black tracking-tight">
@@ -112,6 +86,32 @@
 					height="602"
 					width="1315"
 					class="h-full w-full"
+			/>
+		</div>
+	</div>
+
+
+	<Separator />
+
+	<div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-16">
+		<div class="space-y-4">
+			<h1 class="font-mono text-6xl font-black tracking-tight">
+				<span class="text-orange-600">Not</span> a dashboard
+			</h1>
+			<p class="space-y-4 text-lg text-gray-700 lg:max-w-[24rem]">
+				Tracking the DORA metrics? Codeball will improve your metrics from day one.
+			</p>
+			<Button href="/dora">Learn more</Button>
+		</div>
+		<div
+			class="shadow-x h-80 rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 "
+		>
+			<img
+				alt="Graph of improved lead times after installing Codeball"
+				src="./dora-lead-times.png"
+				height="1080"
+				width="1920"
+				class="h-full w-full"
 			/>
 		</div>
 	</div>
