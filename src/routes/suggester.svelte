@@ -64,7 +64,7 @@
 	<div class="flex flex-col justify-around lg:flex-row lg:space-x-4">
 		<div class="space-y-4 lg:mt-32 lg:w-80">
 			<p class="mb-16 text-xl text-gray-500 lg:mb-32">
-				Codeball Suggester writes code for you using GitHub Code Reviews.
+				Codeball SUGGESTER turns code review comments on your Pull Request into code suggestions.
 			</p>
 
 			<p>Want to see something cool?</p>
@@ -89,7 +89,7 @@
 	</div>
 
 	<div class="mt-16">
-		<p>PS. The comments on this page might be simulated, but they are real.</p>
+		<p>P.S.: The suggestions on this page might be simulated, but they are from real examples. Just test it yourself ;)</p>
 	</div>
 
 	<div class="mt-16 flex items-center justify-center space-x-8">
