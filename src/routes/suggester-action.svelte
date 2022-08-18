@@ -7,30 +7,28 @@
 </script>
 
 <script lang="ts">
-	const script = `on:
+	const script = `name: Codeball
+on:
+  pull_request: {}
   pull_request_review_comment:
     types: [created, edited]
-name: Codeball
 jobs:
   codeball_job:
     runs-on: ubuntu-latest
     name: Codeball
     steps:
-    - name: Trigger Codeball
-      id: codeball_baller
-      uses: sturdy-dev/codeball-action/baller@beta
+      - name: Codeball
+        uses: sturdy-dev/codeball-action@v2
+        with:
+          # Settings for "Codeball Suggester"
+          codeSuggestionsFromComments: "true"
 
-    - name: Get Status
-      id: codeball_status
-      uses: sturdy-dev/codeball-action/status@beta
-      with:
-        codeball-job-id: \${{ steps.codeball_baller.outputs.codeball-job-id }}
-
-    - name: Post Suggestions
-      uses: sturdy-dev/codeball-action/suggester@beta
-      if: \${{ steps.codeball_status.outputs.suggested == 'true' }}
-      with:
-        codeball-job-id: \${{ steps.codeball_baller.outputs.codeball-job-id }}`;
+          # Settings for "Codeball Approver"
+          approvePullRequests: "false" # Set to "true" to enable!
+          labelPullRequestsWhenApproved: "false" # Set to "true" to enable!
+          labelPullRequestsWhenReviewNeeded: "false"
+          failJobsWhenReviewNeeded: "false"
+`
 </script>
 
 <article class="font-mono">
@@ -48,7 +46,7 @@ jobs:
 					<ol>
 						<li>
 							Create a new file in your repository called <code
-								>.github/workflows/codeball-suggestion.yml</code
+								>.github/workflows/codeball.yml</code
 							>
 							with the following content:
 
