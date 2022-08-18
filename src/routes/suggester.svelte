@@ -56,6 +56,24 @@
 		text: u,
 		comments: comments(selectedFile, selectedPrompt, i + 1)
 	}));
+
+	const faq: Array<{ name: string; description: string }> = [
+		{
+			name: 'How does it work?',
+			description:
+				'Codeball Suggester uses a machine learning model to convert code review comments into suggestions that are ready to approve. It draws context from the your project and your codebase to write code following your format and style.'
+		},
+		{
+			name: 'What languages does it support?',
+			description:
+				'Codeball Suggester supports Go, JavaScript, TypeScript, Python, PHP, Ruby, Java, and Shell.'
+		},
+		{
+			name: 'How does it run?',
+			description:
+				'Codeball is triggered via GitHub Actions, and uses the Codeball API to generate suggestions.'
+		}
+	];
 </script>
 
 <article class="mb-32 font-mono">
@@ -89,12 +107,30 @@
 	</div>
 
 	<div class="mt-16">
-		<p>P.S.: The suggestions on this page might be simulated, but they are from real examples. Just test it yourself ;)</p>
+		<p>
+			P.S.: The suggestions on this page might be simulated, but they are from real examples. Just
+			test it yourself ;)
+		</p>
 	</div>
 
 	<div class="mt-16 flex items-center justify-center space-x-8">
 		<div class="text-4xl lg:text-8xl">👉👉👉</div>
 		<Button href="/suggester-action">Add to your repo</Button>
 		<div class="text-4xl lg:text-8xl">👈👈👈</div>
+	</div>
+
+	<div class="mt-16 flex flex-col gap-16 lg:flex-row">
+		<div class="flex flex-col gap-8">
+			<p class="text-xl text-gray-500 sm:max-w-xl">Questions and some answers</p>
+
+			<div class="flex flex-col gap-12">
+				{#each faq as q}
+					<div class="max-w-prose">
+						<h3 class="text-xl text-gray-800">{q.name}</h3>
+						<p class="text-md mt-1 text-gray-500">{@html q.description}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
 	</div>
 </article>
