@@ -74,6 +74,7 @@
 			</h1>
 			<p class="space-y-4 text-lg text-gray-700 lg:max-w-[24rem]">
 				Codeball SUGGESTER<sup class="text-red-500">beta</sup> turns code review comments into code suggestions.
+				Powered by OpenAI Codex.
 			</p>
 			<Button href="/suggester">Learn more</Button>
 		</div>

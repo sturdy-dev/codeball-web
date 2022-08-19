@@ -63,7 +63,7 @@
 		{
 			name: 'How does it work?',
 			description:
-				'Codeball Suggester uses a machine learning model to convert code review comments into suggestions that are ready to approve. It draws context from the your project and your codebase to write code following your format and style.'
+				'Codeball Suggester uses OpenAI Codex, a machine learning model to convert code review comments into suggestions that are ready to approve. It draws context from the your project and your codebase to write code following your format and style.'
 		},
 		{
 			name: 'What languages does it support?',
@@ -85,6 +85,7 @@
 		<div class="space-y-4 lg:mt-32 lg:w-80">
 			<p class="mb-16 text-xl text-gray-500 lg:mb-32">
 				Codeball SUGGESTER turns code review comments on your Pull Request into code suggestions.
+				Powered by OpenAI Codex.
 			</p>
 
 			<p>Want to see something cool?</p>
