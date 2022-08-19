@@ -13,7 +13,12 @@
 				throw err;
 			})
 			.then((login) => ({
-				stuff: { title: 'Codeball | AI-powered code review', login },
+				stuff: { 
+					title: 'Codeball | AI-powered code review',
+					description: 'AI-powered code review',
+					ogimage: 'https://codeball.ai/og-image.png',
+					login 
+				},
 				props: { login }
 			}));
 </script>
@@ -45,11 +50,11 @@
 
 <svelte:head>
 	<title>{$page.stuff.title}</title>
-	<meta name="description" content="AI-powered code review" />
+	<meta name="description" content={$page.stuff.description} />
 	<link rel="icon" type="image/svg" href={favIcon} />
-	<meta property="og:image" content="https://codeball.ai/og-image.png" />
+	<meta property="og:image" content={$page.stuff.ogimage} />
 	<meta property="og:title" content={$page.stuff.title} />
-	<meta property="og:description" content="AI-powered code review" />
+	<meta property="og:description" content={$page.stuff.description} />
 	<meta name="twitter:card" content="summary_large_image" />
 
 	{#if !dev}
