@@ -17,11 +17,12 @@ const config = {
 					'self',
 					'api.codeball.ai',
 					'umami.codeball.ai',
+					'app.posthog.com',
 					'vitals.vercel-insights.com'
 				],
 				'img-src': ['self', 'api.producthunt.com'],
 				'child-src': ['self', 'ghbtns.com'],
-				'script-src': ['self', 'umami.codeball.ai']
+				'script-src': ['self', 'umami.codeball.ai', 'app.posthog.com']
 			}
 		}
 	}
