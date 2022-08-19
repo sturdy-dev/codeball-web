@@ -9,6 +9,20 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true
+		},
+		csp: {
+			directives: {
+				'default-src': ['self'],
+				'connect-src': [
+					'self',
+					'api.codeball.ai',
+					'umami.codeball.ai',
+					'vitals.vercel-insights.com'
+				],
+				'img-src': ['self', 'api.producthunt.com'],
+				'child-src': ['self', 'ghbtns.com'],
+				'script-src': ['self', 'umami.codeball.ai']
+			}
 		}
 	}
 };
