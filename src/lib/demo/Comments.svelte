@@ -22,12 +22,12 @@
 				<div class="flex flex-row space-x-4">
 					{#if comment.isCodeball}
 						<img
-							src="https://avatars.githubusercontent.com/u/75087565?s=96&v=4"
+							src="/avatar-codeball.png"
 							class="h-8 w-8 rounded-full border-2"
 						/>
 					{:else}
 						<img
-							src="https://avatars.githubusercontent.com/u/46955155?v=4"
+							src="/avatar-unknown.png"
 							class="h-8 w-8 rounded-full border-2"
 						/>
 					{/if}
