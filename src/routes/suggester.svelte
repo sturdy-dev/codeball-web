@@ -1,7 +1,9 @@
 <script context="module" lang="ts">
 	export const load = () => ({
 		stuff: {
-			title: 'Codeball Suggester'
+			title: 'Codeball | Turn PR comments to code diffs',
+			ogimage: 'https://codeball.ai/suggester.png',
+			description: 'Codeball SUGGESTER turns code review comments on your Pull Request into code suggestions.',
 		}
 	});
 </script>
