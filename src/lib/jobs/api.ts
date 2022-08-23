@@ -14,4 +14,9 @@ export type ListOptions = {
 };
 
 export const list = (params: ListOptions = {}): Promise<{ jobs: Job[]; next?: string }> =>
-	apiGET(`/jobs`, new URLSearchParams(params));
+	apiGET(
+		`/jobs`,
+		new URLSearchParams(
+			Object.fromEntries(Object.entries(params).map(([key, value]) => [key, value.toString()]))
+		)
+	);
