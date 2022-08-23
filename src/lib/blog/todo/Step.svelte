@@ -16,11 +16,12 @@
 </script>
 
 <div>
-	<div class="sticky top-5 float-left w-[30rem]">
+	<div class="lg:sticky lg:top-5 lg:float-left lg:w-[20rem] xl:w-[30rem]">
 		<code class="text-xl">> {prompt}</code>
-		<p class="mt-4 w-80 text-gray-600">{@html comment}</p>
+		<p class="mt-4 w-4/5 text-gray-600">{@html comment}</p>
 	</div>
-	<div class="top-0 float-right w-[40rem]">
+
+	<div class="mt-8 lg:top-0 lg:float-right lg:mt-0 lg:w-[40rem]">
 		<div class="rounded bg-stone-600 font-mono text-white">
 			{#each lines as line}
 				<div class="flex space-x-4" class:bg-green-700={line.isAdded}>

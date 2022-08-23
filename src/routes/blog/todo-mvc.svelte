@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	export const load = () => ({
 		stuff: {
-			title: 'Codeball TODO MVC'
+			title: 'Codeball x Codex | Todo MVC'
 		}
 	});
 </script>
@@ -23,7 +23,7 @@ def hello():
 if __name__ == "__main__":
     app.run()
 `,
-			comment: `Let's get started! Codex is able to setup a flask server right away! In fact, this server is now up and running [<a href="https://codeball-mvc.fly.dev/" class="text-gray-800">here</a>]`,
+			comment: `Let's get started! In my first attempt I used "python" instead of "flask" in the prompt. The code worked, but was too low level, and I could sense that it would get complicated too fast.<br><br>So I changed the prompt to "flask", and off we went! Codex is able to setup a Flask server fairly easily. I'm not too used to Flask, but this looks good to me.<br><br>Codex does not help me install dependencies, but I was able to get started with <code>pip3 install flask</code>. <br><br>(this server is up and running <a href="https://codeball-mvc.fly.dev/" class="text-gray-800 font-medium">here</a>)`,
 			addedLines: []
 		},
 		{
@@ -49,13 +49,13 @@ if __name__ == "__main__":
     app.run()
 `,
 			addedLines: [2, 10, 11, 12, 13, 14, 15, 16],
-			comment: `Codex adds the endpoint correctly, the file or prompt has no previous mention of sqlite or any tables (table names etc).<br><br>So Codex makes something up for us, so far so good!`
+			comment: `A Hello World might be cool and all, but it's time to write some <i>real</i> code.<br><br>Codex adds the endpoint correctly, LGTM! The file or prompt has no previous mention of sqlite or table names, so Codex makes something up for us, so far so good!`
 		},
 
 		{
 			prompt:
-				'before_first_request : Make sure that the tasks table exists (id auto incremental id, description text, done bool)',
-			comment: `The tasks.db database does not exist yet, and has no tables.<br><br>Let's create a table structure, and ask Codex to set it up if it does not exist. This took some tweaking to get right: prompts like <code>setup ... before the app starts</code> creates code that does not work well with Flask. But adding the keyword <code>before_first_request</code> fixes it and Codex does the right thing!`,
+				'before_first_request: Make sure that the tasks table exists (id auto incremental id, description text, done bool)',
+			comment: `The tasks.db database does not exist yet, and has no tables.<br><br>Let's create a table structure, and ask Codex to set it up if it does not exist.<br><br>This took some tweaking to get right: prompts like "<code>setup ... before the app starts</code>" writes code, but it does not work and is not hooked up to Flask in any way.<br><br>Adding the keyword <code>before_first_request</code> fixes it and Codex does the right thing!`,
 			code: `from flask import Flask, jsonify
 import sqlite3
 
@@ -132,11 +132,11 @@ if __name__ == "__main__":
     app.run()
 `,
 			addedLines: [28, 29, 30, 31, 32, 33, 34, 35],
-			comment: `Let's make the /tasks endpoint easier to consume (it's currently returning a list of lists), return as a list of objects.<br><br>I don't know why I called it "with object keys", it's the first thing that came to mind, and it worked!`
+			comment: `Let's make the /tasks endpoint easier to consume (it's currently returning a list of lists), return as a list of objects.<br><br>I don't know why I called it "with object keys" (it doesn't make me sound particularly smart), but it was the first thing that came to mind, and it worked!`
 		},
 		{
 			prompt: 'Add a /add endpoint that inserts new entries to the tasks table.',
-			comment: `There is no CRUD without the C!<br><br>Looks good, but beware, for some reason (some variation of this prompt and/or input found during testing) caused Codex to generate code prone to SQL injection.`,
+			comment: `There is no CRUD without the C!<br><br>Looks good, but beware: sometimes Codex writes code vulnerable to SQL injection. When that happens tough, I was able to prevent it by adding "safely" to the prompt.`,
 			code: `from flask import Flask, jsonify, request
 import sqlite3
 
@@ -256,7 +256,7 @@ if __name__ == "__main__":
 		},
 		{
 			prompt: 'Add CORS headers to allow connections from any host',
-			comment: `Uuuuh! Our friend CORS is here to stop us from having too much fun and deploying. We need to add a CORS handler.<br><br>After this, the app was up and running with no problems!`,
+			comment: `Uuuuh! Our friend CORS showed up and stopped us from enjoying getting everything on the first try. We need to add a CORS handler.<br><br>After this, the app was up and running with no problems!`,
 			code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
@@ -324,7 +324,7 @@ if __name__ == "__main__":
 		},
 		{
 			prompt: 'Update the add() method to return the id of the task created',
-			comment: `The response from /add was a bit boring, and to improve the frontend (that I developer manually at this stage), it was nice to have the ID of the task in the response.`,
+			comment: `The response from /add was a bit simple, and to improve the frontend (that I developer manually at this stage), it was nice to have the ID of the task in the response.`,
 			code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
@@ -474,7 +474,7 @@ if __name__ == "__main__":
 		},
 		{
 			prompt:
-				'before_first_request : If the tasks table is empty, add three rows to the tasks table.',
+				'before_first_request: If the tasks table is empty, add three rows to the tasks table.',
 			comment: `To make [<a href="https://todo.codeball.ai/" class="text-gray-800">the demo</a>] nicer to look at, let's add some example data!<br><br>I can sense that Codex is getting annoyed with me, and asks me to learn Python by myself! <span class="text-2xl">😬</span>`,
 			code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -570,24 +570,57 @@ if __name__ == "__main__":
 </script>
 
 <div class="prose mb-4">
-	<h1>TODO MVC</h1>
+	<h1>Codeball Todo MVC – Codex Challenge</h1>
 
 	<p>
 		In the last few weeks, I and the rest of our team have been playing around a lot with OpenAI's
-		Codex Model, as we've incorporated it into our latest feature (the suggester), and we've been
-		generally impressed by it's performance.
+		Codex Model, as we've incorporated it into our latest feature (<a href="/suggester"
+			>the suggester</a
+		>), and we've been generally impressed by it's performance.
 	</p>
 
 	<p>
 		I had the idea of a challenge for myself: Create something useful, from scratch, using only
 		Codex.
 	</p>
+
+	<p>
+		My goal was to create a backend for a TODO MVC application. Basically, a tasklist with tasks
+		that can be added, listed, and marked as completed. The frontend is to be built manually
+		afterwards.
+	</p>
+
+	<img src="/todo-mvc.png" class="rounded-lg shadow-lg" />
+	<i>Screenshot of the final application, once completed</i>
+
+	<p>
+		First, I tried to create the backend in Go, but Codex continuously messed up where to add new
+		code, and usually ended up adding a new function withing another one, breaking the syntax. I
+		tried again with Python, which should have better support in Codex, with great success!
+	</p>
+
+	<p>
+		I ended up using the "Codex" in the "edit" mode (<a
+			href="https://openai.com/blog/gpt-3-edit-insert/">read more</a
+		>) as it makes the prompt design easier. For the input file, I started with an empty file, and
+		for later prompts the output of the previous step was used.
+	</p>
+
+	<p>Here we go! First prompt:</p>
 </div>
 
-<div class="relative space-y-32 p-4">
+<div class="relative space-y-16 p-4 lg:space-y-32">
 	{#each steps as step}
 		<Step prompt={step.prompt} code={step.code} added={step.addedLines} comment={step.comment} />
 	{/each}
+</div>
+
+<div class="prose">
+	<p>
+		That's it, our backend is DONE! You can check it out at <a href="https://todo.codeball.ai/"
+			>todo.codeball.ai</a
+		>
+	</p>
 </div>
 
 <Button href="/">HIRE A BOT</Button>
