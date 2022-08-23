@@ -5,7 +5,9 @@ export type Token = {
 	login: string;
 };
 
-export const get = (): Promise<Token> => apiGET('/github');
+export const get = (opts: { fetch?: typeof fetch } = {}): Promise<Token> =>
+	apiGET('/github', undefined, opts);
+     
 
 export const listOrganizations = (
 	opts: { fetch?: typeof fetch } = {}
