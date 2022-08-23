@@ -22,11 +22,13 @@
 				<div class="flex flex-row space-x-4">
 					{#if comment.isCodeball}
 						<img
+							alt="avatar-codeball"
 							src="/avatar-codeball.png"
 							class="h-8 w-8 rounded-full border-2"
 						/>
 					{:else}
 						<img
+							alt="avatar-unknown"
 							src="/avatar-unknown.png"
 							class="h-8 w-8 rounded-full border-2"
 						/>
@@ -46,14 +48,6 @@
 								<div class="w-full whitespace-pre font-mono">
 									{@html comment.html}
 								</div>
-								<!--
-                            <div class="flex">
-                                <div class="flex-1"></div>
-                                <div class="inline-block cursor-pointer hover:bg-gray-300 bg-gray-200 text-gray-600 p-1 border-2 rounded-lg">
-                                    Accept suggestion
-                                </div>
-                            </div>
-                            -->
 							{:else}
 								{comment.text}
 							{/if}
