@@ -1,6 +1,18 @@
 <script lang="ts">
 	export let up = false;
-	$: rotate = up ? '-rotate-[4deg]' : 'rotate-[4deg]';
+	export let straight = false;
+
+	const rot = (up: boolean, straight: boolean) : string => {
+		if (straight) {
+			return ''
+		}
+		if (up) {
+			return '-rotate-[4deg]'
+		}
+		return 'rotate-[4deg]'
+	}
+
+	$: rotate = rot(up, straight)
 </script>
 
 <div
