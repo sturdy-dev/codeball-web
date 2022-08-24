@@ -35,7 +35,7 @@
 		let replied = false;
 
 		const codeballComment = {
-			line: suggestion.from_line,
+			line: suggestion.from_line - 1,
 			author: { name: 'Codeball', avatarUrl: '/avatar-codeball.png' },
 			isOutdated: false,
 			text: suggestion.text,
@@ -45,7 +45,7 @@
 		file = {
 			...file,
 			comments: file.comments.map((comment) => {
-				const shouldReply = comment.line + 1 === suggestion.from_line;
+				const shouldReply = comment.line === codeballComment.line;
 				if (!replied && shouldReply) replied = true;
 				return shouldReply
 					? { ...comment, replies: comment.replies.concat(codeballComment) }
