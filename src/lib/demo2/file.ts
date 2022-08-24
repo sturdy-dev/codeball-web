@@ -18,6 +18,7 @@ export type Line = {
 };
 
 export type File = {
+	name?: string;
 	comments: Comment[];
 	lines: Line[];
 };
@@ -34,6 +35,7 @@ export const fileFromString = (text: string, previous?: File): File => {
 				isOutdated: previous.lines[comment.line]?.text !== lines[comment.line]?.text
 			})) ?? [];
 	return {
+		...previous,
 		lines,
 		comments
 	};

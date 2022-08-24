@@ -6,7 +6,7 @@
 
 <script lang="ts">
 	import { GitHubLoginButton } from '$lib/components/index';
-	import { Editable } from '$lib/demo2';
+	import { Demo, examples } from '$lib/demo2';
 
 	export let login: string;
 	const text = `package main
@@ -21,7 +21,7 @@ func main() {
 </script>
 
 {#if login}
-	<Editable {text} {login} />
+	<Demo {text} {login} />
 {:else}
 	<div class="flex w-full flex-col items-center">
 		<h2 class="font-mono">OpenAI requires us to identify end users, so please:</h2>
