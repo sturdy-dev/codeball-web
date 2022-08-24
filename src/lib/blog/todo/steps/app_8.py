@@ -12,8 +12,8 @@ def create_tables():
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        description text,
-        done bool
+        description TEXT,
+        done BOOLEAN
     )""")
     conn.commit()
     conn.close()
@@ -41,11 +41,9 @@ def tasks():
 
 @app.route("/add", methods=["POST"])
 def add():
-    description = request.form["description"]
     conn = sqlite3.connect('tasks.db')
     c = conn.cursor()
-    c.execute("INSERT INTO tasks (description, done) VALUES (?, ?)",
-              (description, False))
+    c.execute("INSERT INTO tasks (description, done) VALUES (?, ?)", (request.form["description"], 0))
     conn.commit()
     conn.close()
     return jsonify({"id": c.lastrowid})
@@ -53,16 +51,12 @@ def add():
 
 @app.route("/update", methods=["POST"])
 def update():
-    id = request.form["id"]
-    description = request.form["description"]
-    done = request.form["done"]
     conn = sqlite3.connect('tasks.db')
     c = conn.cursor()
-    c.execute("UPDATE tasks SET description = ?, done = ? WHERE id = ?",
-              (description, done, id))
+    c.execute("UPDATE tasks SET description = ?, done = ? WHERE id = ?", (request.form["description"], request.form["done"], request.form["id"]))
     conn.commit()
     conn.close()
-    return "Task updated successfully"
+    return "OK"
 
 
 if __name__ == "__main__":

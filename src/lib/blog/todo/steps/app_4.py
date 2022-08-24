@@ -9,8 +9,8 @@ def create_tables():
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        description text,
-        done bool
+        description TEXT,
+        done BOOLEAN
     )""")
     conn.commit()
     conn.close()
@@ -36,13 +36,12 @@ def tasks():
 
 @app.route("/add", methods=["POST"])
 def add():
-    description = request.form["description"]
     conn = sqlite3.connect('tasks.db')
     c = conn.cursor()
-    c.execute("INSERT INTO tasks (description, done) VALUES (?, ?)", (description, False))
+    c.execute("INSERT INTO tasks (description, done) VALUES (?, ?)", (request.form["description"], 0))
     conn.commit()
     conn.close()
-    return "Task added successfully"
+    return "OK"
 
 if __name__ == "__main__":
     app.run()
