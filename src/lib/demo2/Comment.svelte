@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Spinner from '$lib/Spinner.svelte';
 	import type { Comment } from './file';
 
 	export let comment: Comment;
@@ -18,10 +17,6 @@
 				<span class="rounded-lg bg-orange-200 px-1 text-sm">outdated</span>
 			{/if}
 		</div>
-		{#await comment.text}
-			<Spinner />
-		{:then text}
-			<pre class="w-full">{text}</pre>
-		{/await}
+		<pre class="w-full">{comment.text}</pre>
 	</div>
 </div>

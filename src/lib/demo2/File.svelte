@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { File } from './file';
+	import { fileToString, type File } from './file';
 	import CommentForm from './CommentForm.svelte';
 	import CommentReplyForm from './CommentReplyForm.svelte';
 	import Comment from './Comment.svelte';
+	import { run, type Suggestion } from './api';
 
 	export let file: File;
 	export let highlightLine = -1;
@@ -21,7 +22,7 @@
 								line: comment.line,
 								author: { name: 'name' },
 								isOutdated: false,
-								text: Promise.resolve(text),
+								text: text,
 								replies: []
 							})
 					  }
@@ -30,14 +31,43 @@
 		};
 	};
 
+	const onSuggestionCreated = (suggestion: Suggestion) => {
+		let replied = false;
+
+		const codeballComment = {
+			line: suggestion.from_line,
+			author: { name: 'Codeball', avatarUrl: '/avatar-codeball.png' },
+			isOutdated: false,
+			text: suggestion.text,
+			replies: []
+		};
+
+		file = {
+			...file,
+			comments: file.comments.map((comment) => {
+				const shouldReply = comment.line + 1 === suggestion.from_line;
+				if (!replied && shouldReply) replied = true;
+				return shouldReply
+					? { ...comment, replies: comment.replies.concat(codeballComment) }
+					: comment;
+			})
+		};
+
+		if (!replied) file = { ...file, comments: file.comments.concat(codeballComment) };
+	};
+
 	const onCommentCreated = (line: number, text: string) => {
+		run({ input: fileToString(file), line, comment: text }).then((suggestions) =>
+			suggestions.forEach(onSuggestionCreated)
+		);
+
 		file = {
 			...file,
 			comments: file.comments.concat({
 				line,
 				author: { name: 'name' },
 				isOutdated: false,
-				text: Promise.resolve(text),
+				text: text,
 				replies: []
 			})
 		};
