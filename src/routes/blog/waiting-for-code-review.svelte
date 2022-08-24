@@ -13,13 +13,14 @@
 
 <script lang="ts">
 	import Button from '$lib/Button.svelte';
+	import ReadMore from '$lib/blog/ReadMore.svelte';
 </script>
 
 <div class="prose mb-4">
 	<h1>You are waiting for code review more than you should</h1>
 
 	<div class="flex flex-row items-center gap-4">
-		<img src="https://avatars.githubusercontent.com/u/4030927?v=4" class="w-10 rounded-full" />
+		<img src="/avatars/kiril.jpeg" class="w-10 rounded-full" />
 		<div class="flex flex-col text-xs">
 			<div>Kiril Videlov</div>
 			<div>August 4th, 2022</div>
@@ -179,3 +180,5 @@
 </div>
 
 <Button href="/">HIRE A BOT</Button>
+
+<ReadMore />

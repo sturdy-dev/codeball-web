@@ -1,19 +1,20 @@
 <script context="module" lang="ts">
-	export const load = () => ({
-		stuff: {
-			title: 'Codeball x Codex | Todo MVC'
-		}
-	});
+    export const load = () => ({
+        stuff: {
+            title: 'OpenAI Codex TodoMVC Challenge'
+        }
+    });
 </script>
 
 <script lang="ts">
-	import Button from '$lib/Button.svelte';
-	import Step from '$lib/blog/todo/Step.svelte';
+    import Button from '$lib/Button.svelte';
+    import Step from '$lib/blog/todo/Step.svelte';
+    import ReadMore from '$lib/blog/ReadMore.svelte';
 
-	const steps = [
-		{
-			prompt: 'Create a hello world flask webserver',
-			code: `from flask import Flask
+    const steps = [
+        {
+            prompt: 'Create a hello world flask webserver',
+            code: `from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
@@ -23,12 +24,12 @@ def hello():
 if __name__ == "__main__":
     app.run()
 `,
-			comment: `Let's get started! In my first attempt I used "python" instead of "flask" in the prompt. The code worked, but was too low level, and I could sense that it would get complicated too fast.<br><br>So I changed the prompt to "flask", and off we went! Codex is able to setup a Flask server fairly easily. I'm not too used to Flask, but this looks good to me.<br><br>Codex does not help me install dependencies, but I was able to get started with <code>pip3 install flask</code>. <br><br>(this server is up and running <a href="https://codeball-mvc.fly.dev/" class="text-gray-800 font-medium">here</a>)`,
-			addedLines: []
-		},
-		{
-			prompt: 'Add a /tasks endpoint listing all tasks in a sqlite database',
-			code: `from flask import Flask, jsonify
+            comment: `Let's get started! In my first attempt I used "python" instead of "flask" in the prompt. The code worked, but was too low level, and I could sense that it would get complicated too fast.<br><br>So I changed the prompt to "flask", and off we went! I'm no Flask expert, but this looks good to me.<br><br>Codex does not help me install dependencies, but I was able to get started with <code>pip3 install flask</code>. <br><br>If you're interested, the server is up and running <a href="https://codeball-mvc.fly.dev/" class="text-gray-800 font-medium">here</a>.`,
+            addedLines: []
+        },
+        {
+            prompt: 'Add a /tasks endpoint listing all tasks in a sqlite database',
+            code: `from flask import Flask, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -48,15 +49,15 @@ def tasks():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [2, 10, 11, 12, 13, 14, 15, 16],
-			comment: `A Hello World might be cool and all, but it's time to write some <i>real</i> code.<br><br>Codex adds the endpoint correctly, LGTM! The file or prompt has no previous mention of sqlite or table names, so Codex makes something up for us, so far so good!`
-		},
+            addedLines: [2, 10, 11, 12, 13, 14, 15, 16],
+            comment: `A Hello World might be cool and all, but it's time to write some <i>real</i> code.<br><br>Codex adds the endpoint correctly, LGTM! The file or prompt has no previous mention of sqlite or table names, so Codex makes something up for us, so far so good!`
+        },
 
-		{
-			prompt:
-				'before_first_request: Make sure that the tasks table exists (id auto incremental id, description text, done bool)',
-			comment: `The tasks.db database does not exist yet, and has no tables.<br><br>Let's create a table structure, and ask Codex to set it up if it does not exist.<br><br>This took some tweaking to get right: prompts like "<code>setup ... before the app starts</code>" writes code, but it does not work and is not hooked up to Flask in any way.<br><br>Adding the keyword <code>before_first_request</code> fixes it and Codex does the right thing!`,
-			code: `from flask import Flask, jsonify
+        {
+            prompt:
+                'before_first_request: Make sure that the tasks table exists (id auto incremental id, description text, done bool)',
+            comment: `The tasks.db database does not exist yet, and has no tables.<br><br>Let's create a table structure, and ask Codex to set it up if it does not exist.<br><br>This took some tweaking to get right: prompts like "<code>setup ... before the app starts</code>" writes code, but it does not work and is not hooked up to Flask in any way.<br><br>Adding the keyword <code>before_first_request</code> fixes it and Codex does the right thing!`,
+            code: `from flask import Flask, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -88,11 +89,11 @@ def tasks():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-		},
-		{
-			prompt: 'Update the tasks() method to return tasks with object keys',
-			code: `from flask import Flask, jsonify
+            addedLines: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        },
+        {
+            prompt: 'Update the tasks() method to return tasks as objects',
+            code: `from flask import Flask, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -131,13 +132,13 @@ def tasks():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [28, 29, 30, 31, 32, 33, 34, 35],
-			comment: `Let's make the /tasks endpoint easier to consume (it's currently returning a list of lists), return as a list of objects.<br><br>I don't know why I called it "with object keys" (it doesn't make me sound particularly smart), but it was the first thing that came to mind, and it worked!`
-		},
-		{
-			prompt: 'Add a /add endpoint that inserts new entries to the tasks table.',
-			comment: `There is no CRUD without the C!<br><br>Looks good, but beware: sometimes Codex writes code vulnerable to SQL injection. When that happens tough, I was able to prevent it by adding "safely" to the prompt.`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [28, 29, 30, 31, 32, 33, 34, 35],
+            comment: `Let's make the /tasks endpoint easier to consume (it's currently returning a list of lists), return as a list of objects.`
+        },
+        {
+            prompt: 'Add a /add endpoint that inserts new entries to the tasks table.',
+            comment: `There is no CRUD without the C!<br><br>Looks good, but beware: sometimes Codex writes code vulnerable to SQL injection. When that happens tough, I was able to prevent it by adding "safely" to the prompt.`,
+            code: `from flask import Flask, jsonify, request
 import sqlite3
 
 app = Flask(__name__)
@@ -186,12 +187,12 @@ def add():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [37, 38, 39, 40, 41, 42, 43, 44, 45]
-		},
-		{
-			prompt: 'Add a /update endpoint that updates task descriptions and done status',
-			comment: `Codex is on a streak, this works nicely!<br><br>I think that we have everything we need to run our app now, let's deploy it!`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [37, 38, 39, 40, 41, 42, 43, 44, 45]
+        },
+        {
+            prompt: 'Add a /update endpoint that updates task descriptions and done status',
+            comment: `Codex is on a streak, this works nicely!<br><br>I think that we have everything we need to run our app now, let's deploy it!`,
+            code: `from flask import Flask, jsonify, request
 import sqlite3
 
 app = Flask(__name__)
@@ -252,12 +253,12 @@ def update():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
-		},
-		{
-			prompt: 'Add CORS headers to allow connections from any host',
-			comment: `Uuuuh! Our friend CORS showed up and stopped us from enjoying getting everything on the first try. We need to add a CORS handler.<br><br>After this, the app was up and running with no problems!`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
+        },
+        {
+            prompt: 'Add CORS headers to allow connections from any host',
+            comment: `Uuuuh! Our friend CORS showed up and stopped us from enjoying getting everything on the first try. We need to add a CORS handler.<br><br>After this, the app was up and running with no problems!`,
+            code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 
@@ -320,12 +321,12 @@ def update():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [2, 6]
-		},
-		{
-			prompt: 'Update the add() method to return the id of the task created',
-			comment: `The response from /add was a bit simple, and to improve the frontend (that I developer manually at this stage), it was nice to have the ID of the task in the response.`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [2, 6]
+        },
+        {
+            prompt: 'Update the add() method to return the id of the task created',
+            comment: `The response from /add was a bit simple, and to improve the frontend (that I developer manually at this stage), it was nice to have the ID of the task in the response.`,
+            code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 
@@ -388,12 +389,12 @@ def update():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [47]
-		},
-		{
-			prompt: 'Format',
-			comment: `This step is just for fun, and with a simple "Format" prompt, the code was formatted to be compliant with PEP 8!<br><br>Brb while I run: <code>pip uninstall black && pip install codex-formatter</code>`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [47]
+        },
+        {
+            prompt: 'Format',
+            comment: `This step is just for fun, and with a simple "Format" prompt, the code was formatted to be compliant with PEP 8!<br><br>Brb while I run: <code>pip uninstall black && pip install codex-formatter</code>`,
+            code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 
@@ -470,13 +471,13 @@ def update():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [8, 23, 28, 35, 43, 46, 59, 74]
-		},
-		{
-			prompt:
-				'before_first_request: If the tasks table is empty, add three rows to the tasks table.',
-			comment: `To make [<a href="https://todo.codeball.ai/" class="text-gray-800">the demo</a>] nicer to look at, let's add some example data!<br><br>I can sense that Codex is getting annoyed with me, and asks me to learn Python by myself! <span class="text-2xl">😬</span>`,
-			code: `from flask import Flask, jsonify, request
+            addedLines: [8, 23, 28, 35, 43, 46, 59, 74]
+        },
+        {
+            prompt:
+                'before_first_request: If the tasks table is empty, add three rows to the tasks table.',
+            comment: `To make [<a href="https://todo.codeball.ai/" class="text-gray-800">the demo</a>] nicer to look at, let's add some example data!<br><br>I can sense that Codex is getting annoyed with me, and asks me to learn Python by myself! <span class="text-2xl">😬</span>`,
+            code: `from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 
@@ -564,82 +565,94 @@ def update():
 if __name__ == "__main__":
     app.run()
 `,
-			addedLines: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
-		}
-	];
+            addedLines: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+        }
+    ];
 </script>
 
 <div class="prose mb-4">
-	<h1>Codeball Todo MVC – Codex Challenge</h1>
+    <h1>OpenAI Codex TodoMVC Challenge</h1>
 
-	<p>
-		In the last few weeks, I and the rest of our team have been playing around a lot with OpenAI's
-		Codex Model, as we've incorporated it into our latest feature (<a href="/suggester"
-			>the suggester</a
-		>), and we've been generally impressed by it's performance.
-	</p>
+    <div class="flex flex-row items-center gap-4">
+        <img src="/avatars/gustav.jpeg" class="w-10 rounded-full" />
+        <div class="flex flex-col text-xs">
+            <div>Gustav Westling</div>
+            <div>August 24th, 2022</div>
+        </div>
+    </div>
 
-	<p>
-		I had the idea of a challenge for myself: Create something useful, from scratch, using only
-		Codex.
-	</p>
+    <p>
+        In the last few weeks, I and the rest of our team have been playing around a lot with OpenAI's
+        Codex Model, as we've incorporated it into our latest feature (<a href="/suggester"
+    >
+        the suggester</a>), and we've been generally impressed by it's performance.
+    </p>
 
-	<p>
-		My goal was to create a backend for a TODO MVC application. Basically, a tasklist with tasks
-		that can be added, listed, and marked as completed. The frontend is to be built manually
-		afterwards.
-	</p>
+    <p>
+        I had the idea of a challenge for myself: Create something useful, from scratch, using only
+        Codex.
+    </p>
 
-	<img src="/todo-mvc.png" class="rounded-lg shadow-lg" />
-	<i>Screenshot of the final application, once completed</i>
+    <p>
+        My goal was to create a backend for a TodoMVC-style app. TodoMVC is a tasklist with tasks
+        that can be added, listed, and marked as completed. The frontend is to be built manually.
+    </p>
 
-	<p>
-		First, I tried to create the backend in Go, but Codex continuously messed up where to add new
-		code, and usually ended up adding a new function withing another one, breaking the syntax. I
-		tried again with Python, which should have better support in Codex, with great success!
-	</p>
 
-	<p>
-		I ended up using the "Codex" in the "edit" mode (<a
-			href="https://openai.com/blog/gpt-3-edit-insert/">read more</a
-		>) as it makes the prompt design easier. For the input file, I started with an empty file, and
-		for later prompts the output of the previous step was used.
-	</p>
+    <div class="inline-flex flex-col items-center">
+        <img src="/todo-mvc.png" class="rounded-lg shadow-lg"/>
+        <i>Screenshot of the final application, once completed</i>
+    </div>
 
-	<p>Here we go! First prompt:</p>
+    <p>
+        First, I tried to create the backend in Go, but Codex continuously messed up the syntax when inserting new
+        code, and usually ended up adding a new function withing another one (syntax error!)</p>
+    <p>
+        I switched strategy, and attempted to
+        generate a Python app instead, and it worked great. The continuation of this blog post is a series of prompts
+        used, together with comments about what worked and what didn't end up working out.
+    </p>
+
+    <p>
+        I ended up using the "Codex" in the <a
+            href="https://openai.com/blog/gpt-3-edit-insert/">"edit" mode</a
+    > as it makes the prompt design easier. The edit mode takes two inputs, a file and a instruction/prompt, and spits out a new version of the input file.
+        For the input file, I started with an empty file, and
+        for later prompts the output of the previous step was used.
+    </p>
+
+    <p>Here we go! First prompt:</p>
 </div>
 
 <div class="relative space-y-16 p-4 lg:space-y-32">
-	{#each steps as step}
-		<Step prompt={step.prompt} code={step.code} added={step.addedLines} comment={step.comment} />
-	{/each}
+    {#each steps as step}
+        <Step prompt={step.prompt} code={step.code} added={step.addedLines} comment={step.comment}/>
+    {/each}
 </div>
 
 <div class="prose">
-	<p>
-		That's it, our backend is DONE! You can check it out at <a href="https://todo.codeball.ai/"
-			>todo.codeball.ai</a
-		>
-	</p>
+    <p>
+        That's it, our backend is done! You can check it out, and use the frontend at <a href="https://todo.codeball.ai/"
+    >todo.codeball.ai</a
+    >.
+    </p>
+    <p>
+        Developing with Codex is a bit special, and it sometimes takes a few attempts to get it to write <i>exactly</i>
+        what you want it to.
+        But in broad strokes, getting from nothing to <i>something</i> in just <strong>10 prompts</strong> is really
+        impressive and encouraging.
+    </p>
+    <p>
+        Codex continues to amaze me, and I'm sure that this task could be done in fewer steps (maybe even one?) with some <i>prompt engineering</i>.
+        I'd like to start a <strong>prompt golf</strong> challenge! If you have access to Codex, can you re-create this backend in fewer steps? As few characters as possible?
+    </p>
+    <p>
+Would be cool to see how far we can take this, looking forward to hear in the comments on <a href="#todo">Hacker News</a>.
+    </p>
 </div>
+
+<div class="mb-16"></div>
 
 <Button href="/">HIRE A BOT</Button>
 
-<div class="prose mt-4">
-	<p class="text-blue-600">
-		With 🧠 from the Codeballers (Kiril, Nikita, and Gustav),<br />
-		August 2022
-	</p>
-
-	<hr />
-
-	<h2>Read more</h2>
-	<ul>
-		<li>
-			<a href="/blog/waiting-for-code-review"
-				>You are waiting for code review more than you should</a
-			>
-		</li>
-		<li><a href="/blog/supabase-deepdive">Codeball x Supabase Deepdive</a></li>
-	</ul>
-</div>
+<ReadMore />
