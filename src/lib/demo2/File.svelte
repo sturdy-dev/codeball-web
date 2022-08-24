@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { File } from './file';
 	import CommentForm from './CommentForm.svelte';
+	import CommentReplyForm from './CommentReplyForm.svelte';
 	import Comment from './Comment.svelte';
 
 	export let file: File;
@@ -9,6 +10,26 @@
 
 	const onCommentFormClosed = () => (commentLine = -1);
 
+	const onReplyCreated = (line: number, text: string) => {
+		file = {
+			...file,
+			comments: file.comments.map((comment) =>
+				comment.line === line
+					? {
+							...comment,
+							replies: comment.replies.concat({
+								line: comment.line,
+								author: { name: 'name' },
+								isOutdated: false,
+								text: Promise.resolve(text),
+								replies: []
+							})
+					  }
+					: comment
+			)
+		};
+	};
+
 	const onCommentCreated = (line: number, text: string) => {
 		file = {
 			...file,
@@ -16,7 +37,8 @@
 				line,
 				author: { name: 'name' },
 				isOutdated: false,
-				text: Promise.resolve(text)
+				text: Promise.resolve(text),
+				replies: []
 			})
 		};
 		onCommentFormClosed();
@@ -57,7 +79,14 @@
 		{@const comments = file.comments.filter(({ line }) => line === i)}
 		{#each comments as comment}
 			<div class="border-y-2 border-gray-300">
-				<Comment bind:comment />
+				<Comment {comment} />
+				{#each comment.replies as reply}
+					<Comment comment={reply} />
+				{/each}
+				<CommentReplyForm
+					on:reply={(e) => onReplyCreated(i, e.detail.text)}
+					author={{ name: 'name' }}
+				/>
 			</div>
 		{/each}
 	{/each}

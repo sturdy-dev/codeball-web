@@ -6,7 +6,9 @@
 	const dispatch = createEventDispatcher();
 
 	const onClose = () => dispatch('close');
-	const onCreate = () => dispatch('create', { text });
+	const onCreate = () => {
+		if (text.length > 0) dispatch('create', { text });
+	};
 	const onKeydown = (e: KeyboardEvent) => {
 		if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') onCreate();
 		if (e.key == 'Escape') onClose();
