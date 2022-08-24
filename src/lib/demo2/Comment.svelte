@@ -13,7 +13,7 @@
 	/>
 	<div class="flex w-full flex-col gap-2">
 		<div>
-			<span class="font-semibold">{comment.author.name} </span>
+			<span class="font-semibold">{comment.author.name}</span>
 			{#if comment.isOutdated}
 				<span class="rounded-lg bg-orange-200 px-1 text-sm">outdated</span>
 			{/if}

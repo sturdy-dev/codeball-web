@@ -13,6 +13,7 @@ export type Comment = {
 	isOutdated: boolean;
 	text: Promise<string | Diff>;
 	author: Author;
+	replies: Comment[];
 };
 
 export type Line = {
@@ -27,12 +28,14 @@ export type File = {
 export const fileFromString = (text: string, previous?: File): File => {
 	const lines = text.split('\n').map((line) => ({ text: line }));
 	const comments =
-		previous?.comments.map((comment) => {
-			return {
+		previous?.comments
+			// remove comments on deleted lines
+			.filter((c) => c.line <= lines.length)
+			// if comment turns out to be on a different line, mark it as outdated
+			.map((comment) => ({
 				...comment,
 				isOutdated: previous.lines[comment.line]?.text !== lines[comment.line]?.text
-			};
-		}) ?? [];
+			})) ?? [];
 	return {
 		lines,
 		comments
