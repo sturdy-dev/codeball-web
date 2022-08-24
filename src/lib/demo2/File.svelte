@@ -90,13 +90,15 @@
 			<div class="w-12 flex-shrink-0 select-none px-2 text-right text-gray-800">
 				{i + 1}
 			</div>
-			<div class="flex-1 whitespace-pre px-4">{text}</div>
+
 			<div
-				class:hidden={i !== highlightLine}
-				class="z-1 absolute left-16 cursor-pointer rounded-md bg-blue-300 px-1 shadow-md"
+				class:opacity-0={i !== highlightLine}
+				class="z-1 relative float-left cursor-pointer rounded-md bg-blue-300 px-1 shadow-md"
 			>
 				+
 			</div>
+
+			<pre class="flex-1">{text}</pre>
 		</div>
 		{#if commentLine === i}
 			<div class="border-y-2 border-gray-300 pl-12">
