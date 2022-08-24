@@ -1,17 +1,14 @@
+import type { Diff } from 'diff-match-patch';
+
 export type Author = {
 	name: string;
 	avatarUrl?: string;
 };
 
-export type Diff = {
-	line: string;
-	type: 'plus' | 'minus';
-}[];
-
 export type Comment = {
 	line: number;
 	isOutdated: boolean;
-	text: string | Diff;
+	text: string | Diff[];
 	author: Author;
 	replies: Comment[];
 };

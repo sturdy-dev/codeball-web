@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Comment } from './file';
+	import { DIFF_INSERT, DIFF_DELETE } from 'diff-match-patch';
 
 	export let comment: Comment;
 </script>
@@ -17,6 +18,16 @@
 				<span class="rounded-lg bg-orange-200 px-1 text-sm">outdated</span>
 			{/if}
 		</div>
-		<pre class="w-full">{comment.text}</pre>
+		{#if Array.isArray(comment.text)}
+			<div class="grid font-mono">
+				{#each comment.text as [op, text]}
+					<span class:bg-red-100={op === DIFF_DELETE} class:bg-green-100={op === DIFF_INSERT}
+						>{text}</span
+					>
+				{/each}
+			</div>
+		{:else}
+			<pre class="w-full">{comment.text}</pre>
+		{/if}
 	</div>
 </div>
