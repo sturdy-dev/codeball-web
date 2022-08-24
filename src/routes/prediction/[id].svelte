@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 	import { get, type Job } from '$lib/jobs';
-	export const load: Load = async ({ params, fetch }) => ({
+	export const load: Load = async ({ params }) => ({
 		status: 200,
-		props: { job: await get(params.id, { fetch }) }
+		props: { job: await get(params.id) }
 	});
 </script>
 
