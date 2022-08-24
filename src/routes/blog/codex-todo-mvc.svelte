@@ -179,7 +179,7 @@
 	</p>
 	<p>
 		Would be cool to see how far we can take this, looking forward to hear in the comments on <a
-			href="#todo">Hacker News</a
+			href="https://news.ycombinator.com/item?id=32577624">Hacker News</a
 		>.
 	</p>
 </div>
