@@ -8,8 +8,10 @@
 
 	export let author: Author;
 	export let file: File;
-	export let highlightLine = -1;
-	export let commentLine = -1;
+	export let immutable = false;
+
+	let highlightLine = -1;
+	let commentLine = -1;
 
 	const onCommentFormClosed = () => (commentLine = -1);
 
@@ -96,11 +98,7 @@
 	};
 </script>
 
-<div
-	on:mouseout={() => (highlightLine = -1)}
-	on:blur={() => (highlightLine = -1)}
-	class="grid overflow-hidden rounded-lg border-2 border-gray-300"
->
+<div on:mouseout={() => (highlightLine = -1)} on:blur={() => (highlightLine = -1)}>
 	{#each file.lines as { text }, i}
 		<div
 			class="flex font-mono"
@@ -113,15 +111,16 @@
 			</div>
 
 			<div
-				class:opacity-0={i !== highlightLine}
-				class="z-1 relative float-left cursor-pointer rounded-md bg-blue-300 px-1 shadow-md"
+				class:opacity-0={immutable || i !== highlightLine}
+				class:cursor-pointer={!immutable && i === highlightLine}
+				class="z-1 relative float-left rounded-md bg-blue-300 px-1 shadow-md"
 			>
 				+
 			</div>
 
 			<pre class="flex-1">{text}</pre>
 		</div>
-		{#if commentLine === i}
+		{#if !immutable && commentLine === i}
 			<div class="border-y-2 border-gray-300 pl-12">
 				<CommentForm
 					on:close={() => onCommentFormClosed()}
@@ -136,7 +135,9 @@
 				{#each comment.replies as reply}
 					<Comment comment={reply} />
 				{/each}
-				<CommentReplyForm on:reply={(e) => onReplyCreated(i, e.detail.text)} {author} />
+				{#if !immutable}
+					<CommentReplyForm on:reply={(e) => onReplyCreated(i, e.detail.text)} {author} />
+				{/if}
 			</div>
 		{/each}
 	{/each}

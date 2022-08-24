@@ -8,9 +8,7 @@
 	onMount(() => textarea.focus());
 </script>
 
-<div
-	class="flex gap-4 overflow-hidden rounded-lg border-2 border-gray-300 border-blue-500 font-mono outline-none ring"
->
+<div class="flex gap-4 overflow-hidden border-2 border-blue-500 font-mono outline-none ring">
 	<div>
 		{#each lines as _, i}
 			<div class="w-12 flex-shrink-0 select-none px-2 text-right text-gray-800">
