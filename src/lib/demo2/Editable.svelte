@@ -4,7 +4,10 @@
 	import FileComponent from './File.svelte';
 	import Editing from './Editing.svelte';
 
+	export let login: string;
 	export let text: string;
+
+	const author = { name: login };
 
 	let editing = false;
 
@@ -34,7 +37,7 @@
 		{#if editing}
 			<Editing bind:text />
 		{:else}
-			<FileComponent bind:file />
+			<FileComponent bind:file {author} />
 		{/if}
 	</div>
 </div>

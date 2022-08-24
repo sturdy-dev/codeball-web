@@ -1,16 +1,15 @@
 <script lang="ts">
-	import { fileToString, type File } from './file';
+	import { fileToString, type File, type Author } from './file';
 	import CommentForm from './CommentForm.svelte';
 	import CommentReplyForm from './CommentReplyForm.svelte';
 	import Comment from './Comment.svelte';
 	import { run, type Suggestion } from './api';
 	import { diff_match_patch } from 'diff-match-patch';
 
+	export let author: Author;
 	export let file: File;
 	export let highlightLine = -1;
 	export let commentLine = -1;
-
-	const dmp = new diff_match_patch();
 
 	const onCommentFormClosed = () => (commentLine = -1);
 
@@ -23,7 +22,7 @@
 							...comment,
 							replies: comment.replies.concat({
 								line: comment.line,
-								author: { name: 'name' },
+								author,
 								isOutdated: false,
 								text: text,
 								replies: []
@@ -87,7 +86,7 @@
 			...file,
 			comments: file.comments.concat({
 				line,
-				author: { name: 'name' },
+				author,
 				isOutdated: false,
 				text: text,
 				replies: []
@@ -137,10 +136,7 @@
 				{#each comment.replies as reply}
 					<Comment comment={reply} />
 				{/each}
-				<CommentReplyForm
-					on:reply={(e) => onReplyCreated(i, e.detail.text)}
-					author={{ name: 'name' }}
-				/>
+				<CommentReplyForm on:reply={(e) => onReplyCreated(i, e.detail.text)} {author} />
 			</div>
 		{/each}
 	{/each}
