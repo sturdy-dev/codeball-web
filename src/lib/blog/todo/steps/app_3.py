@@ -9,8 +9,8 @@ def create_tables():
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        description text,
-        done bool
+        description TEXT,
+        done BOOLEAN
     )""")
     conn.commit()
     conn.close()

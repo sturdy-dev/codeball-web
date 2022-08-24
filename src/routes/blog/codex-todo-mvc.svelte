@@ -22,6 +22,8 @@
 	import App8 from '$lib/blog/todo/steps/app_8.py?raw';
 	import App9 from '$lib/blog/todo/steps/app_9.py?raw';
 
+	const range = (start, stop) => Array.from({ length: stop - start + 1 }, (_, i) => start + i);
+
 	const steps = [
 		{
 			prompt: 'Create a hello world flask webserver',
@@ -41,7 +43,7 @@
 				'before_first_request: Make sure that the tasks table exists (id auto incremental id, description text, done bool)',
 			comment: `The tasks.db database does not exist yet, and has no tables.<br><br>Let's create a table structure, and ask Codex to set it up if it does not exist.<br><br>This took some tweaking to get right: prompts like "<code>setup ... before the app starts</code>" writes code, but it does not work and is not hooked up to Flask in any way.<br><br>Adding the keyword <code>before_first_request</code> fixes it and Codex does the right thing!`,
 			code: App2,
-			addedLines: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+			addedLines: range(6, 16)
 		},
 		{
 			prompt: 'Update the tasks() method to return tasks as objects',
@@ -59,7 +61,7 @@
 			prompt: 'Add a /update endpoint that updates task descriptions and done status',
 			comment: `Codex is on a streak, this works nicely!<br><br>I think that we have everything we need to run our app now, let's deploy it!`,
 			code: App5,
-			addedLines: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
+			addedLines: [46, 47, 48, 49, 50, 51, 52, 53]
 		},
 		{
 			prompt: 'Add CORS headers to allow connections from any host',
@@ -68,23 +70,23 @@
 			addedLines: [2, 6]
 		},
 		{
-			prompt: 'Update the add() method to return the id of the task created',
+			prompt: 'Update the add() method to return the id of the task created in json',
 			comment: `The response from /add was a bit simple, and to improve the frontend (that I developer manually at this stage), it was nice to have the ID of the task in the response.`,
 			code: App7,
-			addedLines: [47]
+			addedLines: [46]
 		},
 		{
 			prompt: 'Format',
 			comment: `This step is just for fun, and with a simple "Format" prompt, the code was formatted to be compliant with PEP 8!<br><br>Brb while I run: <code>pip uninstall black && pip install codex-formatter</code>`,
 			code: App8,
-			addedLines: [8, 21, 41, 53, 67]
+			addedLines: [8, 21, 41, 51, 61]
 		},
 		{
 			prompt:
-				'before_first_request: After creating the table, if the table is empty, add three rows',
+				'before_first_request, before conn.close: if the tasks table is empty, add three rows',
 			comment: `To make [<a href="https://todo.codeball.ai/" class="text-gray-800">the demo</a>] nicer to look at, let's add some example data!<br><br>I can sense that Codex is getting annoyed with me, and asks me to learn Python by myself! <span class="text-2xl">😬</span>`,
 			code: App9,
-			addedLines: [19, 20, 21, 22, 23, 24, 25, 26, 27]
+			addedLines: range(22, 33)
 		}
 	];
 </script>
