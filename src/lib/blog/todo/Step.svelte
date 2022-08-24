@@ -17,7 +17,7 @@
 
 <div>
 	<div class="lg:sticky lg:top-5 lg:float-left lg:w-[20rem] xl:w-[30rem]">
-		<code class="text-xl border-l-4 border-black block pl-2">{prompt}</code>
+		<code class="block border-l-4 border-black pl-2 text-xl">{prompt}</code>
 		<p class="mt-4 w-4/5 text-gray-600">{@html comment}</p>
 	</div>
 
