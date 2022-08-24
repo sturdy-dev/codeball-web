@@ -3,8 +3,8 @@
 	import { NotFoundError } from '$lib/api';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ fetch }) =>
-		get({ fetch })
+	export const load: Load = async () =>
+		get()
 			.then(({ login }) => login)
 			.catch((err) => {
 				if (err instanceof NotFoundError) {
@@ -13,11 +13,11 @@
 				throw err;
 			})
 			.then((login) => ({
-				stuff: {
+				stuff: { 
 					title: 'Codeball | AI-powered code review',
 					description: 'AI-powered code review',
 					ogimage: 'https://codeball.ai/og-image.png',
-					login
+					login 
 				},
 				props: { login }
 			}));
