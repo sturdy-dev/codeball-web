@@ -21,8 +21,10 @@
 		{#if Array.isArray(comment.text)}
 			<div class="grid font-mono">
 				{#each comment.text as [op, text]}
-					<span class:bg-red-100={op === DIFF_DELETE} class:bg-green-100={op === DIFF_INSERT}
-						>{text}</span
+					<span
+						class="whitespace-pre-wrap"
+						class:bg-red-100={op === DIFF_DELETE}
+						class:bg-green-100={op === DIFF_INSERT}>{text}</span
 					>
 				{/each}
 			</div>

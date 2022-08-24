@@ -4,7 +4,7 @@
 	import CommentReplyForm from './CommentReplyForm.svelte';
 	import Comment from './Comment.svelte';
 	import { run, type Suggestion } from './api';
-	import { diff_match_patch } from 'diff-match-patch';
+	import { lineMode } from './diff';
 
 	export let author: Author;
 	export let file: File;
@@ -35,18 +35,6 @@
 		};
 	};
 
-	const diff_lineMode = (text1: string, text2: string) => {
-		const dmp = new diff_match_patch();
-		const {
-			chars1: lineText1,
-			chars2: lineText2,
-			lineArray
-		} = dmp.diff_linesToChars_(text1, text2);
-		var diffs = dmp.diff_main(lineText1, lineText2, false);
-		dmp.diff_charsToLines_(diffs, lineArray);
-		return diffs;
-	};
-
 	const onSuggestionCreated = (suggestion: Suggestion) => {
 		let replied = false;
 
@@ -55,7 +43,7 @@
 			.map((l) => l.text)
 			.join('\n');
 		const newLines = suggestion.text;
-		const diffs = diff_lineMode(oldLines, newLines);
+		const diffs = lineMode(oldLines, newLines);
 
 		const codeballComment = {
 			line: suggestion.from_line - 1,
@@ -80,7 +68,7 @@
 	};
 
 	const onCommentCreated = (line: number, text: string) => {
-		run({ input: fileToString(file), line, comment: text }).then((suggestions) =>
+		run({ input: fileToString(file), line: line + 1, comment: text }).then((suggestions) =>
 			suggestions.forEach(onSuggestionCreated)
 		);
 
