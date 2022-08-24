@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { fileFromString } from './file';
+	import { fileFromString, fileToString, type File } from './file';
 
 	import FileComponent from './File.svelte';
 	import Editing from './Editing.svelte';
+	import GitHubLoginButton from '$lib/components/index/GitHubLoginButton.svelte';
 
 	export let immutable = false;
-	export let login: string = 'FriendlyReviewer';
-	export let text: string;
+	export let login: string | null;
+	export let file: File;
 
-	const author = { name: login };
+	const author = { name: login ?? 'FreiendlyReviewer' };
 
 	let editing = false;
-
-	let file = fileFromString(text);
+	let text = fileToString(file);
 
 	const onEditDoneClicked = () => {
 		editing = !editing;
@@ -76,7 +76,12 @@
 				</div>
 			{/if}
 			<div class="w-full">
-				{#if editing}
+				{#if !login && !immutable}
+					<div class="flex h-full w-full flex-col items-center">
+						<h2 class="font-mono">OpenAI requires us to identify end users, so please:</h2>
+						<GitHubLoginButton {login} />
+					</div>
+				{:else if editing}
 					<Editing bind:text />
 				{:else}
 					<FileComponent bind:file {author} {immutable} />
