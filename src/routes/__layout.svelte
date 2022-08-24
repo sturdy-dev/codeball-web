@@ -13,11 +13,11 @@
 				throw err;
 			})
 			.then((login) => ({
-				stuff: { 
+				stuff: {
 					title: 'Codeball | AI-powered code review',
 					description: 'AI-powered code review',
 					ogimage: 'https://codeball.ai/og-image.png',
-					login 
+					login
 				},
 				props: { login }
 			}));
@@ -37,7 +37,8 @@
 		{ href: '/how', title: 'how' },
 		{ href: '/pricing', title: 'pricing' },
 		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'github action' },
-		{ href: '/faq', title: 'faq' }
+		{ href: '/faq', title: 'faq' },
+		{ href: '/blog', title: 'blog' }
 	];
 
 	onMount(() => {

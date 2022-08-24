@@ -1,5 +1,9 @@
+<script lang="ts">
+	export let title = 'Read more';
+</script>
+
 <div class="prose mt-4">
-	<h2>Read more</h2>
+	<h2>{title}</h2>
 	<ul>
 		<li>
 			<a href="/blog/codex-todo-mvc"> Codex TodoMVC Challenge </a>
