@@ -107,6 +107,13 @@
 		>), and we've been generally impressed by it's performance.
 	</p>
 
+	<p class="border-l-4 border-blue-600 py-2 pl-4">
+		"OpenAI Codex is an artificial intelligence model developed by OpenAI. It parses natural
+		language and generates code in response. It is used to power GitHub Copilot, a programming
+		autocompletion tool developed for Visual Studio Code. Codex is a descendant of OpenAI's GPT-3
+		model, fine-tuned for use in programming applications."
+	</p>
+
 	<p>
 		I had the idea of a challenge for myself: Create something useful, from scratch, using only
 		Codex.
