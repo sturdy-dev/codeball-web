@@ -11,7 +11,7 @@ export type Diff = {
 export type Comment = {
 	line: number;
 	isOutdated: boolean;
-	text: Promise<string | Diff>;
+	text: string | Diff;
 	author: Author;
 	replies: Comment[];
 };
@@ -41,3 +41,5 @@ export const fileFromString = (text: string, previous?: File): File => {
 		comments
 	};
 };
+
+export const fileToString = (file: File): string => file.lines.map((l) => l.text).join('\n');
