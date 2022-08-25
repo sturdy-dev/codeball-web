@@ -26,10 +26,20 @@
 <script lang="ts">
 	import '../app.css';
 	import favIcon from '$lib/assets/CodeballIcon-128.ico';
-	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import posthog from 'posthog-js';
+	import { browser, dev } from '$app/env';
+	import { webVitals } from '$lib/vitals';
+
+	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+	$: if (!dev && browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 
 	export let login: string | null;
 
