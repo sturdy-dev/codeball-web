@@ -1,12 +1,12 @@
 import { lineMode } from './diff';
 import { fileFromString, type File, type Comment } from './file';
 
-type Example = {
+export type Example = {
 	file: File;
 	examples: Comment[][];
 };
 
-const codeball = { name: 'Codeball', avatarUrl: '/avatar-codeball.png' };
+export const codeball = { name: 'Codeball', avatarUrl: '/avatar-codeball.png' };
 
 const reviewer = { name: 'FriendlyReviewer' };
 
@@ -44,15 +44,19 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 				{
 					isOutdated: false,
 					line: 21,
-					text: 'Test the db connection before returning',
+					text: Promise.resolve(Promise.resolve('Test the db connection before returning')),
 					author: reviewer,
 					replies: [
 						{
 							isOutdated: false,
 							line: 21,
-							text: lineMode(
-								'',
-								`\tif err := db.Ping(); err != nil {\n\t\treturn nil, fmt.Errorf("error pinging db: %w", err)\n\t}\n\n`
+							text: Promise.resolve(
+								Promise.resolve(
+									lineMode(
+										'',
+										`\tif err := db.Ping(); err != nil {\n\t\treturn nil, fmt.Errorf("error pinging db: %w", err)\n\t}\n\n`
+									)
+								)
 							),
 							author: codeball,
 							replies: []
@@ -63,7 +67,7 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 			[
 				{
 					isOutdated: false,
-					text: 'Add error return with fmt.Errorf instead of panics',
+					text: Promise.resolve('Add error return with fmt.Errorf instead of panics'),
 					line: 15,
 					author: reviewer,
 					replies: [
@@ -71,9 +75,11 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 							isOutdated: false,
 							line: 15,
 							author: codeball,
-							text: lineMode(
-								'\t\tpanic(err)',
-								'\t\treturn nil, fmt.Errorf("failed to open database: %v", err)'
+							text: Promise.resolve(
+								lineMode(
+									'\t\tpanic(err)',
+									'\t\treturn nil, fmt.Errorf("failed to open database: %v", err)'
+								)
 							),
 							replies: []
 						}
@@ -83,16 +89,18 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 3,
 					author: codeball,
-					text: lineMode('', '\t"fmt"'),
+					text: Promise.resolve(lineMode('', '\t"fmt"')),
 					replies: []
 				},
 				{
 					isOutdated: false,
 					line: 12,
 					author: codeball,
-					text: lineMode(
-						'func NewPsql(dbSourceURL string) *sqlx.DB {',
-						'func NewPsql(dbSourceURL string) (*sqlx.DB, error) {'
+					text: Promise.resolve(
+						lineMode(
+							'func NewPsql(dbSourceURL string) *sqlx.DB {',
+							'func NewPsql(dbSourceURL string) (*sqlx.DB, error) {'
+						)
 					),
 
 					replies: []
@@ -121,15 +129,17 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 4,
 					author: reviewer,
-					text: 'Remember to add CORS headers',
+					text: Promise.resolve('Remember to add CORS headers'),
 					replies: [
 						{
 							isOutdated: false,
 							line: 4,
 							author: codeball,
-							text: lineMode(
-								`\t\t'Content-Type': 'text/plain'`,
-								`\t\t'Content-Type': 'text/plain',\n\t\t'Access-Control-Allow-Origin': '*'`
+							text: Promise.resolve(
+								lineMode(
+									`\t\t'Content-Type': 'text/plain'`,
+									`\t\t'Content-Type': 'text/plain',\n\t\t'Access-Control-Allow-Origin': '*'`
+								)
 							),
 							replies: []
 						}
@@ -141,15 +151,17 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 7,
 					author: reviewer,
-					text: `Let's make this more fun, add some emojis`,
+					text: Promise.resolve(`Let's make this more fun, add some emojis`),
 					replies: [
 						{
 							isOutdated: false,
 							line: 7,
 							author: codeball,
-							text: lineMode(
-								`\tresponse.write('Hello, World!\\n');`,
-								`\tresponse.write('Hello, World! 🌍\\n');`
+							text: Promise.resolve(
+								lineMode(
+									`\tresponse.write('Hello, World!\\n');`,
+									`\tresponse.write('Hello, World! 🌍\\n');`
+								)
 							),
 							replies: []
 						}
@@ -195,22 +207,26 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 0,
 					author: codeball,
-					text: lineMode('public class Main {', 'import java.util.Scanner;\n\npublic class Main {'),
+					text: Promise.resolve(
+						lineMode('public class Main {', 'import java.util.Scanner;\n\npublic class Main {')
+					),
 					replies: []
 				},
 				{
 					isOutdated: false,
 					line: 3,
 					author: reviewer,
-					text: 'Ask the user to tneter a numer, and add imports',
+					text: Promise.resolve('Ask the user to tneter a numer, and add imports'),
 					replies: [
 						{
 							isOutdated: false,
 							line: 4,
 							author: codeball,
-							text: lineMode(
-								'\t\tn = 2025;',
-								'\t\tScanner sc = new Scanner(System.in);\n\t\tSystem.out.println("Enter a number: ");\n\t\tn = sc.nextInt();'
+							text: Promise.resolve(
+								lineMode(
+									'\t\tn = 2025;',
+									'\t\tScanner sc = new Scanner(System.in);\n\t\tSystem.out.println("Enter a number: ");\n\t\tn = sc.nextInt();'
+								)
 							),
 							replies: []
 						}
@@ -222,15 +238,17 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 18,
 					author: reviewer,
-					text: 'Use String.format',
+					text: Promise.resolve('Use String.format'),
 					replies: [
 						{
 							isOutdated: false,
 							line: 18,
 							author: codeball,
-							text: lineMode(
-								'\t\tSystem.out.println(n + " is a tech number.");',
-								'\t\tSystem.out.println(String.format("%d is a tech number.", n));'
+							text: Promise.resolve(
+								lineMode(
+									'\t\tSystem.out.println(n + " is a tech number.");',
+									'\t\tSystem.out.println(String.format("%d is a tech number.", n));'
+								)
 							),
 							replies: []
 						}
@@ -240,9 +258,11 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 20,
 					author: codeball,
-					text: lineMode(
-						'\t\tSystem.out.println(n + " is not a tech number.");',
-						'\t\tSystem.out.println(String.format("%d is not a tech number.", n));'
+					text: Promise.resolve(
+						lineMode(
+							'\t\tSystem.out.println(n + " is not a tech number.");',
+							'\t\tSystem.out.println(String.format("%d is not a tech number.", n));'
+						)
 					),
 					replies: []
 				},
@@ -250,9 +270,11 @@ func NewPsql(dbSourceURL string) *sqlx.DB {
 					isOutdated: false,
 					line: 23,
 					author: codeball,
-					text: lineMode(
-						'\t\tSystem.out.println(n + " is not a tech number.");',
-						'\t\tSystem.out.println(String.format("%d is not a tech number.", n));'
+					text: Promise.resolve(
+						lineMode(
+							'\t\tSystem.out.println(n + " is not a tech number.");',
+							'\t\tSystem.out.println(String.format("%d is not a tech number.", n));'
+						)
 					),
 					replies: []
 				}

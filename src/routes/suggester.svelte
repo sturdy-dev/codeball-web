@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import { Demo, examples } from '$lib/demo';
+	import { Demo, examples, type Comment } from '$lib/demo';
 	import Button from '$lib/Button.svelte';
 	import Go from '$lib/assets/Go.svelte';
 	import Java from '$lib/assets/Java.svelte';
@@ -23,6 +23,22 @@
 			examples: []
 		}
 	];
+
+	const delay =
+		(timeout: number) =>
+		(comment: Comment): Comment => {
+			console.log(comment.author.name);
+			return {
+				...comment,
+				text:
+					comment.author.name === 'Codeball'
+						? comment.text.then(
+								(text) => new Promise((resolve) => setTimeout(() => resolve(text), timeout))
+						  )
+						: comment.text,
+				replies: comment.replies.map(delay(timeout))
+			};
+		};
 
 	$: selectedFile = options[0];
 	$: selectedPrompt = selectedFile.examples[0] ?? [];
@@ -88,7 +104,7 @@
 								class:shadow-lg={selected}
 								class:bg-gray-300={!selected}
 							>
-								"{text}"
+								{#await text then text}"{text}"{/await}
 							</div>
 						</div>
 					{:else}
@@ -103,7 +119,7 @@
 			</div>
 		</div>
 		<Demo
-			file={{ ...selectedFile.file, comments: selectedPrompt }}
+			file={{ ...selectedFile.file, comments: selectedPrompt.map(delay(1000)) }}
 			immutable={!!selectedFile.file.name}
 			{login}
 		/>
