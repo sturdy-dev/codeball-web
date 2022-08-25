@@ -10,6 +10,7 @@
 	import Go from '$lib/assets/Go.svelte';
 	import Java from '$lib/assets/Java.svelte';
 	import JS from '$lib/assets/JS.svelte';
+	import { browser } from '$app/env';
 
 	export let login: string;
 
@@ -40,7 +41,14 @@
 			};
 		};
 
-	$: selectedFile = options[0];
+	$: if (browser) location.hash = selectedFile.file.name ?? 'custom';
+	$: selectedFile = browser
+		? options.find((o) =>
+				o.file.name === undefined && location.hash.slice(1) === 'custom'
+					? true
+					: o.file.name === location.hash.slice(1)
+		  ) ?? options[0]
+		: options[0];
 	$: selectedPrompt = selectedFile.examples[0] ?? [];
 </script>
 

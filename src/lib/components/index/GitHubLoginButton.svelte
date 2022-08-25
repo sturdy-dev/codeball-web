@@ -33,7 +33,7 @@
 			<span class="whitespace-nowrap">
 				[<a
 					class="inline-flex items-center text-gray-800 hover:text-black"
-					href={`/github/oauth?redirect=${$page.url}`}
+					href={`/github/oauth?redirect=${encodeURIComponent($page.url.toString())}`}
 				>
 					<span>Login with GitHub</span>
 					<Image class="ml-1" src={gitHubLogo} alt="GitHub logo" />
