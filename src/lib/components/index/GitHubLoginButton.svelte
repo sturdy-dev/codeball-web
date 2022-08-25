@@ -1,6 +1,7 @@
 <script lang="ts">
 	import gitHubLogo from '$lib/assets/GitHub-Mark-120px-plus.png?preset=logo';
 	import Image from '$lib/components/Image.svelte';
+	import { page } from '$app/stores';
 
 	const githubAppName = import.meta.env.VITE_GITHUB_APP_NAME;
 
@@ -30,7 +31,10 @@
 			{/if}
 
 			<span class="whitespace-nowrap">
-				[<a class="inline-flex items-center text-gray-800 hover:text-black" href={`/github/oauth`}>
+				[<a
+					class="inline-flex items-center text-gray-800 hover:text-black"
+					href={`/github/oauth?redirect=${$page.url}`}
+				>
 					<span>Login with GitHub</span>
 					<Image class="ml-1" src={gitHubLogo} alt="GitHub logo" />
 				</a>]
