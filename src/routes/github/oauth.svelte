@@ -11,12 +11,14 @@
 			throw new Error(error);
 		}
 
+		const redirect = urlParams.get('redirect');
+
 		const doneFromBackend = !!urlParams.get('done');
 		const doneFromGitHub = !!urlParams.get('setup_action');
 		const done = doneFromBackend || doneFromGitHub;
 
 		const nextUrl = done
-			? '/'
+			? redirect ?? '/'
 			: `${BASE_URL}/github/oauth?redirectUrl=${encodeURIComponent(window.location.href)}`;
 
 		goto(nextUrl);
