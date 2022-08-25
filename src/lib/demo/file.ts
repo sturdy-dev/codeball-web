@@ -8,7 +8,7 @@ export type Author = {
 export type Comment = {
 	line: number;
 	isOutdated: boolean;
-	text: string | Diff[];
+	text: Promise<string | Diff[]>;
 	author: Author;
 	replies: Comment[];
 };

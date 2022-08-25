@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Comment } from './file';
 	import { DIFF_INSERT, DIFF_DELETE } from 'diff-match-patch';
+	import Spinner from '$lib/Spinner.svelte';
 
 	export let comment: Comment;
 </script>
@@ -18,18 +19,22 @@
 				<span class="rounded-lg bg-orange-200 px-1 text-sm">outdated</span>
 			{/if}
 		</div>
-		{#if Array.isArray(comment.text)}
-			<div class="grid font-mono">
-				{#each comment.text as [op, text]}
-					<span
-						class="whitespace-pre-wrap"
-						class:bg-red-100={op === DIFF_DELETE}
-						class:bg-green-100={op === DIFF_INSERT}>{text}</span
-					>
-				{/each}
-			</div>
-		{:else}
-			<pre class="w-full">{comment.text}</pre>
-		{/if}
+		{#await comment.text}
+			<Spinner />
+		{:then text}
+			{#if Array.isArray(text)}
+				<div class="grid font-mono">
+					{#each text as [op, text]}
+						<span
+							class="whitespace-pre-wrap"
+							class:bg-red-100={op === DIFF_DELETE}
+							class:bg-green-100={op === DIFF_INSERT}>{text}</span
+						>
+					{/each}
+				</div>
+			{:else}
+				<pre class="w-full">{text}</pre>
+			{/if}
+		{/await}
 	</div>
 </div>
