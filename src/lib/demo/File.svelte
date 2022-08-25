@@ -26,7 +26,7 @@
 								line: comment.line,
 								author,
 								isOutdated: false,
-								text: text,
+								text: Promise.resolve(text),
 								replies: []
 							})
 					  }
@@ -49,7 +49,7 @@
 			line: suggestion.from_line - 1,
 			author: { name: 'Codeball', avatarUrl: '/avatar-codeball.png' },
 			isOutdated: false,
-			text: diffs,
+			text: Promise.resolve(diffs),
 			replies: []
 		};
 
@@ -68,17 +68,21 @@
 	};
 
 	const onCommentCreated = (line: number, text: string) => {
-		run({ input: fileToString(file), line: line + 1, comment: text }).then((suggestions) =>
-			suggestions.forEach(onSuggestionCreated)
-		);
+		let commentProcessed: () => void;
+		const processing = new Promise<void>((resolve) => (commentProcessed = resolve));
+
+		run({ input: fileToString(file), line: line + 1, comment: text })
+			.then((suggestions) => suggestions.forEach(onSuggestionCreated))
+			.then(() => commentProcessed());
 
 		file = {
 			...file,
 			comments: file.comments.concat({
+				processing,
 				line,
 				author,
 				isOutdated: false,
-				text: text,
+				text: Promise.resolve(text),
 				replies: []
 			})
 		};
@@ -120,12 +124,14 @@
 		{#each comments as comment}
 			<div class="border-y-2 border-gray-300">
 				<Comment {comment} />
-				{#each comment.replies as reply}
-					<Comment comment={reply} />
-				{/each}
-				{#if !immutable}
-					<CommentReplyForm on:reply={(e) => onReplyCreated(i, e.detail.text)} {author} />
-				{/if}
+				{#await comment.processing then}
+					{#each comment.replies as reply}
+						<Comment comment={reply} />
+					{/each}
+					{#if !immutable}
+						<CommentReplyForm on:reply={(e) => onReplyCreated(i, e.detail.text)} {author} />
+					{/if}
+				{/await}
 			</div>
 		{/each}
 	{/each}

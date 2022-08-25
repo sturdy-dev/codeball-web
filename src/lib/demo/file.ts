@@ -6,6 +6,7 @@ export type Author = {
 };
 
 export type Comment = {
+	processing?: Promise<void>;
 	line: number;
 	isOutdated: boolean;
 	text: Promise<string | Diff[]>;
