@@ -55,9 +55,9 @@
 
 			{#if !immutable}
 				<div
-					class="flex justify-around rounded-md border-2 border-black bg-blue-100 px-2 py-1 font-semibold"
+					class="flex justify-around rounded-md border-2 border-black bg-blue-100 px-2 py-1 font-semibold cursor-pointer"
 				>
-					<label for="edit-checkbox">{editing ? 'done' : 'edit'}</label>
+					<label for="edit-checkbox">{editing ? 'done' : 'edit code'}</label>
 					<input
 						hidden
 						id="edit-checkbox"
