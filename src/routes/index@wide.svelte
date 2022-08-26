@@ -16,46 +16,83 @@
     export let login: string | null;
 </script>
 
-<article class="mb-32 flex w-full flex-col items-center space-y-16 bg-amber-100">
-    <div class="mt-24 flex flex-col items-center gap-8">
-        <h1 class="text-center text-5xl font-normal tracking-tight">Instantly increase Engineering <i>Velocity</i>
+<article class="flex w-full flex-col items-center space-y-16 bg-fuchsia-100">
+    <div class="flex w-full max-w-7xl items-center justify-around gap-16 py-16">
+        <div class="flex flex-col gap-8">
+            <h1 class="text-5xl font-bold">
+                Increase<br/>your<br/>engineering<br/><span class="text-orange-600">velocity</span>
+            </h1>
 
-        </h1>
-        <p class="max-w-[40rem] text-xl text-gray-600 text-center">
-            The Codeball suite saves hundreds of development hours by safely processing Pull Requests for your team.
-        </p>
-        <div class="flex items-center gap-4">
-            <Button href="#setup">Use Codeball</Button>
-            <a href="#">Contact Sales &rarr;</a>
+            <ul class="flex flex-col gap-2">
+                <li class="inline-flex gap-4">
+                    <div>⚫️</div>
+                    <div>AI power suite</div>
+                </li>
+                <li class="inline-flex gap-4">
+                    <div>⚫️</div>
+                    <div>Approves (good) PRs</div>
+                </li>
+                <li class="inline-flex gap-4">
+                    <div>⚫️</div>
+                    <div>No configuration needed</div>
+                </li>
+                <li class="inline-flex gap-4">
+                    <div>⚫️</div>
+                    <div>Codes for you</div>
+                </li>
+                <li class="inline-flex gap-4">
+                    <div>⚫️</div>
+                    <div>Python, Go, C++, Java, and more</div>
+                </li>
+            </ul>
+
+            <div>
+                <Button href="#setup">Get started</Button>
+            </div>
         </div>
-    </div>
 
-    <div class="flex justify-around">
-        <div class="max-w-[50rem]">
+        <div class="max-w-[30rem]">
             <Logos/>
         </div>
     </div>
 
+    <div
+            style="background-position: bottom -6rem right -8rem;"
+            class="flex h-[55rem] w-full justify-around	bg-[url('/armadillo/big-office.png')] bg-no-repeat"
+    >
+        <div class="w-full max-w-7xl space-y-8">
+            <h1 class="text-5xl font-bold">Codeball is your AI powered toolset</h1>
+            <p class="max-w-3xl text-gray-600">
+                Codeball uses AI to improve your engineering productivity from day 0. Using our own dataset
+                of millions of merged Pull Requests and code contributions and OpenAI Codex, we've built
+                some of the most powerful coding AIs in the world. The Codeball
+            </p>
+            <p class="max-w-3xl text-gray-600">
+                AI will help your developers ship more quickly<br/>and with higher confidence.
+            </p>
+        </div>
+    </div>
+</article>
 
-    <div class="bg-blue-200 rounded-xl w-4/5 p-8 flex gap-16 items-center">
+<div class="flex w-full flex-col items-center space-y-16 bg-white py-16">
+    <div class="flex w-4/5 items-center gap-16 rounded-xl bg-blue-200 p-8 py-16">
         <img src="/armadillo/coffee-transformed.png" class="h-40 flex-shrink-0"/>
-        <div class="flex flex-col gap-2 text-gray-700">
+        <div class="flex flex-col gap-2 text-sm text-gray-700">
             <h2 class="text-xl font-normal tracking-tight">Codeball Approver</h2>
             <p>
-                Approver uses advanced Artificial Intelligence to grade Pull Requests, and
-                will approve Pull Requests that it's confident in, so that you don't
-                have to wait for review.
+                Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve Pull
+                Requests that it's confident in, so that you don't have to wait for review.
             </p>
             <p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
         </div>
-        <div class="flex-shrink-0">
+        <div class="w-32 flex-shrink-0">
             <Button href="https://github.com/sturdy-dev/codeball-action">Add it</Button>
         </div>
     </div>
 
-    <div class="bg-blue-200 rounded-xl w-4/5 p-8 flex gap-16 items-center">
+    <div class="flex w-4/5 items-center gap-16 rounded-xl bg-blue-200 p-8 py-16">
         <img src="/armadillo/pingpong-transformed.png" class="h-40 flex-shrink-0"/>
-        <div class="flex flex-col gap-2 text-gray-700">
+        <div class="flex flex-col gap-2 text-sm text-gray-700">
             <h2 class="text-xl font-normal tracking-tight">Codeball Suggester</h2>
             <p>
                 The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
@@ -63,83 +100,22 @@
             </p>
             <p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
         </div>
-        <div class="flex-shrink-0">
+        <div class="w-32 flex-shrink-0">
             <Button href="/suggester">Show me</Button>
         </div>
     </div>
+</div>
 
-
-    <div class="gap-8 bg-red-200 left-0 right-0 w-full ">
-        <div class="float-left bg-green-400 h-80 w-80 rounded-full -ml-[10rem]"></div>
-
-        <div class="bg-blue-700 float-left w-4/5">
-            <div class="flex flex-col items-center gap-8">
-                <h1 class="text-3xl font-normal tracking-tight">
-                    Codeball <span class="text-green-600">Approver</span>
-                </h1>
-                <div class="prose">
-                    <p>
-                        Approver uses <strong>advanced Artificial Intelligence</strong> to grade Pull Requests, and
-                        will approve Pull Requests that it's <strong>extremely confident</strong> in, so that you don't
-                        have to wait for review.
-                    </p>
-                    <p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
-                </div>
-            </div>
-            <div>
-
-                <div class="flex w-full flex-col gap-2">
-                    <p class="text-md text-gray-500">Try it on your repo!</p>
-                    <AnalyzeForm/>
-                </div>
-                <div>
-                    <Button href="https://github.com/sturdy-dev/codeball-action">Add the GitHub Action</Button>
-                </div>
-            </div>
-        </div>
-
-        <div class="float-left bg-green-400 h-80 w-80 rounded-full -mr-[10rem]"></div>
+<div class="max-w-7xl mx-auto">
+    <div>
+        You don't need to trust our marketing speak. Try Codeball on your repository (for free):
     </div>
+    <AnalyzeForm/>
+</div>
 
-    <div class="flex max-w-[40rem] flex-col items-center gap-8">
-        <h1 class="text-3xl font-normal tracking-tight">
-            Codeball <span class="text-orange-600">Suggester</span>
-        </h1>
-        <div class="prose">
-            <p>
-                The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
-                actionable diff suggestions.
-            </p>
-        </div>
-        <div class="">
-            <Button href="/suggester">Try the demo</Button>
-        </div>
-    </div>
+<div>
+    <h2>Let's go</h2>
+    <Button>Show me how</Button>
+</div>
 
-    <div class="flex w-full justify-center bg-stone-700 py-16">
-        <div class="flex max-w-[40rem] flex-col items-center gap-8 text-gray-200">
-            <h1 class="text-3xl font-normal tracking-tight">Not a dashboard</h1>
-            <p>
-                Tracking the DORA metrics? Codeball will improve your metrics from day one, by drastically
-                reducing the time your top performers are spending waiting for code approvals.
-            </p>
-        </div>
-
-        <div class="flex flex-col gap-4">
-            <div
-                    class="shadow-x rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 md:h-80 "
-            >
-                <img
-                        alt="Graph of improved lead times after installing Codeball"
-                        src="./dora-lead-times.png"
-                        height="1080"
-                        width="1920"
-                        class="h-full w-full object-contain"
-                />
-            </div>
-            <div>
-                <Button href="/dora">Learn more</Button>
-            </div>
-        </div>
-    </div>
-</article>
+<div class="mb-32"></div>
