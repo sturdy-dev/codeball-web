@@ -78,7 +78,7 @@
 	</a>
 {/if}
 
-<main class="min-h-screen w-full bg-fuchsia-100 ">
+<main class="min-h-screen w-full bg-rose-100">
 	<Header {login} />
 
 	<slot />

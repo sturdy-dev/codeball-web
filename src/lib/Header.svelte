@@ -17,7 +17,9 @@
 		class="mb-4 flex h-12 flex-col items-center gap-4 border-b-2 border-gray-400 text-black md:mb-0 md:flex-row md:border-b-0"
 	>
 		<div class="flex h-full items-center gap-4 p-2 md:mr-12 md:p-0">
-			<img src="/brand/ball/BallWithBrainRaster256.png" class="h-4/5" />
+			<a class="block h-4/5 text-2xl" href="/"
+				><img class="h-full" src="/brand/ball/BallWithBrainRaster256.png" /></a
+			>
 			<a class="text-2xl" href="/">Codeball</a>
 		</div>
 		<div class="grid flex-1	grid-cols-2	 gap-x-4 md:flex md:space-x-2 ">

@@ -12,12 +12,15 @@
 <script lang="ts">
 	import { AnalyzeForm, Logos } from '$lib/components/index';
 	import Button from '$lib/Button.svelte';
+	import FeatureBox from '$lib/index/FeatureBox.svelte';
 
 	export let login: string | null;
 </script>
 
-<div class="flex w-full flex-col items-center space-y-16 bg-fuchsia-100">
-	<div class="flex w-full max-w-7xl items-center justify-between gap-16 py-16">
+<div class="flex w-full flex-col items-center space-y-16 bg-rose-100">
+	<div
+		class="flex w-full max-w-7xl flex-col items-start justify-between gap-16 py-16 px-8 md:flex-row md:items-center"
+	>
 		<div class="flex flex-col gap-8">
 			<h1 class="text-5xl font-bold">
 				Increase<br />your<br />engineering<br /><span class="text-orange-600">velocity</span>
@@ -53,10 +56,10 @@
 	</div>
 </div>
 
-<div class="flex w-full flex-col items-center space-y-16 bg-blue-100 pt-16">
+<div class="flex w-full flex-col items-center bg-rose-100 px-8 pt-16">
 	<div
 		style="background-position: bottom -6rem right -8rem;"
-		class="flex h-[55rem] w-full justify-around	bg-[url('/armadillo/big-office.png')] bg-no-repeat"
+		class="flex w-full justify-around bg-no-repeat lg:h-[55rem] lg:bg-[url('/armadillo/big-office.png')]"
 	>
 		<div class="w-full max-w-7xl space-y-8">
 			<h1 class="text-5xl font-bold">Codeball is your AI powered toolset</h1>
@@ -70,38 +73,47 @@
 			</p>
 		</div>
 	</div>
+	<img class="block lg:hidden" src="/armadillo/big-office.png" />
 </div>
 
 <div class="flex w-full flex-col items-center space-y-16 bg-white py-16">
-	<div class="flex w-4/5 items-center gap-16 rounded-xl bg-blue-100 p-8 py-16">
-		<img src="/armadillo/coffee-transformed.png" class="h-40 flex-shrink-0" />
-		<div class="flex flex-col gap-2 text-sm text-gray-700">
-			<h2 class="text-xl font-normal tracking-tight">Codeball Approver</h2>
+	<FeatureBox title="Codeball Approver" img="/armadillo/coffee-transformed.png">
+		<div slot="content">
 			<p>
 				Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve Pull
 				Requests that it's confident in, so that you don't have to wait for review.
 			</p>
 			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
 		</div>
-		<div class="w-32 flex-shrink-0">
+		<div slot="action">
 			<Button href="https://github.com/sturdy-dev/codeball-action">Add it</Button>
 		</div>
-	</div>
+	</FeatureBox>
 
-	<div class="flex w-4/5 items-center gap-16 rounded-xl bg-blue-100 p-8 py-16">
-		<img src="/armadillo/pingpong-transformed.png" class="h-40 flex-shrink-0" />
-		<div class="flex flex-col gap-2 text-sm text-gray-700">
-			<h2 class="text-xl font-normal tracking-tight">Codeball Suggester</h2>
+	<FeatureBox title="Codeball Suggester" img="/armadillo/pingpong-transformed.png">
+		<div slot="content">
 			<p>
 				The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
 				actionable diff suggestions.
 			</p>
 			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
 		</div>
-		<div class="w-32 flex-shrink-0">
+		<div slot="action">
 			<Button href="/suggester">Show me</Button>
 		</div>
-	</div>
+	</FeatureBox>
+
+	<FeatureBox title="Really fast, powered by GitHub Actions" img="/armadillo/track-and-field.png">
+		<div slot="content">
+			<p>
+				Codeball runs on GitHub Actions, making it easy as <strong>⌘+V</strong> to setup, and integrates
+				nicely with your existing suite CI/CD.
+			</p>
+		</div>
+		<div slot="action">
+			<Button href="https://github.com/sturdy-dev/codeball-action">Show me</Button>
+		</div>
+	</FeatureBox>
 
 	<div class="flex w-4/5 flex-col items-center gap-4 p-8 py-16">
 		<p class="font-mono">Test Codeball for yourself, with the Codeball web demo:</p>
