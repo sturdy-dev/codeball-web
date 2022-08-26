@@ -79,7 +79,7 @@
 			<Button href="/suggester">Learn more</Button>
 		</div>
 		<div
-			class="shadow-x md:h-80 rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4"
+			class="shadow-x rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 md:h-80"
 		>
 			<img
 				alt="Screenshot of the Codeball Suggester demo, mimicking the GitHub Code Review UI"
@@ -104,7 +104,7 @@
 			<Button href="/dora">Learn more</Button>
 		</div>
 		<div
-			class="shadow-x md:h-80 rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 "
+			class="shadow-x rounded-xl bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 p-4 md:h-80 "
 		>
 			<img
 				alt="Graph of improved lead times after installing Codeball"

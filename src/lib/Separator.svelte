@@ -2,17 +2,17 @@
 	export let up = false;
 	export let straight = false;
 
-	const rot = (up: boolean, straight: boolean) : string => {
+	const rot = (up: boolean, straight: boolean): string => {
 		if (straight) {
-			return ''
+			return '';
 		}
 		if (up) {
-			return '-rotate-[4deg]'
+			return '-rotate-[4deg]';
 		}
-		return 'rotate-[4deg]'
-	}
+		return 'rotate-[4deg]';
+	};
 
-	$: rotate = rot(up, straight)
+	$: rotate = rot(up, straight);
 </script>
 
 <div
