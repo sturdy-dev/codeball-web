@@ -13,7 +13,7 @@
 			<h2 class="text-xl font-normal tracking-tight">{title}</h2>
 			<slot name="content">??</slot>
 		</div>
-		<div class="w-32 flex-shrink-0">
+		<div class="w-32 flex-shrink-0 text-center">
 			<slot name="action">??</slot>
 		</div>
 	</div>
