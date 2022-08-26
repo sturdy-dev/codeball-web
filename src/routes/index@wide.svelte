@@ -45,9 +45,9 @@
 		</h1>
 		<div class="prose">
 			<p>
-				Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve Pull
-				Requests that it's <strong>extremely confident</strong> in, so that you don't have to wait for
-				review.
+				Approver uses <strong>advanced Artificial Intelligence</strong> to grade Pull Requests, and
+				will approve Pull Requests that it's <strong>extremely confident</strong> in, so that you don't
+				have to wait for review.
 			</p>
 			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
 		</div>
@@ -75,7 +75,7 @@
 		</div>
 	</div>
 
-	<div class="flex w-full justify-around bg-stone-700 py-16">
+	<div class="flex w-full justify-center bg-stone-700 py-16">
 		<div class="flex max-w-[40rem] flex-col items-center gap-8 text-gray-200">
 			<h1 class="text-3xl font-normal tracking-tight">Not a dashboard</h1>
 			<p>

@@ -21,7 +21,7 @@
 </script>
 
 <div class="flex flex-col gap-2">
-	<span class="text-md text-gray-500 uppercase">Used by hundreds of teams, including</span>
+	<span class="text-md uppercase text-gray-500">Used by hundreds of teams, including</span>
 
 	<div class="flex flex-wrap gap-x-10 gap-y-6 grayscale">
 		{#each logos as { src, alt }}
