@@ -78,7 +78,7 @@
 	</a>
 {/if}
 
-<main class="min-h-screen bg-white md:mx-auto md:max-w-7xl">
+<main class="min-h-screen bg-white md:mx-auto md:max-w-7xl mb-16">
 	<Header {login} />
 	<slot />
 </main>
