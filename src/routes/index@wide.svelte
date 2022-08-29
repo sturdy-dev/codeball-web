@@ -20,6 +20,14 @@
 	} from '$lib/components/index';
 	import Button from '$lib/Button.svelte';
 
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
+	import armadilloPingPong from '$lib/armadillo/pingpong-2.png?preset=thumbnail&srcset';
+	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
+	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
+
+	import armadilloAtTheComputerHD from '$lib/armadillo/at-the-computer-2.png?preset=hd&srcset';
+	import armadilloBigOfficeHD from '$lib/armadillo/big-office.png?preset=hd&srcset';
+
 	export let login: string | null;
 </script>
 
@@ -56,7 +64,7 @@
 		</div>
 	</slot>
 	<slot slot="right">
-		<img src="/armadillo/at-the-computer-2.png" />
+		<img srcset={armadilloAtTheComputerHD} />
 		<Logos />
 	</slot>
 </Hero>
@@ -79,12 +87,12 @@
 	</div>
 	<img
 		class="select-none md:-mt-[6rem] lg:-mr-[44rem] lg:-mt-[16rem] xl:-mr-[32rem]"
-		src="/armadillo/big-office.png"
+		srcset={armadilloBigOfficeHD}
 	/>
 </div>
 
 <FeatureList>
-	<FeatureBox title="Codeball Approver" img="/armadillo/coffee-2.png">
+	<FeatureBox title="Codeball Approver" srcset={armadilloCoffee}>
 		<slot slot="content">
 			<p>
 				Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve Pull
@@ -101,7 +109,7 @@
 		</div>
 	</FeatureBox>
 
-	<FeatureBox title="Codeball Suggester" img="/armadillo/pingpong-2.png" pill="BETA">
+	<FeatureBox title="Codeball Suggester" srcset={armadilloPingPong} pill="BETA">
 		<slot slot="content">
 			<p>
 				The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
@@ -117,7 +125,7 @@
 		</div>
 	</FeatureBox>
 
-	<FeatureBox title="Really fast, running on GitHub Actions" img="/armadillo/track-and-field.png">
+	<FeatureBox title="Really fast, running on GitHub Actions" srcset={armadilloTrackAndField}>
 		<slot slot="content">
 			<p>
 				All of our tools runs on GitHub Actions, making it easy as <strong>⌘+V</strong> to setup, and
@@ -130,7 +138,7 @@
 		</div>
 	</FeatureBox>
 
-	<FeatureBox title="Not a dashboard" img="/armadillo/graph.png">
+	<FeatureBox title="Not a dashboard" srcset={armadilloGraph}>
 		<slot slot="content">
 			<p>
 				Collecting data and rendering a graph is easy &mdash; making you a better coder and
