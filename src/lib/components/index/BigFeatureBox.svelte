@@ -20,7 +20,7 @@
 		{:else if img}
 			<img
 				src={img}
-				class="float-left m-4 max-w-[8rem] flex-shrink-0 md:float-none md:m-0 md:max-w-[12rem] lg:max-w-[14rem]"
+				class="float-left m-4 h-20 max-w-[8rem] flex-shrink-0 md:float-none md:m-0 md:h-auto md:max-w-[12rem] lg:max-w-[14rem]"
 			/>
 		{/if}
 
