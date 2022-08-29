@@ -80,8 +80,11 @@
 {/if}
 
 <main class="flex min-h-screen flex-col items-center bg-white">
-	<div class="w-full max-w-7xl flex-1">
+	<div class="w-full max-w-7xl flex-shrink-0">
 		<Header {login} />
+	</div>
+
+	<div class="w-full max-w-7xl flex-1 p-4">
 		<slot />
 	</div>
 
