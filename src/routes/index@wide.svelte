@@ -45,10 +45,11 @@
 				</li>
 			</ul>
 
-			<div>
-				<Button color="lime" href="https://github.com/sturdy-dev/codeball-action"
-					>Get started</Button
-				>
+			<div class="space-x-2">
+				<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">
+					Get started
+				</Button>
+				<Button color="lime" href="/approver">Try the demo</Button>
 			</div>
 		</div>
 
