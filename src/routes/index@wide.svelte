@@ -61,11 +61,11 @@
 
 <div class="flex w-full flex-col items-center overflow-hidden bg-lime-50 pt-16">
 	<div class="flex w-full justify-around px-8">
-		<div class="w-full max-w-7xl space-y-4">
+		<div class="w-full max-w-7xl space-y-4 text-lg">
 			<h1 class="text-5xl font-bold text-gray-800">Codeball is your AI powered coding toolset</h1>
 			<p class="max-w-3xl text-gray-600">
-				Codeball uses AI to improve your Engineering Productivity from day 0. Using our own dataset
-				of millions of merged Pull Requests and code contributions and OpenAI Codex, we've built a
+				Codeball uses AI to improve your Engineering Productivity from Day-0. Using our own dataset
+				of millions of merged Pull Requests and code contributions, and OpenAI Codex, we've built a
 				rock-solid AI toolset.
 			</p>
 			<p class="max-w-3xl text-gray-600">
@@ -84,7 +84,7 @@
 		class="flex w-full max-w-7xl flex-col items-center space-y-4 py-16 px-4 md:space-y-16 md:px-8"
 	>
 		<FeatureBox title="Codeball Approver" img="/armadillo/coffee-2.png">
-			<div slot="content">
+			<slot slot="content">
 				<p>
 					Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve
 					Pull Requests that it's confident in, so that you don't have to wait for review.
@@ -92,14 +92,14 @@
 				<p>
 					The Approver is easy to add to any GitHub repository, with a single click installation.
 				</p>
-			</div>
+			</slot>
 			<div slot="action">
 				<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Add it</Button>
 			</div>
 		</FeatureBox>
 
 		<FeatureBox title="Codeball Suggester" img="/armadillo/pingpong-2.png">
-			<div slot="content">
+			<slot slot="content">
 				<p>
 					The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
 					actionable diff suggestions.
@@ -107,32 +107,32 @@
 				<p>
 					The Approver is easy to add to any GitHub repository, with a single click installation.
 				</p>
-			</div>
+			</slot>
 			<div slot="action">
 				<Button color="violet" href="/suggester">Show me</Button>
 			</div>
 		</FeatureBox>
 
 		<FeatureBox title="Really fast, powered by GitHub Actions" img="/armadillo/track-and-field.png">
-			<div slot="content">
+			<slot slot="content">
 				<p>
 					Codeball runs on GitHub Actions, making it easy as <strong>⌘+V</strong> to setup, and integrates
 					nicely with your existing suite CI/CD.
 				</p>
-			</div>
+			</slot>
 			<div slot="action">
 				<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Set up</Button>
 			</div>
 		</FeatureBox>
 
 		<FeatureBox title="Not a dashboard" img="/armadillo/graph.png">
-			<div slot="content">
+			<slot slot="content">
 				<p>
 					Collecting data and rendering a graph is easy &mdash; making you a better coder and
 					developer is much harder. Tracking the DORA metrics? Codeball will improve your metrics
 					from day one.
 				</p>
-			</div>
+			</slot>
 			<div slot="action">
 				<Button color="violet" href="/dora">Read more</Button>
 			</div>

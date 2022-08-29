@@ -9,7 +9,7 @@
 	<img src={img} class="h-40 flex-shrink-0" />
 
 	<div class="flex flex-col items-end gap-4 lg:flex-row lg:items-center lg:gap-16">
-		<div class="flex flex-col gap-2 text-sm text-gray-700">
+		<div class="flex flex-col gap-2 text-gray-600">
 			<h2 class="text-xl font-normal tracking-tight text-black">{title}</h2>
 			<slot name="content">??</slot>
 		</div>
