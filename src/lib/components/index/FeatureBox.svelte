@@ -7,7 +7,7 @@
 <div
 	class="flex items-start gap-4 rounded-xl bg-violet-100 p-4 md:items-center lg:mx-0 lg:w-full lg:gap-16"
 >
-	<img src={img} class="h-40 flex-shrink-0 " />
+	<img src={img} class="h-20 flex-shrink-0 md:h-40 " />
 
 	<div class="flex flex-col items-end gap-4 lg:flex-row lg:items-end lg:gap-16">
 		<div class="flex flex-col gap-2 text-gray-600">
