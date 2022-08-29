@@ -64,19 +64,21 @@
 <div class="flex w-full flex-col items-center overflow-hidden bg-lime-50 pt-16">
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
-			<h1 class="text-5xl font-bold text-gray-800">Codeball is your AI powered coding toolset</h1>
+			<h1 class="text-5xl font-bold text-gray-800">
+				Codeball is your AI-powered programming toolbox
+			</h1>
 			<p class="max-w-3xl text-gray-600">
-				Codeball uses AI to improve your Engineering Productivity from Day-0. Using our own dataset
-				of millions of merged Pull Requests and code contributions, and OpenAI Codex, we've built a
-				rock-solid AI toolset.
+				Codeball uses AI to automate your and your teams workload, and increase the Engineering
+				Productivity in your team from DAY-0. Our tools uses our own enormous dataset from public
+				and private repositories and OpenAI Codex.
 			</p>
 			<p class="max-w-3xl text-gray-600">
-				The Codeball AI will help your developers ship more quickly<br />and with higher confidence.
+				The Codeball AI will help your developers ship quicker<br />and with higher confidence.
 			</p>
 		</div>
 	</div>
 	<img
-		class="md:-mt-[6rem] lg:-mr-[44rem] lg:-mt-[16rem] xl:-mr-[32rem]"
+		class="select-none md:-mt-[6rem] lg:-mr-[44rem] lg:-mt-[16rem] xl:-mr-[32rem]"
 		src="/armadillo/big-office.png"
 	/>
 </div>
@@ -86,9 +88,13 @@
 		<slot slot="content">
 			<p>
 				Approver uses advanced Artificial Intelligence to grade Pull Requests, and will approve Pull
-				Requests that it's confident in, so that you don't have to wait for review.
+				Requests that it's really-really confident in. Approver can reduce the time your teams
+				spends on waiting for review by over 60%.
 			</p>
-			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
+			<p>
+				The Approver is easy to add to any GitHub repository, with a single click installation using
+				GitHub Actions.
+			</p>
 		</slot>
 		<div slot="action">
 			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Set up</Button>
@@ -101,18 +107,22 @@
 				The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
 				actionable diff suggestions.
 			</p>
-			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
+			<p>
+				The Suggester is easy to add to any GitHub repository, with a single click installation
+				using GitHub Actions.
+			</p>
 		</slot>
 		<div slot="action">
 			<Button color="violet" href="/suggester">Go to demo</Button>
 		</div>
 	</FeatureBox>
 
-	<FeatureBox title="Really fast, powered by GitHub Actions" img="/armadillo/track-and-field.png">
+	<FeatureBox title="Really fast, running on GitHub Actions" img="/armadillo/track-and-field.png">
 		<slot slot="content">
 			<p>
-				Codeball runs on GitHub Actions, making it easy as <strong>⌘+V</strong> to setup, and integrates
-				nicely with your existing suite CI/CD.
+				All of our tools runs on GitHub Actions, making it easy as <strong>⌘+V</strong> to setup, and
+				integrates nicely with your existing suite CI/CD, and gives you full configuration for how to
+				integrate our tools into your stack.
 			</p>
 		</slot>
 		<div slot="action">
