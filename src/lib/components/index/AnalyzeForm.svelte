@@ -34,6 +34,6 @@
 				bind:value={repoUrl}
 			/>
 		</div>
-		<Button disabled={repoUrl.length < 4}>Analyze</Button>
+		<Button color="violet" disabled={repoUrl.length < 4}>Analyze</Button>
 	</form>
 </section>

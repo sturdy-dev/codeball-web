@@ -1,14 +1,26 @@
 <script lang="ts">
 	export let disabled = false;
 	export let href: string | undefined = undefined;
-	export let color: 'blue' | 'black' = 'blue';
+	export let color: 'blue' | 'black' | 'lime' | 'violet' = 'blue';
 
 	const calcBg = (disabled: boolean) => {
 		if (color === 'blue') {
 			if (disabled) {
-				return 'bg-blue-300';
+				return 'bg-sky-300';
 			}
 			return 'bg-blue-500 hover:bg-blue-600';
+		}
+		if (color === 'lime') {
+			if (disabled) {
+				return 'bg-lime-200';
+			}
+			return 'bg-lime-500 hover:bg-lime-400';
+		}
+		if (color === 'violet') {
+			if (disabled) {
+				return 'bg-violet-200';
+			}
+			return 'bg-violet-500 hover:bg-violet-400';
 		}
 		if (color === 'black') {
 			return 'bg-black hover:bg-gray-800';
@@ -19,6 +31,12 @@
 		if (color === 'blue') {
 			return 'text-white';
 		}
+		if (color === 'lime') {
+			return 'text-white';
+		}
+		if (color === 'violet') {
+			return 'text-white';
+		}
 		if (color === 'black') {
 			return 'text-white';
 		}
@@ -26,6 +44,12 @@
 
 	const calcBorder = (disabled: boolean) => {
 		if (color === 'blue') {
+			return 'border-transparent';
+		}
+		if (color === 'lime') {
+			return 'border-transparent';
+		}
+		if (color === 'violet') {
 			return 'border-transparent';
 		}
 		if (color === 'black') {

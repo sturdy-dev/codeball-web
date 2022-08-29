@@ -32,6 +32,7 @@
 	import { browser, dev } from '$app/env';
 	import { webVitals } from '$lib/vitals';
 	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
 
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 	$: if (!dev && browser && analyticsId) {
@@ -78,7 +79,13 @@
 	</a>
 {/if}
 
-<main class="mb-16 min-h-screen bg-white md:mx-auto md:max-w-7xl">
-	<Header {login} />
-	<slot />
+<main class="flex min-h-screen flex-col items-center bg-white">
+	<div class="w-full max-w-7xl flex-1">
+		<Header {login} />
+		<slot />
+	</div>
+
+	<div class="w-full bg-lime-50">
+		<Footer />
+	</div>
 </main>
