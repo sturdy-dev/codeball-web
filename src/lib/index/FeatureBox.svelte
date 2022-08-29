@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="mx-4 flex items-center gap-8 rounded-xl bg-sky-100 p-8 lg:mx-0 lg:w-4/5 lg:gap-16 lg:p-8"
+	class="flex items-center gap-8 rounded-xl bg-violet-100  p-4 lg:mx-0 lg:w-full lg:gap-16 lg:p-8"
 >
 	<img src={img} class="h-40 flex-shrink-0" />
 
@@ -13,7 +13,7 @@
 			<h2 class="text-xl font-normal tracking-tight text-black">{title}</h2>
 			<slot name="content">??</slot>
 		</div>
-		<div class="w-32 flex-shrink-0 text-center">
+		<div class="flex-shrink-0 md:w-32 md:text-center">
 			<slot name="action">??</slot>
 		</div>
 	</div>
