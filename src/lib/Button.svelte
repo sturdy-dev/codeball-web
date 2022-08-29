@@ -66,7 +66,7 @@
 	<a
 		{href}
 		class="text-md group relative inline-flex items-center
-	justify-center rounded-md  border-2 border-solid py-2 px-4
+	justify-center whitespace-nowrap  rounded-md border-2 border-solid py-2 px-4
 	focus:outline-none focus:ring-2
 	focus:ring-blue-500 focus:ring-offset-2 {bg} {text} {border}"
 	>
@@ -76,7 +76,7 @@
 	<button
 		type="submit"
 		class="text-md group relative inline-flex items-center
-	justify-center rounded-md  border-2 border-solid py-2 px-4
+	justify-center whitespace-nowrap  rounded-md border-2 border-solid py-2 px-4
 	focus:outline-none focus:ring-2
 	focus:ring-blue-500 focus:ring-offset-2
 		{bg} {text} {border}"

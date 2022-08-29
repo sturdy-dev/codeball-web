@@ -91,11 +91,11 @@
 			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Add it</Button>
+			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Set up</Button>
 		</div>
 	</FeatureBox>
 
-	<FeatureBox title="Codeball Suggester" img="/armadillo/pingpong-2.png">
+	<FeatureBox title="Codeball Suggester" img="/armadillo/pingpong-2.png" pill="BETA">
 		<slot slot="content">
 			<p>
 				The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
@@ -104,7 +104,7 @@
 			<p>The Approver is easy to add to any GitHub repository, with a single click installation.</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/suggester">Show me</Button>
+			<Button color="violet" href="/suggester">Go to demo</Button>
 		</div>
 	</FeatureBox>
 
