@@ -64,7 +64,7 @@
 		</div>
 	</slot>
 	<slot slot="right">
-		<img srcset={armadilloAtTheComputerHD} />
+		<img srcset={armadilloAtTheComputerHD} height="448" width="448" />
 		<Logos />
 	</slot>
 </Hero>
@@ -87,6 +87,8 @@
 	</div>
 	<img
 		class="select-none md:-mt-[6rem] lg:-mr-[44rem] lg:-mt-[16rem] xl:-mr-[32rem]"
+		width="1024"
+		height="914"
 		srcset={armadilloBigOfficeHD}
 	/>
 </div>

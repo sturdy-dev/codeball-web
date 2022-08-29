@@ -9,14 +9,14 @@
 	import SimplepollLogo from '$lib/assets/logo-simplepoll.svg';
 
 	const logos = [
-		{ src: SturdyLogo, alt: 'Sturdy' },
-		{ src: AthenianLogo, alt: 'Athenian' },
-		{ src: OryLogo, alt: 'Ory' },
-		{ src: KitemakerLogo, alt: 'Kitemaker' },
-		{ src: GogsLogo, alt: 'Gogs' },
-		{ src: MasonLogo, alt: 'Mason' },
-		{ src: EMQXLogo, alt: 'EMQX' },
-		{ src: SimplepollLogo, alt: 'Simplepoll' }
+		{ src: SturdyLogo, alt: 'Sturdy', width: 95 },
+		{ src: AthenianLogo, alt: 'Athenian', width: 155 },
+		{ src: OryLogo, alt: 'Ory', width: 47 },
+		{ src: KitemakerLogo, alt: 'Kitemaker', width: 110 },
+		{ src: GogsLogo, alt: 'Gogs', width: 68 },
+		{ src: MasonLogo, alt: 'Mason', width: 93 },
+		{ src: EMQXLogo, alt: 'EMQX', width: 80 },
+		{ src: SimplepollLogo, alt: 'Simplepoll', width: 133 }
 	];
 </script>
 
@@ -24,8 +24,8 @@
 	<span class="text-md uppercase text-gray-500">Used by hundreds of teams, including</span>
 
 	<div class="flex flex-wrap gap-x-10 gap-y-6 grayscale">
-		{#each logos as { src, alt }}
-			<img class="mx-auto h-6 md:mx-0" {src} {alt} />
+		{#each logos as { src, alt, width }}
+			<img class="mx-auto h-6 md:mx-0" {src} {alt} height="24" {width} />
 		{/each}
 	</div>
 </div>

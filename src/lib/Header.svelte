@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	import {
-		Popover,
-		PopoverButton,
-		PopoverPanel,
-		PopoverOverlay
-	} from '@rgossiaux/svelte-headlessui';
+	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
 
 	export let login: string | null;
 
@@ -24,7 +19,12 @@
 		<header class="flex items-center justify-between gap-4 p-4 text-black md:flex-row">
 			<div class="float-left flex h-full items-center gap-4 p-2 md:mr-12 md:p-0">
 				<a class="block h-8 text-2xl md:h-12" href="/"
-					><img class="h-full" src="/brand/ball/BallWithBrainRaster256.png" /></a
+					><img
+						width="49"
+						height="48"
+						class="h-full"
+						src="/brand/ball/BallWithBrainRaster256.png"
+					/></a
 				>
 				<a class="text-2xl" href="/">Codeball</a>
 			</div>
