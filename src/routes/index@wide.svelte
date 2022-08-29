@@ -49,10 +49,10 @@
 		</ul>
 
 		<div class="space-x-2">
-			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">
+			<Button color="orange" href="https://github.com/sturdy-dev/codeball-action">
 				Get started
 			</Button>
-			<Button color="lime" href="/approver">Try the demo</Button>
+			<Button color="violet" href="/approver">Try the demo</Button>
 		</div>
 	</slot>
 	<slot slot="right">
@@ -61,7 +61,7 @@
 	</slot>
 </Hero>
 
-<div class="flex w-full flex-col items-center overflow-hidden bg-lime-50 pt-16">
+<div class="flex w-full flex-col items-center overflow-hidden bg-orange-50 pt-16">
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
 			<h1 class="text-5xl font-bold text-gray-800">
@@ -143,8 +143,12 @@
 		</div>
 	</FeatureBox>
 
-	<div class="flex w-full flex-col items-center gap-4 p-8 py-16 font-mono">
-		<p>Test Codeball for yourself, with the Codeball web demo</p>
+	<div class="flex w-full flex-col items-center gap-4 py-16 font-mono">
+		<p class="items-center gap-4 md:inline-flex">
+			Test Codeball for yourself, with the online demo <span class="hidden text-2xl md:inline-block"
+				>⤵️</span
+			>
+		</p>
 		<div class="w-full lg:w-1/2">
 			<AnalyzeForm />
 		</div>
