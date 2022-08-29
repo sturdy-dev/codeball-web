@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let img: string | undefined;
+	export let srcset: string | undefined;
 	export let title: string;
 	export let rainbow = false;
 	export let reverse = false;
@@ -21,6 +22,13 @@
 			<img
 				src={img}
 				class="float-left m-4 h-20 max-w-[8rem] flex-shrink-0 md:float-none md:m-0 md:h-auto md:max-w-[12rem] lg:max-w-[14rem]"
+				width="150"
+			/>
+		{:else if srcset}
+			<img
+				{srcset}
+				class="float-left m-4 h-20 max-w-[8rem] flex-shrink-0 md:float-none md:m-0 md:h-auto md:max-w-[12rem] lg:max-w-[14rem]"
+				width="150"
 			/>
 		{/if}
 

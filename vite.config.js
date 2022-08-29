@@ -1,4 +1,4 @@
-import imagePresets, { densityPreset } from 'vite-plugin-image-presets';
+import imagePresets, { densityPreset, widthPreset } from 'vite-plugin-image-presets';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 const withRoundBorders = (image) => {
@@ -28,6 +28,22 @@ const config = {
 				formats: {
 					webp: { quality: 40 },
 					png: { quality: 40 }
+				}
+			}),
+
+			thumbnail: widthPreset({
+				loading: 'lazy',
+				widths: [50, 300],
+				formats: {
+					webp: { quality: 90 }
+				}
+			}),
+
+			hd: widthPreset({
+				loading: 'lazy',
+				widths: [50, 300, 1024],
+				formats: {
+					webp: { quality: 90 }
 				}
 			})
 		}),

@@ -10,6 +10,10 @@
 	import Button from '$lib/Button.svelte';
 
 	import { FeatureList, BigFeatureBox, FeatureBox, Hero } from '$lib/components/index';
+	import armadilloGraphHD from '$lib/armadillo/graph.png?preset=hd&srcset';
+	import armadilloPlug from '$lib/armadillo/plug.png?preset=thumbnail&srcset';
+	import armadilloDataScientist from '$lib/armadillo/data-scientist.png?preset=thumbnail&srcset';
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
 </script>
 
 <Hero>
@@ -39,12 +43,12 @@
 	</slot>
 
 	<slot slot="right">
-		<img src="/armadillo/graph.png" />
+		<img srcset={armadilloGraphHD} />
 	</slot>
 </Hero>
 
 <FeatureList>
-	<BigFeatureBox title="DORA Metrics" img="/armadillo/data-scientist.png" reverse={true}>
+	<BigFeatureBox title="DORA Metrics" srcset={armadilloDataScientist} reverse={true}>
 		<slot slot="content">
 			<p>
 				Engineering teams love to track their DORA metrics (<a
@@ -63,7 +67,7 @@
 		</slot>
 	</BigFeatureBox>
 
-	<BigFeatureBox title="Not a dashboard" img="/armadillo/plug.png">
+	<BigFeatureBox title="Not a dashboard" srcset={armadilloPlug}>
 		<slot slot="content">
 			<p>
 				There are many companies that will sell you dashboards, but not doing much to <em
@@ -96,7 +100,7 @@
 		</slot>
 	</BigFeatureBox>
 
-	<FeatureBox title="Start Now" img="/armadillo/coffee-2.png">
+	<FeatureBox title="Start Now" srcset={armadilloCoffee}>
 		<slot slot="content">
 			<p>
 				Get started with Codeball for free today <span class="text-gray-400"
