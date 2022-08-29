@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let disabled = false;
 	export let href: string | undefined = undefined;
-	export let color: 'blue' | 'black' | 'lime' | 'violet' = 'blue';
+	export let color: 'blue' | 'black' | 'lime' | 'violet' | 'orange' = 'blue';
 
 	const calcBg = (disabled: boolean) => {
 		if (color === 'blue') {
@@ -10,17 +10,23 @@
 			}
 			return 'bg-blue-500 hover:bg-blue-600';
 		}
+		if (color === 'orange') {
+			if (disabled) {
+				return 'bg-orange-300';
+			}
+			return 'bg-orange-500 hover:bg-orange-600';
+		}
 		if (color === 'lime') {
 			if (disabled) {
 				return 'bg-lime-200';
 			}
-			return 'bg-lime-500 hover:bg-lime-400';
+			return 'bg-lime-500 hover:bg-lime-600';
 		}
 		if (color === 'violet') {
 			if (disabled) {
 				return 'bg-violet-200';
 			}
-			return 'bg-violet-500 hover:bg-violet-400';
+			return 'bg-violet-500 hover:bg-violet-600';
 		}
 		if (color === 'black') {
 			return 'bg-black hover:bg-gray-800';
@@ -28,33 +34,14 @@
 	};
 
 	const calcText = (disabled: boolean) => {
-		if (color === 'blue') {
-			return 'text-white';
-		}
-		if (color === 'lime') {
-			return 'text-white';
-		}
-		if (color === 'violet') {
-			return 'text-white';
-		}
-		if (color === 'black') {
-			return 'text-white';
-		}
+		return 'text-white';
 	};
 
 	const calcBorder = (disabled: boolean) => {
-		if (color === 'blue') {
-			return 'border-transparent';
-		}
-		if (color === 'lime') {
-			return 'border-transparent';
-		}
-		if (color === 'violet') {
-			return 'border-transparent';
-		}
 		if (color === 'black') {
 			return 'border-white';
 		}
+		return 'border-transparent';
 	};
 
 	$: bg = calcBg(disabled);

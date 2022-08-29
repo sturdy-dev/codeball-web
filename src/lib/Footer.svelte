@@ -12,12 +12,21 @@
 		{ href: 'https://discord.gg/fQcH9QAVpX', title: 'Discord' },
 		{ href: 'mailto:support@codeball.ai', title: 'Email us' }
 	];
+
+	const madeWiths = [
+		{ emoji: '🥕', color: 'text-orange-500' },
+		{ emoji: '🥑', color: 'text-emerald-500' },
+		{ emoji: '🍓', color: 'text-rose-600' },
+		{ emoji: '🍉', color: 'text-rose-500' }
+	];
+
+	const madeWith = madeWiths[Math.floor(Math.random() * madeWiths.length)];
 </script>
 
 <div class="p-4 md:mx-auto md:max-w-7xl">
 	<footer class="py-4">
 		<div class="flex flex-col items-center justify-around gap-2 md:flex-row md:gap-8">
-			<div class="text-lg text-emerald-500">Made with 🥑 in Stockholm</div>
+			<div class="text-lg {madeWith.color}">Made with {madeWith.emoji} in Stockholm</div>
 			<div class="md:flex-1" />
 			{#each footer as { href, title }}
 				<a

@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="flex items-start gap-4 rounded-xl bg-violet-100 p-4 md:items-center lg:mx-0 lg:w-full lg:gap-16"
+	class="flex items-start gap-4 rounded-xl bg-violet-100 p-4 md:items-center md:gap-8 md:p-8 lg:mx-0 lg:w-full lg:gap-16"
 >
 	<img src={img} class="h-20 flex-shrink-0 md:h-40 " />
 
