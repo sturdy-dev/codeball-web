@@ -88,7 +88,7 @@
 		<slot />
 	</div>
 
-	<div class="w-full bg-lime-50">
+	<div class="w-full bg-orange-50">
 		<Footer />
 	</div>
 </main>

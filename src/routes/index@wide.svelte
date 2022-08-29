@@ -17,7 +17,7 @@
 	export let login: string | null;
 </script>
 
-<div class="flex w-full flex-col items-center space-y-16 bg-lime-50">
+<div class="flex w-full flex-col items-center space-y-16 bg-orange-50">
 	<div
 		class="flex w-full max-w-7xl flex-col items-start justify-between gap-16 py-16 px-8 md:flex-row md:items-center"
 	>
@@ -60,7 +60,7 @@
 	</div>
 </div>
 
-<div class="flex w-full flex-col items-center overflow-hidden bg-lime-50 pt-16">
+<div class="flex w-full flex-col items-center overflow-hidden bg-oragne-50 pt-16">
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
 			<h1 class="text-5xl font-bold text-gray-800">Codeball is your AI powered coding toolset</h1>
