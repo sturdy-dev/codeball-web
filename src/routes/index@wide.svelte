@@ -29,19 +29,19 @@
 			<ul class="flex flex-col gap-2 text-gray-800">
 				<li class="inline-flex items-center gap-4">
 					<div class="text-2xl">🧠️</div>
-					<div>GitHub Actions AI power suite</div>
+					<div class="font-medium">AI Code Review</div>
 				</li>
 				<li class="inline-flex items-center gap-4">
-					<div class="text-2xl">✅️</div>
-					<div>Pre-Approves PRs</div>
+					<div class="text-2xl">☁️</div>
+					<div class="font-medium">Runs on GitHub Actions</div>
 				</li>
 				<li class="inline-flex items-center gap-4">
 					<div class="text-2xl">🏎</div>
-					<div>No configuration needed</div>
+					<div class="font-medium">No configuration needed</div>
 				</li>
 				<li class="inline-flex items-center gap-4">
 					<div class="text-2xl">🧑‍💻️</div>
-					<div>Supports Python, JS, TypeScript, Go, C++, Java, and more...</div>
+					<div class="font-medium">Supports Python, JS, TypeScript, Go, C++, Java, and more...</div>
 				</li>
 			</ul>
 
