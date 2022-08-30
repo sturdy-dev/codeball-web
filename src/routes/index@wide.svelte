@@ -10,14 +10,7 @@
 </script>
 
 <script lang="ts">
-	import {
-		AnalyzeForm,
-		Logos,
-		GitHubLoginButton,
-		FeatureList,
-		FeatureBox,
-		Hero
-	} from '$lib/components/index';
+	import { Logos, FeatureList, FeatureBox, Hero } from '$lib/components/index';
 	import Button from '$lib/Button.svelte';
 
 	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
@@ -27,6 +20,8 @@
 
 	import armadilloAtTheComputerHD from '$lib/armadillo/at-the-computer-2.png?preset=hd&srcset';
 	import armadilloBigOfficeHD from '$lib/armadillo/big-office.png?preset=hd&srcset';
+
+	import CalendarDaysMini from '$lib/icons/CalendarDaysMini.svelte';
 
 	export let login: string | null;
 </script>
@@ -56,9 +51,18 @@
 			</li>
 		</ul>
 
-		<div class="space-x-2">
+		<div class="inline-flex items-center space-x-2">
 			<Button color="orange" href="/approver">Get started</Button>
 			<Button color="violet" href="/approver">Try the demo</Button>
+			<Button
+				color="orange"
+				href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08"
+			>
+				<div class="-ml-1 mr-1">
+					<CalendarDaysMini />
+				</div>
+				Schedule a call
+			</Button>
 		</div>
 	</slot>
 	<slot slot="right">

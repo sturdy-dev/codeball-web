@@ -7,9 +7,9 @@
 <script lang="ts">
 	import { Demo, examples, type Comment } from '$lib/demo';
 	import Button from '$lib/Button.svelte';
-	import Go from '$lib/assets/Go.svelte';
-	import Java from '$lib/assets/Java.svelte';
-	import JS from '$lib/assets/JS.svelte';
+	import Go from '../lib/icons/Go.svelte';
+	import Java from '../lib/icons/Java.svelte';
+	import JS from '../lib/icons/JS.svelte';
 	import { browser } from '$app/env';
 
 	export let login: string;
