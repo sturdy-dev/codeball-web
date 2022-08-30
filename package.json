@@ -18,7 +18,7 @@
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"@types/cookie": "^0.4.1",
 		"@types/diff-match-patch": "^1.0.32",
-		"@typescript-eslint/eslint-plugin": "^5.36.0",
+		"@typescript-eslint/eslint-plugin": "^5.36.1",
 		"@typescript-eslint/parser": "^5.36.1",
 		"autoprefixer": "^10.4.7",
 		"eslint": "^8.12.0",
