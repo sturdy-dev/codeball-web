@@ -2,6 +2,7 @@
 	export let srcset: string;
 	export let title: string;
 	export let pill: string;
+	export let showAction = true;
 </script>
 
 <div
@@ -9,8 +10,8 @@
 >
 	<img {srcset} class="h-20 flex-shrink-0 md:h-40 " />
 
-	<div class="flex flex-col items-end gap-4 lg:flex-row lg:items-end lg:gap-16">
-		<div class="flex flex-col gap-2 text-gray-600">
+	<div class="flex w-full flex-col items-end gap-4 lg:flex-row lg:items-end lg:gap-16">
+		<div class="flex w-full flex-grow flex-col gap-2 text-gray-600">
 			<div class="inline-flex items-center gap-4">
 				<h2 class="text-xl font-semibold text-violet-900">{title}</h2>
 				{#if pill}
@@ -19,8 +20,10 @@
 			</div>
 			<slot name="content">??</slot>
 		</div>
-		<div class="flex-shrink-0 text-right">
-			<slot name="action">??</slot>
-		</div>
+		{#if showAction}
+			<div class="flex-shrink-0 text-right">
+				<slot name="action" />
+			</div>
+		{/if}
 	</div>
 </div>

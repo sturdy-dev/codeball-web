@@ -57,9 +57,7 @@
 		</ul>
 
 		<div class="space-x-2">
-			<Button color="orange" href="https://github.com/sturdy-dev/codeball-action">
-				Get started
-			</Button>
+			<Button color="orange" href="/approver">Get started</Button>
 			<Button color="violet" href="/approver">Try the demo</Button>
 		</div>
 	</slot>
@@ -107,7 +105,7 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Set up</Button>
+			<Button color="violet" href="/approver">Set up</Button>
 		</div>
 	</FeatureBox>
 
@@ -152,23 +150,11 @@
 			<Button color="violet" href="/dora">Read more</Button>
 		</div>
 	</FeatureBox>
-
-	<div class="flex w-full flex-col items-center gap-4 py-16 font-mono">
-		<p class="items-center gap-4 md:inline-flex">
-			Test Codeball for yourself, with the online demo <span class="hidden text-2xl md:inline-block"
-				>⤵️</span
-			>
-		</p>
-		<div class="w-full lg:w-1/2">
-			<AnalyzeForm />
-		</div>
-		<GitHubLoginButton showText={true} {login} />
-	</div>
 </FeatureList>
 
 <div class="bg-black py-16 text-white">
 	<div class="mx-auto max-w-7xl space-y-8 p-14 text-center">
 		<h2 class="font-mono text-5xl font-bold">I'm ready</h2>
-		<Button color="black" href="https://github.com/sturdy-dev/codeball-action">Let's go!</Button>
+		<Button color="black" href="/approver">Let's go!</Button>
 	</div>
 </div>

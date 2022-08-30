@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let disabled = false;
 	export let href: string | undefined = undefined;
-	export let color: 'blue' | 'black' | 'lime' | 'violet' | 'orange' = 'blue';
+	export let color: 'blue' | 'black' | 'lime' | 'violet' | 'orange' | 'white' = 'blue';
 
 	const calcBg = (disabled: boolean) => {
 		if (color === 'blue') {
@@ -31,15 +31,24 @@
 		if (color === 'black') {
 			return 'bg-black hover:bg-gray-800';
 		}
+		if (color === 'white') {
+			return 'bg-white hover:bg-gray-200';
+		}
 	};
 
 	const calcText = (disabled: boolean) => {
+		if (color === 'white') {
+			return 'text-gray-800';
+		}
 		return 'text-white';
 	};
 
 	const calcBorder = (disabled: boolean) => {
 		if (color === 'black') {
 			return 'border-white';
+		}
+		if (color === 'white') {
+			return 'border-black';
 		}
 		return 'border-transparent';
 	};
