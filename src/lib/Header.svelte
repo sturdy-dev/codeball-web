@@ -18,14 +18,14 @@
 	<Popover class="" let:open>
 		<header class="flex items-center justify-between gap-4 p-4 text-black md:flex-row">
 			<div class="float-left flex h-full items-center gap-4 p-2 md:mr-12 md:p-0">
-				<a class="block h-8 text-2xl md:h-12" href="/"
+				<a href="/"
 					><img
 						width="49"
 						height="48"
-						class="h-full"
+						class="h-8 w-8 md:h-12 md:w-12"
 						src="/brand/ball/BallWithBrainRaster256.png"
-					/></a
-				>
+					/>
+				</a>
 				<a class="text-2xl" href="/">Codeball</a>
 			</div>
 
@@ -48,7 +48,7 @@
 						href="/dashboard">Dashboard</a
 					>
 				{:else}
-					<a href={`/github/oauth`}>Login</a>
+					<a href={`/github/oauth`}>Login with GitHub</a>
 				{/if}
 			</div>
 
@@ -73,11 +73,11 @@
 					{#if login}
 						<PopoverButton
 							as="a"
-							class="rounded-md text-base font-medium hover:text-gray-50"
+							class="whitespace-nowrap rounded-md text-base font-medium hover:text-gray-50"
 							href="/dashboard">Dashboard</PopoverButton
 						>
 					{:else}
-						<PopoverButton as="a" href={`/github/oauth`}>Login</PopoverButton>
+						<PopoverButton as="a" href={`/github/oauth`}>Login with GitHub</PopoverButton>
 					{/if}
 				</div>
 			</div>
