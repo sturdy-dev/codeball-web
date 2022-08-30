@@ -30,7 +30,7 @@
 		"sharp": "0.30.7",
 		"svelte": "^3.49.0",
 		"svelte-check": "^2.2.6",
-		"svelte-preprocess": "^4.10.1",
+		"svelte-preprocess": "^4.10.7",
 		"svelte-range-slider-pips": "^2.0.3",
 		"tailwindcss": "^3.0.24",
 		"tslib": "^2.3.1",
