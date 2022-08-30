@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AthenianLogo from '$lib/assets/logo-athenian.svg';
-	import SturdyLogo from '$lib/assets/logo-sturdy.svg';
+	import TiktokLogo from '$lib/assets/logo-tiktok.svg';
 	import OryLogo from '$lib/assets/logo-ory.png';
 	import KitemakerLogo from '$lib/assets/logo-kitemaker.png';
 	import GogsLogo from '$lib/assets/logo-gogs.png';
@@ -9,7 +9,7 @@
 	import SimplepollLogo from '$lib/assets/logo-simplepoll.svg';
 
 	const logos = [
-		{ src: SturdyLogo, alt: 'Sturdy', width: 95 },
+		{ src: TiktokLogo, alt: 'Tiktok', width: 82 },
 		{ src: AthenianLogo, alt: 'Athenian', width: 155 },
 		{ src: OryLogo, alt: 'Ory', width: 47 },
 		{ src: KitemakerLogo, alt: 'Kitemaker', width: 110 },
