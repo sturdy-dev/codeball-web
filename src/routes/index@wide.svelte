@@ -54,15 +54,15 @@
 		<div class="inline-flex items-center space-x-2">
 			<Button color="orange" href="/approver">Get started</Button>
 			<Button color="violet" href="/approver">Try the demo</Button>
-			<Button
-				color="orange"
-				href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08"
-			>
-				<div class="-ml-1 mr-1">
-					<CalendarDaysMini />
-				</div>
-				Schedule a call
-			</Button>
+		</div>
+		<div class="inline-flex space-x-2">
+			<span>Need enterprise support?</span>
+			<a class="text-orange-500 inline-flex items-center space-x-1" href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08">
+				<span>
+					Schedule a call
+				</span>
+				<CalendarDaysMini />
+			</a>
 		</div>
 	</slot>
 	<slot slot="right">
