@@ -12,17 +12,28 @@
 		{ href: '/faq', title: 'FAQ' },
 		{ href: '/blog', title: 'Blog' }
 	];
+
+	// When clicking logo and already on the index page
+	let animateLogo = '';
+	let timeout;
+	const onClickLogo = () => {
+		animateLogo = 'animate-[spin_0.8s_ease-in-out]';
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			animateLogo = '';
+		}, 1000);
+	};
 </script>
 
 <div class="md:mx-auto md:max-w-7xl">
 	<Popover class="" let:open>
 		<header class="flex items-center justify-between gap-4 p-4 text-black md:flex-row">
 			<div class="float-left flex h-full items-center gap-4 p-2 md:mr-12 md:p-0">
-				<a href="/"
-					><img
+				<a href="/" on:click={onClickLogo}>
+					<img
 						width="49"
 						height="48"
-						class="h-8 w-8 md:h-12 md:w-12"
+						class="h-8 w-8 md:h-12 md:w-12 {animateLogo}"
 						src="/brand/ball/BallWithBrainRaster256.png"
 					/>
 				</a>
