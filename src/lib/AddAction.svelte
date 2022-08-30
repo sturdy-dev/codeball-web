@@ -40,7 +40,9 @@ jobs:
 </script>
 
 {#if repoName}
-	<Button href={addUrl}>Add the Codeball GitHub Action to {repoName}</Button>
+	<Button color="black" href={addUrl}>Add the Codeball GitHub Action to {repoName}</Button>
 {:else}
-	<Button href="https://github.com/sturdy-dev/codeball-action">Codeball GitHub Action</Button>
+	<Button color="black" href="https://github.com/sturdy-dev/codeball-action"
+		>Codeball GitHub Action</Button
+	>
 {/if}
