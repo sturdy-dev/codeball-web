@@ -57,10 +57,11 @@
 		</div>
 		<div class="inline-flex space-x-2">
 			<span>Need enterprise support?</span>
-			<a class="text-orange-500 inline-flex items-center space-x-1" href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08">
-				<span>
-					Schedule a call
-				</span>
+			<a
+				class="inline-flex items-center space-x-1 text-orange-500"
+				href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08"
+			>
+				<span> Schedule a call </span>
 				<CalendarDaysMini />
 			</a>
 		</div>
