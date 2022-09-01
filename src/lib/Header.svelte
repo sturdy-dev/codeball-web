@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 
 	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
+	import Button from './Button.svelte';
+	import AuthButton from './components/auth/AuthButton.svelte';
 
 	export let login: string | null;
 
@@ -40,7 +42,9 @@
 				<a class="text-2xl" href="/">Codeball</a>
 			</div>
 
-			<div class="grid hidden flex-1 grid-cols-2	gap-x-4	 md:block md:flex md:space-x-2 ">
+			<div
+				class="grid hidden flex-1 grid-cols-2	items-center	 gap-x-4 md:block md:flex md:space-x-2 "
+			>
 				{#each header as { href, title }}
 					<a
 						class:text-red-700={$page.url.pathname === href}
@@ -53,13 +57,9 @@
 				<div class="flex-1" />
 
 				{#if login}
-					<a
-						class:text-red-700={$page.url.pathname === '/dashboard'}
-						class:font-semibold={$page.url.pathname === '/dashboard'}
-						href="/dashboard">Dashboard</a
-					>
+					<Button color="white" href="/dashboard">Dashboard</Button>
 				{:else}
-					<a href={`/github/oauth`}>Login with GitHub</a>
+					<AuthButton overrideRedirectPath="/dashboard" />
 				{/if}
 			</div>
 

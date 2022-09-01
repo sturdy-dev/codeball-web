@@ -74,7 +74,7 @@
 					{#if login && login === customer.github_login}
 						<ManageButton />
 					{/if}
-					<Button href="/subscriptions/{id}">Upcoming invoice</Button>
+					<Button color="black" href="/subscriptions/{id}">Upcoming invoice</Button>
 				{/if}
 			</div>
 		{/each}
