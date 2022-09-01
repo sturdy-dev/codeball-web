@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { type Job, list, type ListOptions } from '$lib/jobs';
 	import { onMount } from 'svelte';
-	import { All, Repository } from '$lib/components/dashboard';
+	import { All, Repository, GetStarted } from '$lib/components/dashboard';
 	import Spinner from '$lib/Spinner.svelte';
 	import { GitHubLoginButton } from '$lib/components/index';
 
@@ -84,13 +84,9 @@
 					We couldn't find any Codeball activity for {organization}/{repository}. Is the Codeball
 					app correctly installed?
 				</p>
-			{:else}
-				<p>
-					We couldn't find any Codeball activity for you (yet!). Install the Codeball app to get
-					started.
-				</p>
 			{/if}
-			<GitHubLoginButton {login} />
+
+			<GetStarted />
 		</div>
 	{/if}
 </div>

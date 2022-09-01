@@ -10,5 +10,5 @@
 	<input type="hidden" name="organization" value={organization} />
 	<input type="hidden" name="success_url" value={$page.url.toString()} />
 	<input type="hidden" name="cancel_url" value={$page.url.toString()} />
-	<Button>Upgrade to BALLER EDITION</Button>
+	<Button color="black">Upgrade to BALLER EDITION</Button>
 </form>

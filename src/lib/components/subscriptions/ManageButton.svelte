@@ -6,5 +6,5 @@
 
 <form action={`${BASE_URL}/subscriptions/manage`} method="GET">
 	<input type="hidden" name="return_url" value={$page.url.toString()} />
-	<Button>Manage subscriptions</Button>
+	<Button color="black">Manage subscriptions</Button>
 </form>
