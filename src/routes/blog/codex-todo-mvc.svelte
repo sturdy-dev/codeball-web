@@ -194,6 +194,17 @@
 
 <div class="mb-16" />
 
-<Button href="/">HIRE A BOT</Button>
+<div class="rounded-xl bg-orange-200">
+	<div class="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:py-16 lg:px-8">
+		<h2 class="text-3xl font-bold tracking-tight  sm:text-4xl">
+			<span class="block text-orange-800">Ready to Codeball?</span>
+			<span class="block text-gray-700">Play with our demos, and start a free trial today.</span>
+		</h2>
+		<div class="mt-8 flex justify-center space-x-3">
+			<Button href="/" color="orange">Get started</Button>
+			<Button href="/approver" color="violet">Show me more</Button>
+		</div>
+	</div>
+</div>
 
 <ReadMore />
