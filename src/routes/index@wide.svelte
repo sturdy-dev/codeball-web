@@ -79,9 +79,9 @@
 				Codeball is your AI-powered programming toolbox
 			</h1>
 			<p class="max-w-3xl text-gray-600">
-				Automate your teams workload, increasing Engineering Productivity from DAY-0. 
-				Levarage the insights from state of the art AI — Codeball combines a custom model trained on over 2 million Pull Requests with 
-				OpenAI Codex.
+				Automate your teams workload, increasing Engineering Productivity from DAY-0. Levarage the
+				insights from state of the art AI — Codeball combines a custom model trained on over 2
+				million Pull Requests with OpenAI Codex.
 			</p>
 			<p class="max-w-3xl text-gray-600">
 				The Codeball AI will help your developers ship quicker<br />and with higher confidence.
