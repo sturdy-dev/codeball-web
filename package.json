@@ -38,7 +38,7 @@
 		"vite": "^3.1.0",
 		"vite-imagetools": "^4.0.5",
 		"vite-plugin-image-presets": "^0.3.2",
-		"web-vitals": "^2.1.4"
+		"web-vitals": "^3.0.1"
 	},
 	"type": "module",
 	"dependencies": {
