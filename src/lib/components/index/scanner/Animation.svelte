@@ -215,7 +215,7 @@
 			style="text-shadow: 0 0 10px bisque">
 &#123;
     "author": <JsonItem target={username}>"{outputUsername}"</JsonItem>,
-    "authorScore": <JsonItem target={title}>{outputUsernameCreditScore}</JsonItem>,
+    "authorScore": <JsonItem target={username}>{outputUsernameCreditScore}</JsonItem>,
     "type": <JsonItem target={branch}>"{outputType}"</JsonItem>,
     "kingOfTheHillScore": <JsonItem target={branch}>{outputKingOfTheHill}</JsonItem>,
     "simplicityRanking": <JsonItem target={branch}>{outputSimplicityRanking}</JsonItem>,
