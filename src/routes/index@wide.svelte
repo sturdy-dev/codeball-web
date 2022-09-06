@@ -22,6 +22,7 @@
 	import armadilloBigOfficeHD from '$lib/armadillo/big-office.png?preset=hd&srcset';
 
 	import CalendarDaysMini from '$lib/icons/CalendarDaysMini.svelte';
+	import Animation from '$lib/components/index/Animation.svelte';
 
 	export let login: string | null;
 </script>
@@ -69,6 +70,7 @@
 		</div>
 	</slot>
 	<slot slot="right">
+		<Animation />
 		<img srcset={armadilloAtTheComputerHD} height="448" width="448" />
 		<Logos />
 	</slot>
