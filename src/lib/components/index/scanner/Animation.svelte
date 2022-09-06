@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Scrambler from './scrambler';
-	import Target from "./Target.svelte";
-	import JsonItem from "$lib/components/index/scanner/JsonItem.svelte";
-	import type {findable} from "./types";
+	import Target from './Target.svelte';
+	import JsonItem from '$lib/components/index/scanner/JsonItem.svelte';
+	import type { findable } from './types';
 
 	const iLoveSvelte = () => {
 		title = title;
@@ -40,28 +40,28 @@
 		show: false,
 		run: false,
 		done: false,
-		bg: "bg-green-800",
+		bg: 'bg-green-800'
 	};
 
 	let title: findable = {
 		show: false,
 		run: false,
 		done: false,
-		bg: "bg-red-800"
+		bg: 'bg-red-800'
 	};
 
 	let branch: findable = {
 		show: false,
 		run: false,
 		done: false,
-		bg: "bg-blue-800",
+		bg: 'bg-blue-800'
 	};
 
 	let fileName: findable = {
 		show: false,
 		run: false,
 		done: false,
-		bg: "bg-orange-800",
+		bg: 'bg-orange-800'
 	};
 
 	let animateWindow = false;
@@ -86,8 +86,6 @@
 		new Scrambler().scramble('FEATURE', (text) => {
 			outputType = text;
 		});
-
-
 
 		new Scrambler().scramble(
 			'2492',
@@ -166,9 +164,7 @@
 			<div class="flex items-end ">
 				<div class="flex flex-1 flex-col gap-2">
 					<div class="flex space-x-2 text-4xl">
-						<Target target={title}>
-							Adding code
-						</Target>
+						<Target target={title}>Adding code</Target>
 						<span class="text-gray-800">#1337</span>
 					</div>
 					<div class="flex items-center space-x-2">
@@ -220,8 +216,12 @@
     "type": <JsonItem target={branch}>"{outputType}"</JsonItem>,
     "kingOfTheHillScore": <JsonItem target={branch}>{outputKingOfTheHill}</JsonItem>,
     "simplicityRanking": <JsonItem target={branch}>{outputSimplicityRanking}</JsonItem>,
-    "fileReputation": <JsonItem target={fileName}>{outputReputation}</JsonItem>,<span class="hidden md:inline">
-    "patterns": <JsonItem target={fileName}>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</JsonItem>,</span>
+    "fileReputation": <JsonItem target={fileName}>{outputReputation}</JsonItem>,<span
+				class="hidden md:inline">
+    "patterns": <JsonItem target={fileName}
+					>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</JsonItem
+				>,</span
+			>
 	...
 &#125;
 </pre>
