@@ -6,7 +6,7 @@
 			<slot name="left" />
 		</div>
 
-		<div class=" flex flex-col items-center px-4 md:max-w-[30rem]">
+		<div class=" flex flex-col items-center px-4 md:max-w-[50rem]">
 			<slot name="right" />
 		</div>
 	</div>
