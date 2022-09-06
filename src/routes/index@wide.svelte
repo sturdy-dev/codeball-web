@@ -29,7 +29,7 @@
 <Hero>
 	<slot slot="left">
 		<h1 class="text-5xl font-bold">
-			Increase<br />your<br />engineering<br /><span class="text-orange-600">velocity</span>
+			Boost<br />your<br />engineering<br /><span class="text-orange-600">velocity</span> with AI
 		</h1>
 
 		<ul class="flex flex-col gap-2 text-gray-800">
@@ -47,7 +47,9 @@
 			</li>
 			<li class="inline-flex items-center gap-4">
 				<div class="text-2xl">🧑‍💻️</div>
-				<div class="font-medium">Supports Python, JS, TypeScript, Go, C++, Java, and more...</div>
+				<div class="font-medium">
+					Supports Python, JS, TypeScript, Go, C++, Java, Ruby, and more...
+				</div>
 			</li>
 		</ul>
 
@@ -76,15 +78,17 @@
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
 			<h1 class="text-5xl font-bold text-gray-800">
-				Codeball is your AI-powered programming toolbox
+				Skip code review, Codeball approves your <span class="text-gray-400">(good)</span> PRs!
 			</h1>
 			<p class="max-w-3xl text-gray-600">
-				Automate your teams workload, increasing Engineering Productivity from DAY-0. Levarage the
-				insights from state of the art AI — Codeball combines a custom model trained on over 2
-				million Pull Requests with OpenAI Codex.
-			</p>
-			<p class="max-w-3xl text-gray-600">
-				The Codeball AI will help your developers ship quicker<br />and with higher confidence.
+				Reading this as you're waiting for a review? We know the feeling.
+				<br /><br />
+				Codeball is an AI trained to review and approve Pull Requests. If Codeball sees that you're good
+				to go, your PR will be approved – without having to wait for humans.
+				<br /><br />
+				Codeball has been trained to only act if it's confident,<br />
+				and will not do anything (fallback to human review) when unsure.<br />
+				It's a win-win!
 			</p>
 		</div>
 	</div>
