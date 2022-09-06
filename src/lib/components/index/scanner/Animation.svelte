@@ -198,9 +198,12 @@
 					class:opacity-0={!approvedFade}
 				>
 					<div class="text-2xl">✅</div>
-					<div>Codeball <span class="text-green-900">[bot]</span> approved these changes</div>
+					<div>
+						Codeball <span class="text-green-900">[bot]</span> approved
+						<span class="hidden md:inline">these changes</span>
+					</div>
 					<div class="flex-1" />
-					<div>just now</div>
+					<div><span class="hidden md:inline">just</span> now</div>
 				</div>
 			{/if}
 		</div>
