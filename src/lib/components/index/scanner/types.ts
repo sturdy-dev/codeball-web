@@ -3,4 +3,5 @@ export type findable = {
 	run: boolean;
 	done: boolean;
 	bg: string;
+	steps?: number;
 };

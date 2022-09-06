@@ -10,6 +10,7 @@
 		username = username;
 		branch = branch;
 		fileName = fileName;
+		fileName2 = fileName2;
 	};
 
 	const find = (a: findable, delay: number) => {
@@ -29,10 +30,27 @@
 			}, 700 * 2);
 
 			setTimeout(() => {
-				a.show = false;
-				a.done = true;
+				if (a.steps !== 5) {
+					a.show = false;
+					a.done = true;
+				} else {
+					a.run = false;
+				}
 				iLoveSvelte();
 			}, 700 * 3);
+
+			if (a.steps === 5) {
+				setTimeout(() => {
+					a.run = true;
+					iLoveSvelte();
+				}, 700 * 4);
+
+				setTimeout(() => {
+					a.show = false;
+					a.done = true;
+					iLoveSvelte();
+				}, 700 * 5);
+			}
 		}, delay);
 	};
 
@@ -62,6 +80,14 @@
 		run: false,
 		done: false,
 		bg: 'bg-orange-800'
+	};
+
+	let fileName2: findable = {
+		show: false,
+		run: false,
+		done: false,
+		bg: 'bg-orange-800',
+		steps: 5
 	};
 
 	let animateWindow = false;
@@ -127,6 +153,7 @@
 
 		find(title, 500);
 		find(fileName, 500);
+		find(fileName2, 500);
 		find(username, 550);
 		find(branch, 1300);
 
@@ -187,7 +214,7 @@
 
 			<div class="overflow-hidden rounded-lg border-2 border-gray-300">
 				<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
-					<Target target={fileName}>feature.py</Target>
+					<Target target={fileName2}>feature.py</Target>
 				</div>
 			</div>
 
@@ -247,8 +274,8 @@
 		background: linear-gradient(
 			90deg,
 			transparent calc(var(--scanner-pos)),
-			var(--color-blue-800) calc(var(--scanner-pos) + 3%),
-			transparent calc(var(--scanner-pos) + 4%),
+			var(--color-gray-400) calc(var(--scanner-pos) + 3%),
+			transparent calc(var(--scanner-pos) + 6%),
 			transparent calc(100%)
 		);
 	}
