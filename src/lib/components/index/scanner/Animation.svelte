@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Scrambler from './scrambler';
-
-	type findable = {
-		show: boolean;
-		run: boolean;
-		done: boolean;
-	};
+	import Target from "./Target.svelte";
+	import JsonItem from "$lib/components/index/scanner/JsonItem.svelte";
+	import type {findable} from "./types";
 
 	const iLoveSvelte = () => {
 		title = title;
@@ -42,25 +39,29 @@
 	let username: findable = {
 		show: false,
 		run: false,
-		done: false
+		done: false,
+		bg: "bg-green-800",
 	};
 
 	let title: findable = {
 		show: false,
 		run: false,
-		done: false
+		done: false,
+		bg: "bg-red-800"
 	};
 
 	let branch: findable = {
 		show: false,
 		run: false,
-		done: false
+		done: false,
+		bg: "bg-blue-800",
 	};
 
 	let fileName: findable = {
 		show: false,
 		run: false,
-		done: false
+		done: false,
+		bg: "bg-orange-800",
 	};
 
 	let animateWindow = false;
@@ -75,6 +76,8 @@
 	let outputKingOfTheHill = 0;
 	let outputUsernameCreditScore = 0;
 
+	const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
 	const scramble = () => {
 		new Scrambler().scramble('Happy Coder', (text) => {
 			outputUsername = text;
@@ -84,7 +87,7 @@
 			outputType = text;
 		});
 
-		const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
 
 		new Scrambler().scramble(
 			'2492',
@@ -163,37 +166,18 @@
 			<div class="flex items-end ">
 				<div class="flex flex-1 flex-col gap-2">
 					<div class="flex space-x-2 text-4xl">
-						<span
-							class="transition-bg rounded-md px-2 py-0.5 duration-200"
-							class:run={title.run}
-							class:found={title.show}
-							class:bg-red-800={title.done}
-							class:text-white={title.done}
-						>
+						<Target target={title}>
 							Adding code
-						</span>
+						</Target>
 						<span class="text-gray-800">#1337</span>
 					</div>
 					<div class="flex items-center space-x-2">
 						<div class="test-green-700 rounded-xl bg-green-200 px-4 py-2">Open</div>
 						<div>
-							<span
-								class="transition-bg rounded-md px-2 py-0.5 duration-200"
-								class:found={username.show}
-								class:run={username.run}
-								class:bg-green-800={username.done}
-								class:text-white={username.done}>HappyCoder</span
-							>
+							<Target target={username}>HappyCoder</Target>
 							wants to merge <code class="text-blue-800">more-stuff</code>
 							into
-							<span
-								class:found={branch.show}
-								class:run={branch.run}
-								class:bg-sky-800={branch.done}
-								class:text-white={branch.done}
-								class:text-blue-800={!branch.done}
-								class="transition-bg rounded-md px-2 py-0.5 duration-200">main</span
-							>
+							<Target target={branch}>main</Target>
 						</div>
 					</div>
 				</div>
@@ -201,25 +185,13 @@
 
 			<div class="overflow-hidden rounded-lg border-2 border-gray-300">
 				<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
-					<span
-						class:found={fileName.show}
-						class:run={fileName.run}
-						class:bg-orange-800={fileName.done}
-						class:text-white={fileName.done}
-						class="transition-bg rounded-md px-2 py-0.5 duration-200">transformer.py</span
-					>
+					<Target target={fileName}>transformer.py</Target>
 				</div>
 			</div>
 
 			<div class="overflow-hidden rounded-lg border-2 border-gray-300">
 				<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
-					<span
-						class:found={fileName.show}
-						class:run={fileName.run}
-						class:bg-orange-800={fileName.done}
-						class:text-white={fileName.done}
-						class="transition-bg rounded-md px-2 py-0.5 duration-200">feature.py</span
-					>
+					<Target target={fileName}>feature.py</Target>
 				</div>
 			</div>
 
@@ -243,37 +215,14 @@
 			class="block flex-1 rounded-md bg-black p-4 leading-7 text-white drop-shadow-lg"
 			style="text-shadow: 0 0 10px bisque">
 &#123;
-    "author": <span
-				class:bg-green-800={username.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">"{outputUsername}"</span
-			>,
-    "authorScore": <span
-				class:bg-green-800={username.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">{outputUsernameCreditScore}</span
-			>,
-    "type": <span
-				class:bg-red-800={title.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">"{outputType}"</span
-			>,
-    "kingOfTheHillScore": <span
-				class:bg-sky-800={branch.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">{outputKingOfTheHill}</span
-			>,
-    "simplicityRanking": <span
-				class:bg-sky-800={branch.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">{outputSimplicityRanking}</span
-			>,
-    "fileReputation": <span
-				class:bg-orange-800={fileName.done}
-				class="transition-bg rounded-sm px-2 py-0.5 duration-200">{outputReputation}</span
-			>,<span class="hidden md:inline">
-    "patterns": <span
-					class:bg-orange-800={fileName.done}
-					class="transition-bg rounded-sm px-2 py-0.5 duration-200"
-					>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</span
-				>,</span
-			>
-    ...
+    "author": <JsonItem target={username}>"{outputUsername}"</JsonItem>,
+    "authorScore": <JsonItem target={title}>{outputUsernameCreditScore}</JsonItem>,
+    "type": <JsonItem target={branch}>"{outputType}"</JsonItem>,
+    "kingOfTheHillScore": <JsonItem target={branch}>{outputKingOfTheHill}</JsonItem>,
+    "simplicityRanking": <JsonItem target={branch}>{outputSimplicityRanking}</JsonItem>,
+    "fileReputation": <JsonItem target={fileName}>{outputReputation}</JsonItem>,<span class="hidden md:inline">
+    "patterns": <JsonItem target={fileName}>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</JsonItem>,</span>
+	...
 &#125;
 </pre>
 	</div>
@@ -305,26 +254,6 @@
 	.scanner:hover {
 		/*--a:360deg;*/
 		--scanner-pos: 100%;
-		/*--c:green;*/
-	}
-
-	.found {
-		--scanner-pos: 5%;
-		transition: --scanner-pos 0.7s;
-		transition-timing-function: ease-in-out;
-		background: linear-gradient(
-			90deg,
-			transparent calc(var(--scanner-pos) - 5%),
-			var(--color-blue-800) calc(var(--scanner-pos)),
-			transparent calc(var(--scanner-pos) + 5%),
-			transparent calc(100%)
-		);
-	}
-
-	.found.run,
-	.found:hover {
-		/*--a:360deg;*/
-		--scanner-pos: 95%;
 		/*--c:green;*/
 	}
 </style>

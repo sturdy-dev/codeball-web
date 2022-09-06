@@ -22,7 +22,7 @@
 	import armadilloBigOfficeHD from '$lib/armadillo/big-office.png?preset=hd&srcset';
 
 	import CalendarDaysMini from '$lib/icons/CalendarDaysMini.svelte';
-	import Animation from '$lib/components/index/Animation.svelte';
+	import Animation from '../lib/components/index/scanner/Animation.svelte';
 
 	export let login: string | null;
 </script>
