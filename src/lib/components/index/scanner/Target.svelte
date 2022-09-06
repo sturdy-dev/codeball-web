@@ -13,10 +13,11 @@
 
 <span
         class="transition-bg  px-2 py-0.5 duration-200 {bg}"
-        class:run={target.run && canAnimate}
+        class:run={target.run}
         class:found={target.show && canAnimate}
+        class:foundSimple={target.show && !canAnimate}
         class:text-white={target.done}
-		class:rounded-md={target.done}
+		class:rounded-md={target.done || !canAnimate}
 ><slot/></span>
 
 
@@ -40,10 +41,17 @@
 		);
 	}
 
-	.found.run,
-	.found:hover {
-		/*--a:360deg;*/
+	.found.run {
 		--scanner-pos: 95%;
-		/*--c:green;*/
+	}
+
+	.foundSimple {
+		background-color: rgba(30, 64, 175, 0.2);
+		transition: background-color 0.7s;
+		transition-timing-function: ease-in-out;
+	}
+
+	.foundSimple.run {
+		background-color: rgba(30, 64, 175, 0.5)
 	}
 </style>
