@@ -32,10 +32,11 @@
 		transition-timing-function: ease-in-out;
 		background: linear-gradient(
 			90deg,
+			transparent,
 			transparent calc(var(--scanner-pos) - 5%),
-			var(--color-blue-800) calc(var(--scanner-pos)),
-			transparent calc(var(--scanner-pos) + 5%),
-			transparent calc(100%)
+			var(--color-gray-400) calc(var(--scanner-pos)),
+			transparent calc(var(--scanner-pos) + 10px),
+			transparent 100%
 		);
 	}
 
