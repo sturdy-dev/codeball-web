@@ -17,10 +17,7 @@
 	import armadilloPingPong from '$lib/armadillo/pingpong-2.png?preset=thumbnail&srcset';
 	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
 	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
-
 	import armadilloAtTheComputerHD from '$lib/armadillo/at-the-computer-2.png?preset=hd&srcset';
-	import armadilloBigOfficeHD from '$lib/armadillo/big-office.png?preset=hd&srcset';
-
 	import CalendarDaysMini from '$lib/icons/CalendarDaysMini.svelte';
 	import Animation from '../lib/components/index/scanner/Animation.svelte';
 
@@ -29,8 +26,8 @@
 
 <Hero>
 	<slot slot="left">
-		<h1 class="text-5xl font-bold">
-			Boost<br />your<br />engineering<br /><span class="text-orange-600">velocity</span> with AI
+		<h1 class="text-5xl font-bold max-w-lg">
+			Boost your engineering <span class="text-orange-600">velocity</span> and <span class="text-orange-600">reliability</span> with AI
 		</h1>
 
 		<ul class="flex flex-col gap-2 text-gray-800">
