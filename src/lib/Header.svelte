@@ -10,7 +10,7 @@
 	const header = [
 		{ href: '/how', title: 'How' },
 		{ href: '/pricing', title: 'Pricing' },
-		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'GitHub Action' },
+		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'GitHub Action', event: "umami--click--github-action" },
 		{ href: '/faq', title: 'FAQ' },
 		{ href: '/blog', title: 'Blog' }
 	];
@@ -45,11 +45,11 @@
 			<div
 				class="grid hidden flex-1 grid-cols-2	items-center	 gap-x-4 md:block md:flex md:space-x-2 "
 			>
-				{#each header as { href, title }}
+				{#each header as { href, title, event }}
 					<a
 						class:text-red-700={$page.url.pathname === href}
 						class:font-semibold={$page.url.pathname === href}
-						class="whitespace-nowrap"
+						class="whitespace-nowrap {event ?? ''}"
 						{href}>{title}</a
 					>
 				{/each}
@@ -73,10 +73,10 @@
 		<PopoverPanel class="box-shadow-lg absolute top-12 z-10 w-full transform p-4 md:hidden">
 			<div class="rounded-xl bg-black p-4 pb-32 text-white drop-shadow-xl">
 				<div class="grid grid-cols-2 gap-4">
-					{#each header as { href, title }}
+					{#each header as { href, title, event }}
 						<PopoverButton
 							as="a"
-							class="whitespace-nowrap rounded-md text-base font-medium hover:text-gray-50"
+							class="whitespace-nowrap rounded-md text-base font-medium hover:text-gray-50 {event ?? ''}"
 							{href}>{title}</PopoverButton
 						>
 					{/each}

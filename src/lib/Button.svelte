@@ -2,6 +2,7 @@
 	export let disabled = false;
 	export let href: string | undefined = undefined;
 	export let color: 'blue' | 'black' | 'lime' | 'violet' | 'orange' | 'white' = 'blue';
+	export let event = ""; // Umami style events (example: "umami--click--signup-button")
 
 	const calcBg = (disabled: boolean) => {
 		if (color === 'blue') {
@@ -64,7 +65,7 @@
 		class="text-md group relative inline-flex items-center
 	justify-center whitespace-nowrap  rounded-md border-2 border-solid py-2 px-4
 	focus:outline-none focus:ring-2
-	focus:ring-blue-500 focus:ring-offset-2 {bg} {text} {border}"
+	focus:ring-blue-500 focus:ring-offset-2 {bg} {text} {border} {event}"
 	>
 		<slot />
 	</a>
@@ -75,7 +76,7 @@
 	justify-center whitespace-nowrap  rounded-md border-2 border-solid py-2 px-4
 	focus:outline-none focus:ring-2
 	focus:ring-blue-500 focus:ring-offset-2
-		{bg} {text} {border}"
+		{bg} {text} {border} {event}"
 	>
 		<slot />
 	</button>
