@@ -163,13 +163,23 @@
 		setTimeout(() => (approvedFade = true), 4300);
 	};
 
+	let hoverPull = false;
+	const onMouseOver = () => {
+		hoverPull = true;
+	};
+	const onMouseOut = () => {
+		hoverPull = false;
+	};
+
 	onMount(run);
 </script>
 
-<div class="overflow-hidden">
+<div class="relative">
 	<div
 		class="scanner mt-16 flex-1 border-black lg:mt-0 lg:border-2 lg:shadow-lg"
 		class:run={animateWindow}
+		on:mouseover={onMouseOver}
+		on:mouseout={onMouseOut}
 	>
 		<div class="flex hidden space-x-2 border-b-2 border-black p-4 lg:block">
 			<div class="space-y-2">
@@ -218,25 +228,27 @@
 				</div>
 			</div>
 
-			{#if approved}
-				<div
-					class="duration-2000 flex items-center gap-2 text-black text-green-800 transition-all"
-					class:opacity-100={approvedFade}
-					class:opacity-0={!approvedFade}
-				>
-					<div class="text-2xl">✅</div>
-					<div>
-						Codeball <span class="text-green-900">[bot]</span> approved
-						<span class="hidden md:inline">these changes</span>
-					</div>
-					<div class="flex-1" />
-					<div><span class="hidden md:inline">just</span> now</div>
+			<div
+				class="duration-2000 flex items-center gap-2 text-black text-green-800 transition-all"
+				class:opacity-100={approvedFade}
+				class:opacity-0={!approvedFade || approved}
+			>
+				<div class="text-2xl">✅</div>
+				<div>
+					Codeball <span class="text-green-900">[bot]</span> approved
+					<span class="hidden lg:inline">these changes</span>
 				</div>
-			{/if}
+				<div class="flex-1" />
+				<div><span class="hidden lg:inline">just</span> now</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="mt-8 flex w-full items-start">
+	<div
+		class="md_mt-0 duration-250 mt-8 flex w-full items-start transition-opacity md:absolute md:top-64 md:left-16 md:hover:opacity-100"
+		class:md:opacity-50={hoverPull}
+		class:md:opacity-75={!hoverPull}
+	>
 		<pre
 			class="block flex-1 rounded-md bg-black p-4 leading-7 text-white drop-shadow-lg"
 			style="text-shadow: 0 0 10px bisque">
