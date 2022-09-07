@@ -55,13 +55,13 @@
 		</ul>
 
 		<div class="inline-flex items-center space-x-2">
-			<Button color="orange" href="/approver">Get started</Button>
-			<Button color="violet" href="/approver">Try the demo</Button>
+			<Button color="orange" href="/approver" event="umami--click--index-get-started">Get started</Button>
+			<Button color="violet" href="/approver" event="umami--click--try-the-demo">Try the demo</Button>
 		</div>
 		<div class="inline-flex space-x-2">
 			<span>Need enterprise support?</span>
 			<a
-				class="inline-flex items-center space-x-1 text-orange-500"
+				class="inline-flex items-center space-x-1 text-orange-500 umami--click--schedule-a-call"
 				href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08"
 			>
 				<span> Schedule a call </span>
@@ -116,7 +116,7 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/approver">Set up</Button>
+			<Button color="violet" href="/approver" event="umami--click--index-approver-set-up">Set up</Button>
 		</div>
 	</FeatureBox>
 
@@ -132,7 +132,7 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/suggester">Go to demo</Button>
+			<Button color="violet" href="/suggester" event="umami--click--index-suggester-go-to-demo">Go to demo</Button>
 		</div>
 	</FeatureBox>
 
@@ -145,7 +145,7 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action">Set up</Button>
+			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action" event="umami--click--runs-on-actions-set-up">Set up</Button>
 		</div>
 	</FeatureBox>
 
@@ -158,7 +158,7 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/dora">Read more</Button>
+			<Button color="violet" href="/dora" event="umami--click--index-dora">Read more</Button>
 		</div>
 	</FeatureBox>
 </FeatureList>
@@ -166,6 +166,6 @@
 <div class="bg-black py-16 text-white">
 	<div class="mx-auto max-w-7xl space-y-8 p-14 text-center">
 		<h2 class="font-mono text-5xl font-bold">I'm ready</h2>
-		<Button color="black" href="/approver">Let's go!</Button>
+		<Button color="black" href="/approver" event="umami--click--index-ready-lets-go">Let's go!</Button>
 	</div>
 </div>
