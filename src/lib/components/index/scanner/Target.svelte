@@ -11,7 +11,7 @@
 </script>
 
 <span
-	class="transition-bg  px-2 py-0.5 duration-200 {bg}"
+	class="transition-bg  whitespace-nowrap px-2 py-0.5 duration-200 {bg}"
 	class:run={target.run}
 	class:found={target.show && canAnimate}
 	class:foundSimple={target.show && !canAnimate}

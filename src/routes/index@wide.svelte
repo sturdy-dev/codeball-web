@@ -68,12 +68,11 @@
 				<CalendarDaysMini />
 			</a>
 		</div>
+
+		<Logos />
 	</slot>
 	<slot slot="right">
 		<Animation />
-		<div class="pt-4">
-			<Logos />
-		</div>
 	</slot>
 </Hero>
 
