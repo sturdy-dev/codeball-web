@@ -73,29 +73,42 @@
 	</slot>
 </Hero>
 
+
 <div class="flex w-full flex-col items-center overflow-hidden bg-orange-50 pt-16">
+
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
-			<h1 class="text-5xl font-bold text-gray-800">
-				Skip code review, Codeball approves your <span class="text-gray-400">(good)</span> PRs!
-			</h1>
+			<h2 class="text-5xl font-bold text-gray-800">
+				Avoid reckless merging, Codeball identifies and labels risky PRs
+			</h2>
 			<p class="max-w-3xl text-gray-600">
-				Reading this as you're waiting for a review? We know the feeling.
-				<br /><br />
-				Codeball is an AI trained to review and approve Pull Requests. If Codeball sees that you're good
-				to go, your PR will be approved – without having to wait for humans.
-				<br /><br />
-				Codeball has been trained to only act if it's confident,<br />
-				and will not do anything (fallback to human review) when unsure.<br />
-				It's a win-win!
+				Codeball is an AI model trained on millions of code contributions to distinguish<br>
+				between safe and risky code changes.<br>
+				<br>
+				It augments your development process by risk scoring your<br>
+				Pull Requests. Ship faster and with fewer faults with actionable
+				<br>and  team-specific code insights.
+			</p>
+
+			<h2 class="max-w-3xl text-5xl font-bold text-gray-800 pt-16">
+				Skip code review, <br>
+				Codeball approves<br>
+				your <span class="text-gray-400">(good)</span> PRs!
+			</h2>
+			<p class="max-w-3xl text-gray-600">
+				Feeling confident and prioritising<br>getting-shit-done?<br>
+				<br>
+				Setup Codeball to automatically approve good PRs,<br>
+				without having to wait for review.
 			</p>
 		</div>
 	</div>
+
 	<img
-		class="select-none md:-mt-[6rem] lg:-mr-[44rem] lg:-mt-[16rem] xl:-mr-[32rem]"
-		width="1024"
-		height="914"
-		srcset={armadilloAtTheComputerHD}
+			class="select-none opacity-50 md:-mt-[6rem] lg:-mr-[54rem] lg:-mt-[40rem] xl:-mr-[36rem]"
+			width="1024"
+			height="914"
+			srcset={armadilloAtTheComputerHD}
 	/>
 </div>
 
