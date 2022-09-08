@@ -18,10 +18,13 @@
 	import armadilloThumbsUpHD from '$lib/armadillo/thumbs-up.png?preset=hd&srcset';
 	import armadilloDataScientist from '$lib/armadillo/data-scientist.png?preset=thumbnail&srcset';
 	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
+	import InstallAction from '$lib/components/InstallAction.svelte';
 
 	export let login: string | null;
 
 	$: showDemoForm = clickedContinue || login;
+
+	let repoURL = '';
 
 	let clickedContinue = false;
 	const onClickContinue = () => {
@@ -96,12 +99,19 @@
 					The Codeball Action works out of the box, is very customizable, and can integrate tightly
 					with your existing configuration and setup.
 				</p>
+
+				<div class="inline-flex items-start justify-end gap-2">
+					<input
+						type="text"
+						bind:value={repoURL}
+						placeholder="https://github.com/"
+						class="text-md min-w-40 group relative inline-flex
+	w-full items-center  justify-center whitespace-nowrap rounded-md border-2 border-solid border-black bg-white py-2 px-4 text-black focus:outline-none focus:ring-2"
+					/>
+					<InstallAction {repoURL} />
+				</div>
 			</slot>
-			<div slot="action">
-				<Button color="violet" href="https://github.com/sturdy-dev/codeball-action"
-					>Install the Action</Button
-				>
-			</div>
+			<div slot="bottom" />
 		</FeatureBox>
 	</FeatureList>
 </article>

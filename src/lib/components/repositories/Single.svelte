@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Failed from './Single.failed.svelte';
 	import Running from './Single.running.svelte';
-	import MoneySavedCalculator from '$lib/MoneySavedCalculator.svelte';
+	import MoneySavedCalculator from './MoneySavedCalculator.svelte';
 	import { isFinalStatus, type RepositoryJob } from '$lib/jobs';
 	import { Table } from '$lib/components/contributions';
 	import Button from '$lib/Button.svelte';
-	import AddAction from '$lib/AddAction.svelte';
+	import AddAction from './AddAction.svelte';
 
 	export let job: RepositoryJob;
 

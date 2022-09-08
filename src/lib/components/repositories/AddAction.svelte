@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from './Button.svelte';
-	import type { Job } from '$lib/jobs';
+	import Button from '../../Button.svelte';
+	import type { Job } from '../../jobs';
 
 	export let job: Job;
 
@@ -24,7 +24,6 @@ jobs:
           labelPullRequestsWhenApproved: "true"
           labelPullRequestsWhenReviewNeeded: "false"
           failJobsWhenReviewNeeded: "false"
-          codeSuggestionsFromComments: "true"
 `;
 
 	$: repoName = job.repository?.name;
