@@ -3,10 +3,14 @@
 
 	const footer = [
 		{ href: '/how', title: 'How' },
-		{ href: '/pricing', title: 'Pricing' },
-		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'GitHub Action', event: "umami--click--github-action" },
+		{
+			href: 'https://github.com/sturdy-dev/codeball-action',
+			title: 'GitHub Action',
+			event: 'umami--click--github-action'
+		},
 		{ href: '/faq', title: 'FAQ' },
 		{ href: '/blog', title: 'Blog' },
+		{ href: '/our-story', title: 'Our story' },
 		{ href: 'https://discord.gg/fQcH9QAVpX', title: 'Discord' },
 		{ href: 'mailto:support@codeball.ai', title: 'Email us' }
 	];
