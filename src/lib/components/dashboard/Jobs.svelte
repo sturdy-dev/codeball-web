@@ -60,20 +60,10 @@
 		return events.sort((a, b) => a.created_at.localeCompare(b.created_at));
 	};
 
-	let showProbabilities = false;
-
-	const handleKeydown = (e: KeyboardEvent) => {
-		if (e.key === '.' && (e.metaKey || e.ctrlKey)) {
-			showProbabilities = !showProbabilities;
-		}
-	};
-
 	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAtDesc);
 
 	$: showJobs = latestJobsForContribution;
 </script>
-
-<svelte:window on:keydown={handleKeydown} />
 
 <section class="flex flex-col  bg-white">
 	<div
@@ -111,9 +101,9 @@
 						{codeballApproved ? 'CODEBALL 👍' : 'NOT APPROVED'}
 					</span>
 
-					{#if showProbabilities}
-						<span class="block text-center text-xs text-gray-400">{prob.toFixed(4)}</span>
-					{/if}
+					<span class="block text-center text-xs text-gray-400" title="Confidence"
+						>{prob.toFixed(3)}</span
+					>
 				</div>
 
 				<div class="space-y-1">
