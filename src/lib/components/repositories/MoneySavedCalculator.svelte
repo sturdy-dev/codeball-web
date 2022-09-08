@@ -1,6 +1,6 @@
 <script lang="ts">
-	import AddAction from '$lib/AddAction.svelte';
-	import type { RepositoryJob } from '$lib/jobs';
+	import AddAction from './AddAction.svelte';
+	import type { RepositoryJob } from '../../jobs';
 	import RangeSlider from 'svelte-range-slider-pips';
 	import { differenceInMinutes, minutesToHours, compareAsc, differenceInDays } from 'date-fns';
 
