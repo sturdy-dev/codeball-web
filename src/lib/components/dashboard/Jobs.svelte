@@ -138,14 +138,21 @@
 					<div class="flex space-x-2">
 						{#each events as event, i}
 							{@const isLast = i === events.length - 1}
-							<div
-								class="p-2"
-								class:bg-red-100={event.github_action.error !== null}
-								class:text-red-800={event.github_action.error !== null}
-								class:bg-green-100={event.github_action.error === null}
-								class:text-green-800={event.github_action.error === null}
-							>
-								{event.github_action.name}
+							{@const labelName = event?.github_action?.data?.labelName}
+
+							<div class="inline-flex flex-col gap-1">
+								<div
+									class="p-2 text-center"
+									class:bg-red-100={event.github_action.error !== null}
+									class:text-red-800={event.github_action.error !== null}
+									class:bg-green-100={event.github_action.error === null}
+									class:text-green-800={event.github_action.error === null}
+								>
+									<span>{event.github_action.name}</span>
+								</div>
+								{#if labelName}
+									<span class="text-xs text-gray-600">{labelName}</span>
+								{/if}
 							</div>
 							{#if !isLast}
 								<div class="py-2">👉</div>
