@@ -8,7 +8,11 @@
 	$: path = overrideRedirectPath ?? $page.url.toString();
 </script>
 
-<Button href={`/github/oauth?redirect=${encodeURIComponent(path)}`} color="white" event="umami--click--login-with-github">
+<Button
+	href={`/github/oauth?redirect=${encodeURIComponent(path)}`}
+	color="white"
+	event="umami--click--login-with-github"
+>
 	<span>Login with GitHub</span>
 	<Image class="ml-1" src={gitHubLogo} alt="GitHub logo" />
 </Button>

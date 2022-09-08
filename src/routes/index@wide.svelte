@@ -26,8 +26,9 @@
 
 <Hero>
 	<slot slot="left">
-		<h1 class="text-5xl font-bold max-w-lg">
-			Boost your engineering <span class="text-orange-600">velocity</span> and <span class="text-orange-600">reliability</span> with AI
+		<h1 class="max-w-lg text-5xl font-bold">
+			Boost your engineering <span class="text-orange-600">velocity</span> and
+			<span class="text-orange-600">reliability</span> with AI
 		</h1>
 
 		<ul class="flex flex-col gap-2 text-gray-800">
@@ -52,13 +53,17 @@
 		</ul>
 
 		<div class="inline-flex items-center space-x-2">
-			<Button color="orange" href="/approver" event="umami--click--index-get-started">Get started</Button>
-			<Button color="violet" href="/approver" event="umami--click--try-the-demo">Try the demo</Button>
+			<Button color="orange" href="/approver" event="umami--click--index-get-started"
+				>Get started</Button
+			>
+			<Button color="violet" href="/approver" event="umami--click--try-the-demo"
+				>Try the demo</Button
+			>
 		</div>
 		<div class="inline-flex space-x-2">
 			<span>Need enterprise support?</span>
 			<a
-				class="inline-flex items-center space-x-1 text-orange-500 umami--click--schedule-a-call"
+				class="umami--click--schedule-a-call inline-flex items-center space-x-1 text-orange-500"
 				href="https://calendly.com/kiril-videlov/30-min-codeball?month=2022-08"
 			>
 				<span> Schedule a call </span>
@@ -73,42 +78,40 @@
 	</slot>
 </Hero>
 
-
 <div class="flex w-full flex-col items-center overflow-hidden bg-orange-50 pt-16">
-
 	<div class="flex w-full justify-around px-8">
 		<div class="w-full max-w-7xl space-y-4 text-lg">
 			<h2 class="text-5xl font-bold text-gray-800">
 				Avoid reckless merging, Codeball identifies and labels risky PRs
 			</h2>
 			<p class="max-w-3xl text-gray-600">
-				Codeball is an AI model trained on millions of code contributions to distinguish<br>
-				between safe and risky code changes.<br>
-				<br>
-				It augments your development process by risk scoring your<br>
+				Codeball is an AI model trained on millions of code contributions to distinguish<br />
+				between safe and risky code changes.<br />
+				<br />
+				It augments your development process by risk scoring your<br />
 				Pull Requests. Ship faster and with fewer faults with actionable
-				<br>and  team-specific code insights.
+				<br />and team-specific code insights.
 			</p>
 
-			<h2 class="max-w-3xl text-5xl font-bold text-gray-800 pt-16">
-				Skip code review, <br>
-				Codeball approves<br>
+			<h2 class="max-w-3xl pt-16 text-5xl font-bold text-gray-800">
+				Skip code review, <br />
+				Codeball approves<br />
 				your <span class="text-gray-400">(good)</span> PRs!
 			</h2>
 			<p class="max-w-3xl text-gray-600">
-				Feeling confident and prioritising<br>getting-shit-done?<br>
-				<br>
-				Setup Codeball to automatically approve good PRs,<br>
+				Feeling confident and prioritising<br />getting-shit-done?<br />
+				<br />
+				Setup Codeball to automatically approve good PRs,<br />
 				without having to wait for review.
 			</p>
 		</div>
 	</div>
 
 	<img
-			class="select-none opacity-50 md:-mt-[6rem] lg:-mr-[54rem] lg:-mt-[40rem] xl:-mr-[36rem]"
-			width="1024"
-			height="914"
-			srcset={armadilloAtTheComputerHD}
+		class="select-none opacity-50 md:-mt-[6rem] lg:-mr-[54rem] lg:-mt-[40rem] xl:-mr-[36rem]"
+		width="1024"
+		height="914"
+		srcset={armadilloAtTheComputerHD}
 	/>
 </div>
 
@@ -126,7 +129,9 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/approver" event="umami--click--index-approver-set-up">Set up</Button>
+			<Button color="violet" href="/approver" event="umami--click--index-approver-set-up"
+				>Set up</Button
+			>
 		</div>
 	</FeatureBox>
 
@@ -142,7 +147,9 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/suggester" event="umami--click--index-suggester-go-to-demo">Go to demo</Button>
+			<Button color="violet" href="/suggester" event="umami--click--index-suggester-go-to-demo"
+				>Go to demo</Button
+			>
 		</div>
 	</FeatureBox>
 
@@ -155,7 +162,11 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="https://github.com/sturdy-dev/codeball-action" event="umami--click--runs-on-actions-set-up">Set up</Button>
+			<Button
+				color="violet"
+				href="https://github.com/sturdy-dev/codeball-action"
+				event="umami--click--runs-on-actions-set-up">Set up</Button
+			>
 		</div>
 	</FeatureBox>
 
@@ -176,6 +187,8 @@
 <div class="bg-black py-16 text-white">
 	<div class="mx-auto max-w-7xl space-y-8 p-14 text-center">
 		<h2 class="font-mono text-5xl font-bold">I'm ready</h2>
-		<Button color="black" href="/approver" event="umami--click--index-ready-lets-go">Let's go!</Button>
+		<Button color="black" href="/approver" event="umami--click--index-ready-lets-go"
+			>Let's go!</Button
+		>
 	</div>
 </div>

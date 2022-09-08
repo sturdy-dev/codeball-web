@@ -2,7 +2,7 @@
 	export let disabled = false;
 	export let href: string | undefined = undefined;
 	export let color: 'blue' | 'black' | 'lime' | 'violet' | 'orange' | 'white' = 'blue';
-	export let event = ""; // Umami style events (example: "umami--click--signup-button")
+	export let event = ''; // Umami style events (example: "umami--click--signup-button")
 
 	const calcBg = (disabled: boolean) => {
 		if (color === 'blue') {

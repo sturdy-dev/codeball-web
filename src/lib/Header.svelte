@@ -10,7 +10,11 @@
 	const header = [
 		{ href: '/how', title: 'How' },
 		{ href: '/pricing', title: 'Pricing' },
-		{ href: 'https://github.com/sturdy-dev/codeball-action', title: 'GitHub Action', event: "umami--click--github-action" },
+		{
+			href: 'https://github.com/sturdy-dev/codeball-action',
+			title: 'GitHub Action',
+			event: 'umami--click--github-action'
+		},
 		{ href: '/faq', title: 'FAQ' },
 		{ href: '/blog', title: 'Blog' }
 	];
@@ -76,7 +80,8 @@
 					{#each header as { href, title, event }}
 						<PopoverButton
 							as="a"
-							class="whitespace-nowrap rounded-md text-base font-medium hover:text-gray-50 {event ?? ''}"
+							class="whitespace-nowrap rounded-md text-base font-medium hover:text-gray-50 {event ??
+								''}"
 							{href}>{title}</PopoverButton
 						>
 					{/each}
