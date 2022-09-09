@@ -45,7 +45,7 @@ export default class Scrambler {
 
 	constructor() {
 		this.characters = [...Scrambler.CHARACTERS.DEFAULT];
-		this.maxCounter = 45;
+		this.maxCounter = 15;
 
 		this.targetText = '';
 		this.scrambledText = '';
