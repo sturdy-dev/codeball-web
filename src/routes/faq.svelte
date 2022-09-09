@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
 	export const load = () => ({
 		stuff: {
-			title: 'FAQ'
+			title: 'FAQ',
+			description: 'Questions and answers about Codeball: AI Powered Code Review'
 		}
 	});
 </script>
