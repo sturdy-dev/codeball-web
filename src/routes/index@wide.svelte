@@ -96,7 +96,16 @@
 
 	<Step pill="Configure" title="Configure Codeball to your needs">
 		<slot slot="text">
-			Auto-approve safe PRs or enforce extra review on the risky ones &mdash; You decide!
+			Auto-approve safe PRs or enforce extra review on the risky ones &mdash; You decide!<br /><br
+			/>
+			Codeball is highly configurable with GitHub Actions, and you can configure the workflow yourself
+			to fit your needs. Run Codeball only on the <code>`web`</code> directory, run only the
+			Codeball Labeler, only the Approver, or only trigger the Codeball pipeline on Thursdays?
+			There's almost
+			<a
+				class="text-black underline"
+				href="https://github.com/sturdy-dev/codeball-action#customizations">endless possibilities</a
+			>.
 		</slot>
 	</Step>
 </div>
