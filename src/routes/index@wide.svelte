@@ -30,37 +30,95 @@
 
 <Hero>
     <slot slot="left">
-        <h1 class="text-9xl font-bold tracking-tight max-w-2xl">
+        <h1 class="text-8xl font-bold tracking-tight max-w-2xl">
             AI-powered code review
         </h1>
 
+        <!--
         <h1 class="max-w-lg text-3xl font-bold leading-relaxed">
             Increase your engineering <span class="text-orange-600">velocity</span> and <span class="text-orange-600">quality</span>
         </h1>
+        --->
 
         <p class="text-gray-600 max-w-lg font-light leading-relaxed">
             Codeball finds bugs in your Pull Requests, lets you ship faster and with higher confidence.
             The Codeball AI is trained on millions of code contributions to recognize risky code changes.
         </p>
 
+
         <div class="inline-flex items-center space-x-2">
-            <Button color="orange" href="/approver" event="umami--click--index-get-started">
+            <Button color="white" href="/approver" event="umami--click--index-get-started">
                 Get started
             </Button>
-            <Button color="violet" href="/approver" event="umami--click--try-the-demo">
+            <!--<Button color="violet" href="/approver" event="umami--click--try-the-demo">
                 Try the demo
             </Button>
+            -->
         </div>
 
-        <Logos/>
+        <div class="max-w-2xl">
+            <Logos/>
+        </div>
+    </slot>
+    <slot slot="right">
+        <div class="m-16 h-[30rem] w-[20rem] bg-orange-300 rounded-xl"></div>
     </slot>
 </Hero>
 
-<div class="flex flex-col items-center my-8">
-    <h2 class="text-md uppercase text-gray-500">How it works</h2>
+
+<div class="bg-white flex flex-col items-center gap-32 px-4 md:px-24">
+    <div class="flex flex-col items-center my-8">
+        <h2 class="text-md uppercase text-gray-500">How it works</h2>
+    </div>
+
+
+    <div class="flex flex-col items-center gap-4">
+        <span class="bg-orange-100 text-orange-800 px-4 py-1 rounded-xl font-medium">Install</span>
+        <div class="text-4xl text-slate-800 font-extrabold">Add the Codeball GitHub Action</div>
+        <p class="text-slate-600 font-light max-w-lg leading-relaxed text-center">
+            Codeball is setup and configured using GitHub Actions.<br>
+            Add <code>`.github/workflows/codeball.yml`</code> to a repo, and you're ready to go!
+        </p>
+    </div>
+
+
+    <div class="flex flex-col items-center gap-4">
+        <span class="bg-orange-100 text-orange-800 px-4 py-1 rounded-xl font-medium">Run</span>
+        <div class="text-4xl text-slate-800 font-extrabold">Codeball evaluates new Pull Requests</div>
+
+        <p class="text-slate-600 font-light max-w-lg leading-relaxed text-center">
+           Codeball analyzes the Pull Request, and picks up hundreds of parameters to use as the input to the Codeball AI.
+        </p>
+
+        <Animation />
+
+        <div class="mt-64"></div>
+    </div>
+
+    <div class="flex flex-col items-center gap-4">
+        <span class="bg-orange-100 text-orange-800 px-4 py-1 rounded-xl font-medium">Know</span>
+        <div class="text-4xl text-slate-800 font-extrabold"></div>
+        <p class="text-slate-600 font-light max-w-lg leading-relaxed text-center">
+            Codeball notifies you about new problems and risks.
+            </p>
+            <span class="bg-amber-100 text-amber-500 px-2 py-0.5 rounded-xl whitespace-nowrap">codeball:needs-careful-review</span>
+            <span class="bg-sky-100 text-sky-500 px-2 py-0.5 rounded-xl whitespace-nowrap ">codeball:needs-review</span>
+            <span class="bg-green-100 text-green-500 px-2 py-0.5 rounded-xl whitespace-nowrap">codeball:approved</span>
+    </div>
+
+    <div class="flex flex-col items-center gap-4">
+        <span class="bg-orange-100 text-orange-800 px-4 py-1 rounded-xl font-medium">Configure</span>
+        <div class="text-4xl text-slate-800 font-extrabold">Configure Codeball to your needs</div>
+        <p class="text-slate-600 font-light max-w-lg leading-relaxed text-center">Auto-approve safe PRs or enforce extra review on
+            the risky
+            ones &mdash;
+            You decide!</p>
+    </div>
 </div>
 
+
 <div class="flex flex-col items-center gap-32 px-4 md:px-24">
+
 
     <div class="flex w-full items-start flex-row-reverse gap-8">
         <div class="w-1/3 flex gap-2 items-start flex-col justify-center ">
@@ -99,7 +157,8 @@
     <div class="flex w-full items-start gap-8">
         <div class="w-1/3 flex gap-2 items-end flex-col justify-center ">
             <div class="text-4xl">✅</div>
-            <div class="text-lg text-slate-600 font-light text-right">Auto-approve safe PRs or enforce extra review on the risky
+            <div class="text-lg text-slate-600 font-light text-right">Auto-approve safe PRs or enforce extra review on
+                the risky
                 ones &mdash;
                 You decide!
             </div>
