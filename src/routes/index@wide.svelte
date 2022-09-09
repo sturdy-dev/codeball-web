@@ -127,13 +127,12 @@
 		<Button color="violet" href="/approver" event="umami--click--try-the-demo">Try the demo</Button>
 	</div>
 
-	<div class="ax-w-3xl flex w-full flex-col justify-around gap-4 px-4 leading-relaxed md:px-8 ">
-		<h2 class="text-5xl font-bold text-gray-800">
-			Avoid reckless merging, Codeball identifies and labels <span class="text-orange-400"
-				>risky PRs</span
-			>
+	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-4 leading-relaxed md:px-8 ">
+		<h2 class="max-w-3xl text-5xl font-bold text-gray-800">
+			Avoid reckless merging, Codeball identifies and labels
+			<span class="text-orange-400"> risky PRs </span>
 		</h2>
-		<p class=" text-gray-600 ">
+		<p class="max-w-3xl text-gray-600 ">
 			Codeball is an AI model trained on millions of code contributions to distinguish between safe
 			and risky code changes. It augments your development process by risk scoring your Pull
 			Requests. Ship faster and with fewer faults with actionable and team-specific code insights.
