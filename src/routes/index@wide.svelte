@@ -47,7 +47,7 @@
 			<li class="inline-flex items-center gap-4">
 				<div class="text-2xl">🧑‍💻️</div>
 				<div class="font-medium">
-					Supports Python, JS, TypeScript, Go, C++, Java, Ruby, and more...
+					Supports Python, JS, TypeScript, Go, C++, Java, C#, Ruby, and more...
 				</div>
 			</li>
 		</ul>
