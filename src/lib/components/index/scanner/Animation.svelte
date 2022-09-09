@@ -4,6 +4,7 @@
 	import Target from './Target.svelte';
 	import JsonItem from '$lib/components/index/scanner/JsonItem.svelte';
 	import type { findable } from './types';
+	import Visibility from './Visibility.svelte';
 
 	const iLoveSvelte = () => {
 		title = title;
@@ -171,87 +172,93 @@
 		hoverPull = false;
 	};
 
-	onMount(run);
+	function onVisibilityPercentage(percent) {
+		if (percent > 50) {
+			run();
+		}
+		return '';
+	}
 </script>
 
-<div class="relative">
-	<div
-		class="scanner mt-16 flex-1 border-black lg:mt-0 lg:border-2 lg:shadow-lg"
-		class:run={animateWindow}
-		on:mouseover={onMouseOver}
-		on:mouseout={onMouseOut}
-	>
-		<div class="flex hidden space-x-2 border-b-2 border-black p-4 lg:block">
-			<div class="space-y-2">
-				<div class="flex space-x-2">
-					<div class="h-3 w-3 rounded-full bg-red-600" />
-					<div class="h-3 w-3 rounded-full bg-yellow-600" />
-					<div class="h-3 w-3 rounded-full bg-green-600" />
-				</div>
-				<div class="flex items-center space-x-2">
-					<div class="text-2xl">&larr;</div>
-					<div class="text-2xl">&rarr;</div>
-					<div class="text-2xl">🏠</div>
-					<div class="px-2">https://codehub.com/FancyStartup/EpicProject/pulls/1337</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="flex flex-col gap-4 lg:p-4">
-			<div class="flex items-end ">
-				<div class="flex flex-1 flex-col gap-2">
-					<div class="flex space-x-2 text-4xl">
-						<Target target={title}>Adding code</Target>
-						<span class="text-gray-800">#1337</span>
+<Visibility steps={100} let:percent let:unobserve let:intersectionObserverSupport>
+	<div class="relative {onVisibilityPercentage(percent)}">
+		<div
+			class="scanner mt-16 flex-1 border-black lg:mt-0 lg:border-2 lg:shadow-lg"
+			class:run={animateWindow}
+			on:mouseover={onMouseOver}
+			on:mouseout={onMouseOut}
+		>
+			<div class="flex hidden space-x-2 border-b-2 border-black p-4 lg:block">
+				<div class="space-y-2">
+					<div class="flex space-x-2">
+						<div class="h-3 w-3 rounded-full bg-red-600" />
+						<div class="h-3 w-3 rounded-full bg-yellow-600" />
+						<div class="h-3 w-3 rounded-full bg-green-600" />
 					</div>
 					<div class="flex items-center space-x-2">
-						<div class="test-green-700 rounded-xl bg-green-200 px-4 py-2">Open</div>
-						<div>
-							<Target target={username}>HappyCoder</Target>
-							wants to merge <code class="text-blue-800">more-stuff</code>
-							into
-							<Target target={branch}>main</Target>
+						<div class="text-2xl">&larr;</div>
+						<div class="text-2xl">&rarr;</div>
+						<div class="text-2xl">🏠</div>
+						<div class="px-2">https://codehub.com/FancyStartup/EpicProject/pulls/1337</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-4 lg:p-4">
+				<div class="flex items-end ">
+					<div class="flex flex-1 flex-col gap-2">
+						<div class="flex space-x-2 text-4xl">
+							<Target target={title}>Adding code</Target>
+							<span class="text-gray-800">#1337</span>
+						</div>
+						<div class="flex items-center space-x-2">
+							<div class="test-green-700 rounded-xl bg-green-200 px-4 py-2">Open</div>
+							<div class="leading-8">
+								<Target target={username}>HappyCoder</Target>
+								wants to merge <code class="text-blue-800">more-stuff</code>
+								into
+								<Target target={branch}>main</Target>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="overflow-hidden rounded-lg border-2 border-gray-300">
-				<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
-					<Target target={fileName}>transformer.py</Target>
+				<div class="overflow-hidden rounded-lg border-2 border-gray-300">
+					<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
+						<Target target={fileName}>transformer.py</Target>
+					</div>
 				</div>
-			</div>
 
-			<div class="overflow-hidden rounded-lg border-2 border-gray-300">
-				<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
-					<Target target={fileName2}>feature.py</Target>
+				<div class="overflow-hidden rounded-lg border-2 border-gray-300">
+					<div class="border-b-2 border-gray-400 bg-gray-200 py-2  px-4 font-mono">
+						<Target target={fileName2}>feature.py</Target>
+					</div>
 				</div>
-			</div>
 
-			<div
-				class="duration-2000 flex items-center gap-2 text-black text-green-800 transition-all"
-				class:opacity-100={approvedFade}
-				class:opacity-0={!approvedFade || approved}
-			>
-				<div class="text-2xl">✅</div>
-				<div>
-					Codeball <span class="text-green-900">[bot]</span> approved
-					<span class="hidden lg:inline">these changes</span>
+				<div
+					class="duration-2000 flex items-center gap-2 text-black text-green-800 transition-all"
+					class:opacity-100={approvedFade}
+					class:opacity-0={!approvedFade || approved}
+				>
+					<div class="text-2xl">✅</div>
+					<div>
+						Codeball <span class="text-green-900">[bot]</span> approved
+						<span class="hidden lg:inline">these changes</span>
+					</div>
+					<div class="flex-1" />
+					<div><span class="hidden lg:inline">just</span> now</div>
 				</div>
-				<div class="flex-1" />
-				<div><span class="hidden lg:inline">just</span> now</div>
 			</div>
 		</div>
-	</div>
 
-	<div
-		class="md_mt-0 duration-250 mt-8 flex w-full items-start transition-opacity md:absolute md:top-64 md:left-16 md:hover:opacity-100"
-		class:md:opacity-50={hoverPull}
-		class:md:opacity-75={!hoverPull}
-	>
-		<pre
-			class="block flex-1 rounded-md bg-black p-4 leading-7 text-white drop-shadow-lg"
-			style="text-shadow: 0 0 10px bisque">
+		<div
+			class="md_mt-0 duration-250 mt-8 flex w-full items-start transition-opacity md:absolute md:top-64 md:left-16 md:hover:opacity-100"
+			class:md:opacity-50={hoverPull}
+			class:md:opacity-75={!hoverPull}
+		>
+			<pre
+				class="block flex-1 rounded-md bg-black p-4 leading-7 text-white drop-shadow-lg"
+				style="text-shadow: 0 0 10px bisque">
 &#123;
     "author": <JsonItem target={username}>"{outputUsername}"</JsonItem>,
     "authorScore": <JsonItem target={username}>{outputUsernameCreditScore}</JsonItem>,
@@ -259,16 +266,17 @@
     "kingOfTheHillScore": <JsonItem target={branch}>{outputKingOfTheHill}</JsonItem>,
     "simplicityRanking": <JsonItem target={branch}>{outputSimplicityRanking}</JsonItem>,
     "fileReputation": <JsonItem target={fileName}>{outputReputation}</JsonItem>,<span
-				class="hidden md:inline">
+					class="hidden md:inline">
     "patterns": <JsonItem target={fileName}
-					>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</JsonItem
-				>,</span
-			>
+						>{fileName.done ? '[19333, 52185, 85664, 35212, 80203]' : '[]'}</JsonItem
+					>,</span
+				>
 	...
 &#125;
 </pre>
+		</div>
 	</div>
-</div>
+</Visibility>
 
 <style>
 	@property --scanner-pos {
