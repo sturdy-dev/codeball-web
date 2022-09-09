@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
 	export const load = () => ({
 		stuff: {
-			title: 'Codeball Action'
+			title: 'Codeball Action',
+			description: 'Learn how to use and configure the Codeball GitHub Action'
 		}
 	});
 </script>

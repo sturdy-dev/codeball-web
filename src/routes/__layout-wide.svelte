@@ -5,7 +5,9 @@
 
 	export const load: Load = async () =>
 		get()
-			.then(({ login }) => login)
+			.then(({ login }) => {
+				login;
+			})
 			.catch((err) => {
 				if (err instanceof NotFoundError) {
 					return undefined;

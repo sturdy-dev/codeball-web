@@ -2,7 +2,10 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ stuff: { login } }) => ({
-		stuff: { title: 'Codeball Approver' },
+		stuff: {
+			title: 'Codeball Approver',
+			description: 'Learn about risks in Pull Requests, and fast track and auto-approve safe PRs'
+		},
 		props: { login }
 	});
 </script>
@@ -10,7 +13,6 @@
 <script lang="ts">
 	import { AnalyzeForm } from '$lib/components/index';
 	import AuthButton from '$lib/components/auth/AuthButton.svelte';
-	import Button from '$lib/Button.svelte';
 	import Hero from '$lib/components/index/Hero.svelte';
 	import FeatureList from '$lib/components/index/FeatureList.svelte';
 	import FeatureBox from '$lib/components/index/FeatureBox.svelte';

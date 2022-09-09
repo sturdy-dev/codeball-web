@@ -1,10 +1,10 @@
 <script lang="ts" context="module">
-	import type { Load } from '@sveltejs/kit';
-
-	export const load: Load = async ({ stuff: { login } }) => ({
-		props: { login: login ?? null },
+	export const load = async ({ stuff }) => ({
+		props: { login: stuff?.login ?? null },
 		stuff: {
-			showAnnouncementBanner: false
+			title: 'Codeball – AI Powered Code Review',
+			description:
+				'Codeball finds bugs in your Pull Requests, lets you ship faster and with higher confidence.'
 		}
 	});
 </script>
