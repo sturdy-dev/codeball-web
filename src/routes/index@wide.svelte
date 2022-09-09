@@ -14,6 +14,7 @@
 	import Button from '$lib/Button.svelte';
 
 	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
+	import armadilloCoffeeHD from '$lib/armadillo/coffee-2-tight.png?preset=hd&srcset';
 	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
 	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
 	import Animation from '../lib/components/index/scanner/Animation.svelte';
@@ -42,12 +43,14 @@
 	</slot>
 
 	<slot slot="right">
-		<div class="m-16 h-[30rem] w-[20rem] rounded-xl bg-orange-300" />
+        <div class="" >
+            <img srcset={armadilloCoffeeHD} class="" />
+        </div>
 	</slot>
 </Hero>
 
 <div class="flex flex-col items-center gap-32 bg-white px-4 py-32 md:px-24">
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex flex-col items-center gap-4 ">
 		<div class="flex flex-col items-center">
 			<h2 class="text-md uppercase text-gray-500">How it works</h2>
 		</div>
@@ -60,7 +63,7 @@
 		</p>
 	</div>
 
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex flex-col items-center gap-4 ">
 		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Run</span>
 		<div class="text-4xl font-extrabold text-slate-800">Codeball evaluates new Pull Requests</div>
 
@@ -71,10 +74,11 @@
 
 		<Animation />
 
-		<div class="mt-64" />
+        <!-- To compensate for the absolute positioning in the Animation -->
+		<div class="mt-[13rem]" />
 	</div>
 
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex flex-col items-center gap-4 ">
 		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Know</span>
 		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
 			Codeball notifies you about new problems and risks. Add labels, fail the tests, or add an
@@ -91,7 +95,7 @@
 		</span>
 	</div>
 
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex flex-col items-center gap-4 ">
 		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Configure</span>
 		<div class="text-4xl font-extrabold text-slate-800">Configure Codeball to your needs</div>
 		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
@@ -100,8 +104,8 @@
 	</div>
 </div>
 
-<div class=" flex flex-col items-center gap-16 bg-orange-50 py-16">
-	<div class="my-8 flex flex-col items-center">
+<div class="flex flex-col items-center gap-16 bg-orange-50 py-16">
+	<div class="flex flex-col items-center gap-4 ">
 		<h2 class="text-md uppercase text-gray-500">Supports them all</h2>
 		<p class="max-w-lg text-center font-mono font-light leading-relaxed text-slate-600">
 			Go, TypeScript, Java, HTML, C#, Ruby, C++, Rust, Python, JavaScript, Swift, CSS, and over 20
@@ -109,7 +113,7 @@
 		</p>
 	</div>
 
-	<div class="inline-flex items-center space-x-2">
+	<div class="inline-flex items-center space-x-2 ">
 		<Button color="orange" href="/approver" event="umami--click--index-get-started">
 			Get started
 		</Button>
@@ -117,7 +121,7 @@
 		<Button color="violet" href="/approver" event="umami--click--try-the-demo">Try the demo</Button>
 	</div>
 
-	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed">
+	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed ">
 		<h2 class="text-5xl font-bold text-gray-800">
 			Avoid reckless merging, Codeball identifies and labels risky PRs
 		</h2>
@@ -128,7 +132,7 @@
 		</p>
 	</div>
 
-	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed">
+	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed ">
 		<h2 class="max-w-3xl pt-16 text-5xl font-bold text-gray-800">
 			Skip code review, Codeball approves your <span class="text-gray-400">(good)</span> PRs!
 		</h2>
