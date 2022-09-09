@@ -18,90 +18,87 @@
 	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
 	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
 	import Animation from '../lib/components/index/scanner/Animation.svelte';
+	import Step from '../lib/components/index/Step.svelte';
 
 	export let login: string | null;
 </script>
 
 <Hero>
 	<slot slot="left">
-		<h1 class="max-w-2xl text-8xl font-bold tracking-tight">AI-powered code review</h1>
+		<h1 class="max-w-2xl text-7xl font-bold tracking-tight lg:text-8xl">AI-powered code review</h1>
 
-		<p class="max-w-lg font-light leading-relaxed text-gray-600">
+		<p class="max-w-lg text-justify font-light leading-relaxed text-gray-600">
 			Codeball finds bugs in your Pull Requests, lets you ship faster and with higher confidence.
 			The Codeball AI is trained on millions of code contributions to recognize risky code changes.
 		</p>
 
-		<div class="inline-flex items-center space-x-2">
+		<div class="inline-flex items-center justify-center space-x-2 md:justify-start">
 			<Button color="white" href="/approver" event="umami--click--index-get-started">
 				Get started
 			</Button>
 		</div>
 
-		<div class="max-w-2xl">
+		<div class="mb-16 max-w-2xl">
 			<Logos />
 		</div>
 	</slot>
 
 	<slot slot="right">
-        <div class="" >
-            <img srcset={armadilloCoffeeHD} class="" />
-        </div>
+		<div class="hidden md:block">
+			<img srcset={armadilloCoffeeHD} class="max-w-xs lg:max-w-lg" />
+		</div>
 	</slot>
 </Hero>
 
-<div class="flex flex-col items-center gap-32 bg-white px-4 py-32 md:px-24">
-	<div class="flex flex-col items-center gap-4 ">
-		<div class="flex flex-col items-center">
-			<h2 class="text-md uppercase text-gray-500">How it works</h2>
-		</div>
-
-		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Install</span>
-		<div class="text-4xl font-extrabold text-slate-800">Add the Codeball GitHub Action</div>
-		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
+<div class="flex flex-col items-center gap-12 bg-white px-4 py-12 md:gap-32 md:py-32 md:px-24">
+	<Step pill="Install" title="Add the Codeball GitHub Action">
+		<slot slot="header">
+			<div class="flex flex-col items-center">
+				<h2 class="text-md uppercase text-gray-500">How it works</h2>
+			</div>
+		</slot>
+		<slot slot="text">
 			Codeball is setup and configured using GitHub Actions.<br />
 			Add <code>`.github/workflows/codeball.yml`</code> to a repo, and you're ready to go!
-		</p>
-	</div>
+		</slot>
+	</Step>
 
-	<div class="flex flex-col items-center gap-4 ">
-		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Run</span>
-		<div class="text-4xl font-extrabold text-slate-800">Codeball evaluates new Pull Requests</div>
-
-		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
+	<Step pill="Run" title="Codeball evaluates new Pull Requests">
+		<slot slot="text">
 			Codeball analyzes the Pull Request, and picks up hundreds of parameters to use as the input to
 			the Codeball AI.
-		</p>
+		</slot>
+		<slot slot="extra">
+			<Animation />
 
-		<Animation />
+			<!-- To compensate for the absolute positioning in the Animation -->
+			<div class="md:mt-[13rem]" />
+		</slot>
+	</Step>
 
-        <!-- To compensate for the absolute positioning in the Animation -->
-		<div class="mt-[13rem]" />
-	</div>
-
-	<div class="flex flex-col items-center gap-4 ">
-		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Know</span>
-		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
+	<Step pill="Know" title="Learn your risks">
+		<slot slot="text">
 			Codeball notifies you about new problems and risks. Add labels, fail the tests, or add an
 			approving review.
-		</p>
-		<span class="whitespace-nowrap rounded-xl bg-amber-100 px-2 py-0.5 text-amber-700">
-			codeball:needs-careful-review
-		</span>
-		<span class="whitespace-nowrap rounded-xl bg-sky-100 px-2 py-0.5 text-sky-700 ">
-			codeball:needs-review
-		</span>
-		<span class="whitespace-nowrap rounded-xl bg-green-100 px-2 py-0.5 text-green-700">
-			codeball:approved
-		</span>
-	</div>
+		</slot>
+		<slot slot="extra">
+			<span class="whitespace-nowrap rounded-xl bg-amber-100 px-2 py-0.5 text-amber-700">
+				codeball:needs-careful-review
+			</span>
+			<span class="whitespace-nowrap rounded-xl bg-sky-100 px-2 py-0.5 text-sky-700 ">
+				codeball:needs-review
+			</span>
+			<span class="whitespace-nowrap rounded-xl bg-green-100 px-2 py-0.5 text-green-700">
+				codeball:approved
+			</span>
+		</slot>
+	</Step>
 
-	<div class="flex flex-col items-center gap-4 ">
-		<span class="rounded-xl bg-orange-100 px-4 py-1 font-medium text-orange-800">Configure</span>
-		<div class="text-4xl font-extrabold text-slate-800">Configure Codeball to your needs</div>
-		<p class="max-w-lg text-center font-light leading-relaxed text-slate-600">
+	<Step pill="Configure" title="Configure Codeball to your needs">
+		<slot slot="text">
 			Auto-approve safe PRs or enforce extra review on the risky ones &mdash; You decide!
-		</p>
-	</div>
+		</slot>
+	</Step>
 </div>
 
 <div class="flex flex-col items-center gap-16 bg-orange-50 py-16">
