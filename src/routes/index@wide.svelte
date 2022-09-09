@@ -14,7 +14,6 @@
 	import Button from '$lib/Button.svelte';
 
 	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
-	import armadilloPingPong from '$lib/armadillo/pingpong-2.png?preset=thumbnail&srcset';
 	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
 	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
 	import armadilloAtTheComputerHD from '$lib/armadillo/at-the-computer-2.png?preset=hd&srcset';
@@ -129,27 +128,9 @@
 			</p>
 		</slot>
 		<div slot="action">
-			<Button color="violet" href="/approver" event="umami--click--index-approver-set-up"
-				>Set up</Button
-			>
-		</div>
-	</FeatureBox>
-
-	<FeatureBox title="Codeball Suggester" srcset={armadilloPingPong} pill="BETA">
-		<slot slot="content">
-			<p>
-				The Suggester is powered by OpenAI Codex and converts comment feedback in Code Review to
-				actionable diff suggestions.
-			</p>
-			<p>
-				The Suggester is easy to add to any GitHub repository, with a single click installation
-				using GitHub Actions.
-			</p>
-		</slot>
-		<div slot="action">
-			<Button color="violet" href="/suggester" event="umami--click--index-suggester-go-to-demo"
-				>Go to demo</Button
-			>
+			<Button color="violet" href="/approver" event="umami--click--index-approver-set-up">
+				Set up
+			</Button>
 		</div>
 	</FeatureBox>
 
@@ -187,8 +168,8 @@
 <div class="bg-black py-16 text-white">
 	<div class="mx-auto max-w-7xl space-y-8 p-14 text-center">
 		<h2 class="font-mono text-5xl font-bold">I'm ready</h2>
-		<Button color="black" href="/approver" event="umami--click--index-ready-lets-go"
-			>Let's go!</Button
-		>
+		<Button color="black" href="/approver" event="umami--click--index-ready-lets-go">
+			Let's go!
+		</Button>
 	</div>
 </div>
