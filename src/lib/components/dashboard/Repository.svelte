@@ -4,7 +4,6 @@
 	import { Subscribe } from '$lib/components/subscriptions';
 	import Spinner from '$lib/Spinner.svelte';
 	import { compareAsc } from 'date-fns';
-	import Preferences from './Preferences.svelte';
 
 	export let jobs: Job[] = [];
 	export let loading = false;
@@ -32,8 +31,6 @@
 	{:else}
 		<Subscribe {organization} />
 	{/if}
-
-	<Preferences {organization} {repository} />
 </div>
 <Stats {jobs} />
 <Jobs {jobs} />
