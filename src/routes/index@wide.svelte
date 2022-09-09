@@ -101,7 +101,7 @@
 	</Step>
 </div>
 
-<div class="flex flex-col items-center gap-16 bg-orange-50 py-16">
+<div class="flex flex-col items-center gap-12 bg-orange-50 py-12 md:gap-16 md:py-16">
 	<div class="flex flex-col items-center gap-4 ">
 		<h2 class="text-md uppercase text-gray-500">Supports them all</h2>
 		<p class="max-w-lg text-center font-mono font-light leading-relaxed text-slate-600">
@@ -118,9 +118,11 @@
 		<Button color="violet" href="/approver" event="umami--click--try-the-demo">Try the demo</Button>
 	</div>
 
-	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed ">
+	<div class="ax-w-3xl flex w-full flex-col justify-around gap-4 px-4 leading-relaxed md:px-8 ">
 		<h2 class="text-5xl font-bold text-gray-800">
-			Avoid reckless merging, Codeball identifies and labels risky PRs
+			Avoid reckless merging, Codeball identifies and labels <span class="text-orange-400"
+				>risky PRs</span
+			>
 		</h2>
 		<p class=" text-gray-600 ">
 			Codeball is an AI model trained on millions of code contributions to distinguish between safe
@@ -129,9 +131,10 @@
 		</p>
 	</div>
 
-	<div class="flex w-full max-w-3xl flex-col justify-around gap-4 px-8 leading-relaxed ">
+	<div class="flex w-full max-w-3xl flex-col justify-around gap-4  px-4 leading-relaxed md:px-8 ">
 		<h2 class="max-w-3xl pt-16 text-5xl font-bold text-gray-800">
-			Skip code review, Codeball approves your <span class="text-gray-400">(good)</span> PRs!
+			Skip code review, Codeball <span class="text-orange-400">approves</span> your
+			<span class="text-gray-400">(good)</span> PRs!
 		</h2>
 		<p class="max-w-3xl text-gray-600">
 			Feeling confident and prioritising getting-shit-done? Setup Codeball to automatically approve
