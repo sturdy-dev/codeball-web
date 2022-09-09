@@ -33,22 +33,17 @@
 
 <div class="md:mx-auto md:max-w-7xl">
 	<Popover class="" let:open>
-		<header class="flex items-center justify-between gap-4 p-4 text-black md:flex-row">
-			<div class="float-left flex h-full items-center gap-4 p-2 md:mr-12 md:p-0">
-				<a href="/" on:click={onClickLogo}>
-					<img
-						width="49"
-						height="48"
-						class="h-8 w-8 md:h-12 md:w-12 {animateLogo}"
-						src="/brand/ball/BallWithBrainRaster256.png"
-					/>
-				</a>
-				<a class="text-2xl" href="/">Codeball</a>
+		<header class="flex items-center justify-between gap-6 p-4 text-black md:flex-row">
+			<div class="inline-flex gap-1">
+				<div
+					class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-orange-400"
+				>
+					<span class="text-xl">🧠</span>
+				</div>
+				<a class="text-2xl font-normal tracking-tight text-orange-400" href="/">Codeball</a>
 			</div>
 
-			<div
-				class="grid hidden flex-1 grid-cols-2	items-center	 gap-x-4 md:block md:flex md:space-x-2 "
-			>
+			<div class="grid hidden flex-1 grid-cols-2	items-center gap-x-6 md:block md:flex">
 				{#each header as { href, title, event }}
 					<a
 						class:text-red-700={$page.url.pathname === href}
