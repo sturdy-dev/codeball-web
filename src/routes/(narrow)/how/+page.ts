@@ -7,7 +7,8 @@ export const load : PageLoad= async ({parent}) => {
 		...parentData,
 		meta: {
 			...parentData.meta,
-			title: 'Launching: Codeball 1.0'
+			title: 'How Codeball Works'
 		}
 	};
 };
+
