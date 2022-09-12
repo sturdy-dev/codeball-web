@@ -6,7 +6,7 @@
 	import Go from '../../lib/icons/Go.svelte';
 	import Java from '../../lib/icons/Java.svelte';
 	import JS from '../../lib/icons/JS.svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	export let login: string;
 

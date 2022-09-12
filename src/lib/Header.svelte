@@ -18,17 +18,6 @@
 		{ href: '/faq', title: 'FAQ' },
 		{ href: '/blog', title: 'Blog' }
 	];
-
-	// When clicking logo and already on the index page
-	let animateLogo = '';
-	let timeout;
-	const onClickLogo = () => {
-		animateLogo = 'animate-[spin_0.8s_ease-in-out]';
-		clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			animateLogo = '';
-		}, 1000);
-	};
 </script>
 
 <div class="md:mx-auto md:max-w-7xl">
