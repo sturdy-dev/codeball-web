@@ -60,6 +60,18 @@
 		return events.sort((a, b) => a.created_at.localeCompare(b.created_at));
 	};
 
+	const isApproved = (c: ContributionJob) => {
+		const prob = minProbability(c);
+		const thresh = c?.contribution?.thresholds?.approve || 0.935;
+		return prob >= thresh;
+	};
+
+	const isNeedsCarefulReview = (c: ContributionJob) => {
+		const prob = minProbability(c);
+		const thresh = c?.contribution?.thresholds?.careful_review || 0.3;
+		return prob < thresh;
+	};
+
 	$: latestJobsForContribution = getLatestByURL(jobsByContributionURL).sort(byPredictedAtDesc);
 
 	$: showJobs = latestJobsForContribution;
@@ -73,7 +85,8 @@
 	</div>
 
 	{#each showJobs as job}
-		{@const codeballApproved = job.contribution.predicted_outcome.prediction === 'approved'}
+		{@const codeballApproved = isApproved(job)}
+		{@const needsCarefulReview = isNeedsCarefulReview(job)}
 		{@const haveActualOutcome = !!job.contribution.actual_outcome}
 		{@const isMerged = job.contribution.actual_outcome?.merged_at}
 		{@const isClosed = job.contribution.actual_outcome?.closed_at}
@@ -94,16 +107,24 @@
 
 				<div class="space-y-1">
 					<span
-						class="block w-32 py-2 text-center text-xs font-semibold leading-5"
+						class="block w-36 py-2 text-center text-xs font-semibold leading-5"
 						class:bg-green-100={codeballApproved}
 						class:text-green-800={codeballApproved}
+						class:bg-orange-100={needsCarefulReview}
+						class:text-orange-800={needsCarefulReview}
 					>
-						{codeballApproved ? 'CODEBALL 👍' : 'NOT APPROVED'}
+						{#if codeballApproved}
+							APPROVED 👍
+						{:else if needsCarefulReview}
+							CAREFUL REVIEW 👀
+						{:else}
+							NORMAL
+						{/if}
 					</span>
 
-					<span class="block text-center text-xs text-gray-400" title="Confidence"
-						>{prob.toFixed(3)}</span
-					>
+					<span class="block text-center text-xs text-gray-400" title="Confidence">
+						{prob.toFixed(3)}
+					</span>
 				</div>
 
 				<div class="space-y-1">

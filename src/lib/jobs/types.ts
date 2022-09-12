@@ -51,6 +51,8 @@ export type Contribution = {
 	predicted_outcome?: PredictedOutcome;
 	actual_outcome?: ActualOutcome;
 
+	thresholds?: ContributionThresholds;
+
 	merged_without_objections: boolean; // Deprecated
 	merged_at: any; // Deprecated
 	result: 'inconclusive' | 'approved' | 'not_approved' | null; // Deprecated
@@ -86,4 +88,9 @@ export type Meta = {
 
 export type ContributionFile = {
 	name: string;
+};
+
+export type ContributionThresholds = {
+	approve?: number;
+	careful_review?: number;
 };
