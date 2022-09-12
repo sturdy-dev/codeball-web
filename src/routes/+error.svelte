@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	throw new Error("@migration task: Replace error load function (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3293209)");
+	// throw new Error("@migration task: Replace error load function (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3293209)");
 
 	// import { BadRequestError, NotFoundError, Unauthorized } from '$lib/api';
 	// import type { Load } from '@sveltejs/kit';

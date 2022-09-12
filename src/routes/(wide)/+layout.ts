@@ -12,11 +12,12 @@ export const load: LayoutLoad = async () =>
 			throw err;
 		})
 		.then((login) => ({
-			stuff: {
-				title: 'Codeball | AI-powered code review',
-				description: 'AI-powered code review',
-				ogimage: 'https://codeball.ai/og-image.png',
-				login
-			},
-			props: { login }
+			// stuff: {
+			// 	title: 'Codeball | AI-powered code review',
+			// 	description: 'AI-powered code review',
+			// 	ogimage: 'https://codeball.ai/og-image.png',
+			// 	login
+			// },
+			// props: { login },
+			login,
 		}));
