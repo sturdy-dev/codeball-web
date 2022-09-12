@@ -1,5 +1,13 @@
-export const load = () => ({
+import type {PageLoad} from "@sveltejs/kit";
 
-		title: 'Codeball – Actually improve your DORA metrics '
+export const load : PageLoad= async ({parent}) => {
+     const parentData = await parent();
 
-});
+    return {
+        ...parentData,
+        meta: {
+            ...parentData.meta,
+            title: "Codeball – Actually improve your DORA metrics",
+        }
+    };
+};
