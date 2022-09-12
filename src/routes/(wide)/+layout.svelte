@@ -19,6 +19,7 @@
 	}
 
 	export let login: string | null;
+	export let data;
 
 	onMount(() => {
 		if (!dev) {
@@ -48,7 +49,7 @@
 </svelte:head> --->
 
 <main class="min-h-screen w-full bg-orange-50">
-	<Header {login} />
+	<Header login={data.login} />
 
 	<slot />
 
