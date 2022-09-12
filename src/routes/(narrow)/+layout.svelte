@@ -1,30 +1,3 @@
-<script context="module" lang="ts">
-	// throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// import { get } from '$lib/github';
-	// import { NotFoundError } from '$lib/api';
-	// import type { Load } from '@sveltejs/kit';
-
-	// export const load: Load = async () =>
-	// 	get()
-	// 		.then(({ login }) => login)
-	// 		.catch((err) => {
-	// 			if (err instanceof NotFoundError) {
-	// 				return undefined;
-	// 			}
-	// 			throw err;
-	// 		})
-	// 		.then((login) => ({
-	// 			stuff: {
-	// 				title: 'Codeball | AI-powered code review',
-	// 				description: 'AI-powered code review',
-	// 				ogimage: 'https://codeball.ai/og-image.png',
-	// 				login
-	// 			},
-	// 			props: { login }
-	// 		}));
-</script>
-
 <script lang="ts">
 	import '../../app.css';
 	import favIcon from '../../lib/assets/CodeballIcon-128.ico';
@@ -54,6 +27,24 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<title>{$page.data.meta.title}</title>
+	<meta name="description" content={$page.data.meta.description} />
+	<link rel="icon" type="image/svg" href={favIcon} />
+	<meta property="og:image" content={$page.data.meta.ogimage} />
+	<meta property="og:title" content={$page.data.meta.title} />
+	<meta property="og:description" content={$page.data.meta.description} />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	{#if !dev}
+		<script
+				async
+				defer
+				data-website-id="a9b93947-2a07-4d7c-bd02-ba2dce8d446a"
+				src="https://umami.codeball.ai/umami.js"></script>
+	{/if}
+</svelte:head>
 
 <main class="flex min-h-screen flex-col items-center bg-white">
 	<div class="w-full max-w-7xl flex-shrink-0">

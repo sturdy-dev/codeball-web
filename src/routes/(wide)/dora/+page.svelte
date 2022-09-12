@@ -6,6 +6,8 @@
 	import armadilloPlug from '../../../lib/armadillo/plug.png';
 	import armadilloDataScientist from '../../../lib/armadillo/data-scientist.png';
 	import armadilloCoffee from '../../../lib/armadillo/coffee-2.png';
+
+	export let data;
 </script>
 
 <Hero>
