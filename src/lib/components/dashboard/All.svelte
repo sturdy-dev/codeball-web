@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { type Job } from '$lib/jobs';
-	import { Jobs, Stats, OrganisationPicker } from '$lib/components/dashboard';
+	import { Jobs, Stats, OrganisationPicker, Histogram } from '$lib/components/dashboard';
 
 	const githubAppName = import.meta.env.VITE_GITHUB_APP_NAME;
 
@@ -8,6 +8,7 @@
 </script>
 
 <Stats {jobs} />
+
 <div class="flex space-x-2">
 	<div class="flex flex-col space-y-2">
 		<OrganisationPicker {jobs} />
