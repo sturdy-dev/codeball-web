@@ -19,7 +19,7 @@
 		"@types/cookie": "^0.4.1",
 		"@types/diff-match-patch": "^1.0.32",
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
-		"@typescript-eslint/parser": "^5.36.1",
+		"@typescript-eslint/parser": "^5.36.2",
 		"autoprefixer": "^10.4.7",
 		"eslint": "^8.12.0",
 		"eslint-config-prettier": "^8.3.0",
