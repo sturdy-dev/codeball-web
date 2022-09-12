@@ -7,3 +7,4 @@ export { default as OrganisationPicker } from './OrganisationPicker.svelte';
 export { default as All } from './All.svelte';
 export { default as Repository } from './Repository.svelte';
 export { default as GetStarted } from './GetStarted.svelte';
+export { default as Histogram } from './Histogram.svelte';

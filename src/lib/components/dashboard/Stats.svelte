@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { type ContributionJob, type Job } from '$lib/jobs';
 	import Time from './Time.svelte';
+	import Histogram from '$lib/components/dashboard/Histogram.svelte';
 
 	export let jobs: Job[];
 
@@ -90,49 +91,52 @@
 	).length;
 </script>
 
-<div class="flex gap-2">
-	<div class="inline-flex grow flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem]">
+<div class="grid grid-cols-3 gap-2">
+	<div
+		class="row-start-1 row-end-3 inline-flex grow flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem] lg:row-end-4"
+	>
 		<span class="text-center font-bold uppercase">PRs</span>
 		<div class="space-x-1 text-center">
 			<span class="text-2xl text-white md:text-6xl">{statNumberOfContributions}</span><span />
 		</div>
 	</div>
 
-	<div class="flex grow flex-col gap-2 md:min-w-[12rem]">
-		<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
-			<span class="text-center font-bold uppercase">Avg. Lead Time</span>
-			<div class="space-x-1 text-center">
-				<Time seconds={timeToMergeAvgSeconds} />
-			</div>
-			<span class="text-center text-sm">All PRs</span>
+	<div class="inline-flex min-w-[12rem] flex-col space-y-2 bg-gray-400 p-4">
+		<span class="text-center font-bold uppercase">Avg. Lead Time</span>
+		<div class="space-x-1 text-center">
+			<Time seconds={timeToMergeAvgSeconds} />
 		</div>
-
-		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem]">
-			<div class="space-x-1 text-center">
-				<Time seconds={timeToMergeApprovedByCodeballAvgSeconds} />
-			</div>
-			<span class="text-center text-sm">With Codeball</span>
-		</div>
+		<span class="text-center text-sm">All PRs</span>
 	</div>
 
-	<div class=" flex grow flex-col gap-2 md:min-w-[12rem]">
-		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
-			<span class="text-center font-bold uppercase">Codeball</span>
-			<div class="space-x-1 text-center">
-				<span class="text-2xl text-white md:text-6xl"
-					>{mergedContributionJobsApprovedByCodeball.length}</span
-				>
-			</div>
-			<span class="text-center text-sm">Approved</span>
+	<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
+		<span class="text-center font-bold uppercase">Codeball</span>
+		<div class="space-x-1 text-center">
+			<span class="text-2xl text-white md:text-6xl">
+				{mergedContributionJobsApprovedByCodeball.length}
+			</span>
 		</div>
+		<span class="text-center text-sm">Approved</span>
+	</div>
 
-		<div class="inline-flex flex-col space-y-2 bg-gray-400 p-4">
-			<div class="space-x-1 text-center">
-				<span class="text-2xl text-white md:text-6xl"
-					>{mergedContributionJobsRejectedByCodeball.length}</span
-				>
-			</div>
-			<span class="text-center text-sm">Not Approved</span>
+	<div class="inline-flex h-full flex-col space-y-2 bg-gray-400 p-4 md:min-w-[12rem]">
+		<div class="space-x-1 text-center">
+			<Time seconds={timeToMergeApprovedByCodeballAvgSeconds} />
 		</div>
+		<span class="text-center text-sm">When Approved by Codeball</span>
+	</div>
+
+	<div class="inline-flex h-full flex-col space-y-2 bg-gray-400 p-4">
+		<div class="space-x-1 text-center">
+			<span class="text-2xl text-white md:text-6xl">
+				{mergedContributionJobsRejectedByCodeball.length}
+			</span>
+		</div>
+		<span class="text-center text-sm">Not Approved</span>
+	</div>
+
+	<div class="col-start-2 col-end-4 hidden flex-col justify-center bg-gray-400 p-4 lg:inline-flex">
+		<span class="text-center font-bold uppercase">Confidence Histogram</span>
+		<Histogram {jobs} />
 	</div>
 </div>

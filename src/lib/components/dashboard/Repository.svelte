@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { isPublic as isJobPublic, type Job } from '$lib/jobs';
-	import { Jobs, Stats } from '$lib/components/dashboard';
+	import { Jobs, Stats, Histogram } from '$lib/components/dashboard';
 	import { Subscribe } from '$lib/components/subscriptions';
 	import Spinner from '$lib/Spinner.svelte';
 	import { compareAsc } from 'date-fns';
