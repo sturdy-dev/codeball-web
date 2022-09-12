@@ -45,19 +45,19 @@
 		});
 	}
 
-	export let login: string | null;
+	export let data;
 
 	onMount(() => {
 		if (!dev) {
 			posthog.init('phc_5wtSq4CFj2AtKs04bAwFrP8ohmH0OKWmxy0QxZUMY1W');
-			if (login) posthog.identify(`${login}@github`);
+			if (data.login) posthog.identify(`${data.login}@github`);
 		}
 	});
 </script>
 
 <main class="flex min-h-screen flex-col items-center bg-white">
 	<div class="w-full max-w-7xl flex-shrink-0">
-		<Header {login} />
+		<Header login={data.login} />
 	</div>
 
 	<div class="w-full max-w-7xl flex-1 p-4">

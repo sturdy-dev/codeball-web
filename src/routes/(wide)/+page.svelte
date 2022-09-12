@@ -8,8 +8,6 @@
 	import armadilloGraph from '../../lib/armadillo/graph.png';
 	import Animation from '../../lib/components/index/scanner/Animation.svelte';
 	import Step from '../../lib/components/index/Step.svelte';
-
-	export let login: string | null;
 </script>
 
 <Hero>
