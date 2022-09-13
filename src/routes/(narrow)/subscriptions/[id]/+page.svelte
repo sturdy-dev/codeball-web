@@ -1,25 +1,10 @@
-<script context="module" lang="ts">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// export let prerender = false;
-
-	// import type { Load } from '@sveltejs/kit';
-	// import { upcoming } from '$lib/subscriptions';
-
-	// export const load: Load = async ({ params: { id }, stuff: { login }, fetch }) => ({
-	// 	stuff: { title: 'Subscription' },
-	// 	props: { login, upcomingInvoice: await upcoming(id, { fetch }) }
-	// });
-</script>
-
 <script lang="ts">
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import ManageButton from '../../../../lib/components/subscriptions/ManageButton.svelte';
 	import CurrencyAmount from '../../../../lib/components/subscriptions/CurrencyAmount.svelte';
-	import type { UpcomingInvoice } from '../../../../lib/subscriptions';
 
-	export let upcomingInvoice: UpcomingInvoice;
+	export let data;
+	let {upcomingInvoice} = data;
+	$: upcomingInvoice = data.upcomingInvoice
 </script>
 
 <div class="prose font-mono">
