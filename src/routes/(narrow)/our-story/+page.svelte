@@ -1,5 +1,5 @@
 <script lang="ts">
-	import armadilloThumbsUpHD from '../../../lib/armadillo/thumbs-up.png';
+	import armadilloThumbsUpHD from '$lib/armadillo/thumbs-up.png';
 </script>
 
 <article class="mx-auto max-w-[70rem] space-y-48 py-32 md:px-8">

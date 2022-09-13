@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ReadMore from '../../../lib/blog/ReadMore.svelte';
+	import ReadMore from '$lib/blog/ReadMore.svelte';
 </script>
 
 <article class="font-mono">

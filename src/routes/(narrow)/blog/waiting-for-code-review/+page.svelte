@@ -13,8 +13,8 @@
 </script>
 
 <script lang="ts">
-	import Button from '../../../../lib/Button.svelte';
-	import ReadMore from '../../../../lib/blog/ReadMore.svelte';
+	import Button from '$lib/Button.svelte';
+	import ReadMore from '$lib/blog/ReadMore.svelte';
 
 	import mergeTimesNoObjection from '$lib/assets/merge_times_no_objection.svg';
 	import mergeTimesWithObjection from '$lib/assets/merge_times_with_objection.svg';

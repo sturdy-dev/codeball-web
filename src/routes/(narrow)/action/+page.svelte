@@ -1,5 +1,5 @@
 <script lang="ts">
-	import writePrivateForks from '../../../lib/assets/github-screenshot-permissions-private-repo.png';
+	import writePrivateForks from '$lib/assets/github-screenshot-permissions-private-repo.png';
 </script>
 
 <article class="font-mono">

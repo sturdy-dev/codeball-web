@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '../../../lib/Button.svelte';
-	import ManageButton from '../../../lib/components/subscriptions/ManageButton.svelte';
-	import SubscribeButton from '../../../lib/components/subscriptions/SubscribeButton.svelte';
-	import GitHubLoginButton from '../../../lib/components/index/GitHubLoginButton.svelte';
+	import Button from '$lib/Button.svelte';
+	import ManageButton from '$lib/components/subscriptions/ManageButton.svelte';
+	import SubscribeButton from '$lib/components/subscriptions/SubscribeButton.svelte';
+	import GitHubLoginButton from '$lib/components/index/GitHubLoginButton.svelte';
 
 	export let data;
 

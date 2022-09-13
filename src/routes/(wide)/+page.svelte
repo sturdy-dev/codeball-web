@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Logos, FeatureList, FeatureBox, Hero } from '../../lib/components/index';
-	import Button from '../../lib/Button.svelte';
+	import { Logos, FeatureList, FeatureBox, Hero } from '$lib/components/index';
+	import Button from '$lib/Button.svelte';
 
-	import armadilloCoffee from '../../lib/armadillo/coffee-2.png';
-	import armadilloCoffeeHD from '../../lib/armadillo/coffee-2-tight.png';
-	import armadilloTrackAndField from '../../lib/armadillo/track-and-field.png';
-	import armadilloGraph from '../../lib/armadillo/graph.png';
-	import Animation from '../../lib/components/index/scanner/Animation.svelte';
-	import Step from '../../lib/components/index/Step.svelte';
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png';
+	import armadilloCoffeeHD from '$lib/armadillo/coffee-2-tight.png';
+	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png';
+	import armadilloGraph from '$lib/armadillo/graph.png';
+	import Animation from '$lib/components/index/scanner/Animation.svelte';
+	import Step from '$lib/components/index/Step.svelte';
 </script>
 
 <Hero>

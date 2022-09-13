@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ManageButton from '../../../../lib/components/subscriptions/ManageButton.svelte';
-	import CurrencyAmount from '../../../../lib/components/subscriptions/CurrencyAmount.svelte';
+	import ManageButton from '$lib/components/subscriptions/ManageButton.svelte';
+	import CurrencyAmount from '$lib/components/subscriptions/CurrencyAmount.svelte';
 
 	export let data;
 	let {upcomingInvoice} = data;

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import '../../app.css';
-	import favIcon from '../../lib/assets/CodeballIcon-128.ico';
+	import favIcon from '$lib/assets/CodeballIcon-128.ico';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import posthog from 'posthog-js';
 	import { browser, dev } from '$app/environment';
-	import { webVitals } from '../../lib/vitals';
-	import Header from '../../lib/Header.svelte';
-	import Footer from '../../lib/Footer.svelte';
+	import { webVitals } from '$lib/vitals';
+	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
 
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 	$: if (!dev && browser && analyticsId) {

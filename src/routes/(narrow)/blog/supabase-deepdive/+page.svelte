@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '../../../../lib/Button.svelte';
-	import ReadMore from '../../../../lib/blog/ReadMore.svelte';
+	import Button from '$lib/Button.svelte';
+	import ReadMore from '$lib/blog/ReadMore.svelte';
 </script>
 
 <div class="prose mb-4">
