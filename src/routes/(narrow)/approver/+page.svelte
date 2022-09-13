@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { AnalyzeForm } from '../../../lib/components/index';
-	import AuthButton from '../../../lib/components/auth/AuthButton.svelte';
-	import Hero from '../../../lib/components/index/Hero.svelte';
-	import FeatureList from '../../../lib/components/index/FeatureList.svelte';
-	import FeatureBox from '../../../lib/components/index/FeatureBox.svelte';
+	import { AnalyzeForm } from '$lib/components/index';
+	import AuthButton from '$lib/components/auth/AuthButton.svelte';
+	import Hero from '$lib/components/index/Hero.svelte';
+	import FeatureList from '$lib/components/index/FeatureList.svelte';
+	import FeatureBox from '$lib/components/index/FeatureBox.svelte';
 
-	import armadilloThumbsUpHD from '../../../lib/armadillo/thumbs-up.png';
-	import armadilloDataScientist from '../../../lib/armadillo/data-scientist.png';
-	import armadilloCoffee from '../../../lib/armadillo/coffee-2.png';
-	import InstallAction from '../../../lib/components/InstallAction.svelte';
+	import armadilloThumbsUpHD from '$lib/armadillo/thumbs-up.png';
+	import armadilloDataScientist from '$lib/armadillo/data-scientist.png';
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png';
+	import InstallAction from '$lib/components/InstallAction.svelte';
 
 	export let data;
 

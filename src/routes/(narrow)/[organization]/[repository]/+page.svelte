@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dashboard } from '../../../../lib/components/dashboard';
+	import { Dashboard } from '$lib/components/dashboard';
 	import { page } from '$app/stores';
 	const { organization, repository } = $page.params;
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { BASE_URL } from '../../../../lib/api';
+	import { BASE_URL } from '$lib/api';
 	import { goto } from '$app/navigation';
-	import Spinner from '../../../../lib/Spinner.svelte';
+	import Spinner from '$lib/Spinner.svelte';
 
 	const validateParams = async () => {
 		const urlParams = new URLSearchParams(window.location.search);

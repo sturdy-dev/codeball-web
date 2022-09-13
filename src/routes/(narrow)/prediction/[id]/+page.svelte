@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Single } from '../../../../lib/components/jobs';
+	import { Single } from '$lib/components/jobs';
 
 	export let data;
 </script>
