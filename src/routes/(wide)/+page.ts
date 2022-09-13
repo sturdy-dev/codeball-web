@@ -1,6 +1,6 @@
-import type {PageLoad} from "@sveltejs/kit";
+import type { PageLoad } from '@sveltejs/kit';
 
-export const load : PageLoad= async ({parent}) => {
+export const load: PageLoad = async ({ parent }) => {
 	const parentData = await parent();
 
 	return {
@@ -8,7 +8,8 @@ export const load : PageLoad= async ({parent}) => {
 		meta: {
 			...parentData.meta,
 			title: 'Codeball – AI Powered Code Review',
-			description: 'Codeball finds bugs in your Pull Requests, lets you ship faster and with higher confidence.'
+			description:
+				'Codeball finds bugs in your Pull Requests, lets you ship faster and with higher confidence.'
 		}
 	};
 };

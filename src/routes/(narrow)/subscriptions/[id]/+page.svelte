@@ -3,8 +3,8 @@
 	import CurrencyAmount from '$lib/components/subscriptions/CurrencyAmount.svelte';
 
 	export let data;
-	let {upcomingInvoice} = data;
-	$: upcomingInvoice = data.upcomingInvoice
+	let { upcomingInvoice } = data;
+	$: upcomingInvoice = data.upcomingInvoice;
 </script>
 
 <div class="prose font-mono">

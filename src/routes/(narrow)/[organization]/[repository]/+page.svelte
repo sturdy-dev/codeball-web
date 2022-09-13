@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	const { organization, repository } = $page.params;
 
-    export let data;
+	export let data;
 </script>
 
 <Dashboard {organization} {repository} login={data.login} />

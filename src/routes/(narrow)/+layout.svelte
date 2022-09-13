@@ -39,10 +39,10 @@
 
 	{#if !dev}
 		<script
-				async
-				defer
-				data-website-id="a9b93947-2a07-4d7c-bd02-ba2dce8d446a"
-				src="https://umami.codeball.ai/umami.js"></script>
+			async
+			defer
+			data-website-id="a9b93947-2a07-4d7c-bd02-ba2dce8d446a"
+			src="https://umami.codeball.ai/umami.js"></script>
 	{/if}
 </svelte:head>
 

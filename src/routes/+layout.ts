@@ -15,7 +15,7 @@ export const load: LayoutLoad = async () =>
 			meta: {
 				title: 'Codeball | AI-powered code review',
 				description: 'AI-powered code review',
-				ogimage: 'https://codeball.ai/og-image.png',
+				ogimage: 'https://codeball.ai/og-image.png'
 			},
-			login,
+			login
 		}));
