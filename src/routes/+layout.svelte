@@ -3,6 +3,27 @@
 	import favIcon from '$lib/assets/CodeballIcon-128.ico';
 	import { page } from '$app/stores';
 	import { browser, dev } from '$app/environment';
+	import { webVitals } from '$lib/vitals';
+	import { onMount } from 'svelte';
+	import posthog from 'posthog-js';
+
+	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+	$: if (!dev && browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
+
+	export let data;
+
+	onMount(() => {
+		if (!dev) {
+			posthog.init('phc_5wtSq4CFj2AtKs04bAwFrP8ohmH0OKWmxy0QxZUMY1W');
+			if (data.login) posthog.identify(`${data.login}@github`);
+		}
+	});
 </script>
 
 <svelte:head>
