@@ -2,10 +2,11 @@
 	import Button from '$lib/Button.svelte';
 
 	import { FeatureList, BigFeatureBox, FeatureBox, Hero } from '$lib/components/index';
-	import armadilloGraphHD from '$lib/armadillo/graph.png';
-	import armadilloPlug from '$lib/armadillo/plug.png';
-	import armadilloDataScientist from '$lib/armadillo/data-scientist.png';
-	import armadilloCoffee from '$lib/armadillo/coffee-2.png';
+
+	import armadilloGraphHD from '$lib/armadillo/graph.png?preset=hd&srcset';
+	import armadilloPlug from '$lib/armadillo/plug.png?preset=thumbnail&srcset';
+	import armadilloDataScientist from '$lib/armadillo/data-scientist.png?preset=thumbnail&srcset';
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
 
 	export let data;
 </script>

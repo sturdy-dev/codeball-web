@@ -2,10 +2,11 @@
 	import { Logos, FeatureList, FeatureBox, Hero } from '$lib/components/index';
 	import Button from '$lib/Button.svelte';
 
-	import armadilloCoffee from '$lib/armadillo/coffee-2.png';
-	import armadilloCoffeeHD from '$lib/armadillo/coffee-2-tight.png';
-	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png';
-	import armadilloGraph from '$lib/armadillo/graph.png';
+	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
+	import armadilloCoffeeHD from '$lib/armadillo/coffee-2-tight.png?preset=hd&srcset';
+	import armadilloTrackAndField from '$lib/armadillo/track-and-field.png?preset=thumbnail&srcset';
+	import armadilloGraph from '$lib/armadillo/graph.png?preset=thumbnail&srcset';
+
 	import Animation from '$lib/components/index/scanner/Animation.svelte';
 	import Step from '$lib/components/index/Step.svelte';
 </script>
