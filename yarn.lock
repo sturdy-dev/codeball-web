@@ -210,7 +210,7 @@
     set-cookie-parser "^2.4.8"
     tiny-glob "^0.2.9"
 
-"@sveltejs/adapter-node@^1.0.0-next.89":
+"@sveltejs/adapter-node@^1.0.0-next.90":
   version "1.0.0-next.90"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.90.tgz#666d6ac285ee923e3aa31734f9b914e9decf7a0c"
   integrity sha512-xf2mjGMdtOGm9ht/8a/hndRq/WS+IYX3CDrzrqS53y5gcEElXUMSvBe0W6B4dkbVhvLg8l5gyrfW8bWht2BNlg==
@@ -225,10 +225,10 @@
     "@vercel/nft" "^0.22.0"
     esbuild "^0.14.48"
 
-"@sveltejs/kit@1.0.0-next.480":
-  version "1.0.0-next.480"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.480.tgz#cbe3cd7051d50480ad1f3515492c7db779465f78"
-  integrity sha512-RnltVDZFksAkeIZ0wgMQDr4POz3WZxSDy6D/ycIjrz3VXMDYWxKRqmTEI7Yl7TxPgUabeYHGRm/qI+nSXOb/Yw==
+"@sveltejs/kit@1.0.0-next.481":
+  version "1.0.0-next.481"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.481.tgz#661204a206bcdc5e11a12efb8bd8c0f0d1b366fe"
+  integrity sha512-rgt6KKjUmx/S/a/duntAp+yds9F3fSm6uq8nvfWHuT1aVGSC5sOdNDrKqck7PCUc9/GPJ6WJu3et5R69hqevRw==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.5"
     cookie "^0.5.0"
