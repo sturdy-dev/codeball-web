@@ -1,39 +1,14 @@
-<script context="module" lang="ts">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// export let prerender = false;
-
-	// import type { Load } from '@sveltejs/kit';
-	// import { list } from '$lib/subscriptions';
-	// import { listOrganizations } from '$lib/github';
-
-	// export const load: Load = async ({ stuff: { login }, fetch }) =>
-	// 	Promise.all([list({}, { fetch }), listOrganizations({ fetch })]).then(
-	// 		([{ subscriptions }, { organizations }]) => ({
-	// 			stuff: { title: 'Subscriptions' },
-	// 			props: {
-	// 				login,
-	// 				subscriptions,
-	// 				organizations
-	// 			}
-	// 		})
-	// 	);
-</script>
-
 <script lang="ts">
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Button from '../../../lib/Button.svelte';
 	import ManageButton from '../../../lib/components/subscriptions/ManageButton.svelte';
 	import SubscribeButton from '../../../lib/components/subscriptions/SubscribeButton.svelte';
-
-	import type { Subscription } from '../../../lib/subscriptions';
-	import type { Organization } from '../../../lib/github';
 	import GitHubLoginButton from '../../../lib/components/index/GitHubLoginButton.svelte';
 
-	export let login: string | null;
-	export let subscriptions: Subscription[];
-	export let organizations: Organization[];
+	export let data;
+
+	let {subscriptions, organizations} = data
+	$: subscriptions =  data.subscriptions || []
+	$: organizations =  data.organizations || []
 
 	const subscribedOrgs = new Set(subscriptions.map((s) => s.github_organization));
 	const nonSubscribedOrganizations = organizations
@@ -57,7 +32,7 @@
 				>, and come back here after you've run your first job with Codeball. :-)
 			</p>
 
-			<p>Already up and running? You might need to <GitHubLoginButton {login} /></p>
+			<p>Already up and running? You might need to <GitHubLoginButton login={data.login} /></p>
 		</div>
 	{/if}
 
@@ -75,7 +50,7 @@
 					<div class="flex-1">Inactive</div>
 				{:else}
 					<div class="flex-1">BALLER EDITION</div>
-					{#if login && login === customer.github_login}
+					{#if data.login && data.login === customer.github_login}
 						<ManageButton />
 					{/if}
 					<Button color="black" href="/subscriptions/{id}">Upcoming invoice</Button>
