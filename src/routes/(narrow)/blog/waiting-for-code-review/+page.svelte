@@ -156,8 +156,8 @@
 	</p>
 
 	<p>
-		<a href="/static">Codeball</a> is a new and ballsy attempt at taking automation further. It
-		<a href="../../how">simulates</a>
+		<a href="/">Codeball</a> is a new and ballsy attempt at taking automation further. It
+		<a href="/how">simulates</a>
 		the developer intuition and approves <b>safe</b> pull requests, saving teams time.
 	</p>
 
@@ -176,7 +176,7 @@
 
 	<p>
 		If this sounds too good to be true, this is because a technological innovation is upon us! Go
-		and <a href="/static">test</a> it out on your own repository!
+		and <a href="/">test</a> it out on your own repository!
 	</p>
 
 	<p class="mb-16">

@@ -45,7 +45,7 @@ These numbers might be higher or lower <span class="text-gray-400">(hopefully hi
 		{
 			name: 'Does Codeball work for my repo?',
 			description:
-				"IDK? Use the [<a href='/static' class='text-black'>money-saver-calculator</a>] to see how well Codeball performs on your repository."
+				"IDK? Use the [<a href='/' class='text-black'>money-saver-calculator</a>] to see how well Codeball performs on your repository."
 		},
 
 		{

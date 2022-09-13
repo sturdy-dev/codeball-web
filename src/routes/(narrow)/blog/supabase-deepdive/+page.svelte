@@ -7,7 +7,7 @@
 	<h1>Codeball AI Code Review, a deepdive into the numbers</h1>
 
 	<p>
-		<a href="/static">Codeball</a> is an AI trained to perform code review, and the first available
+		<a href="/">Codeball</a> is an AI trained to perform code review, and the first available
 		version – <strong>CODEBALL-1</strong>, is able to accurately identify PRs that will be approved.
 	</p>
 
@@ -25,7 +25,7 @@
 	</p>
 
 	<p>
-		The <a href="/static">Codeball demo</a> runs Codeball on the latest 50 merged PRs
+		The <a href="/">Codeball demo</a> runs Codeball on the latest 50 merged PRs
 		<span class="text-gray-500">(in this case, created between 2022-06-02 and 2022-06-13)</span>,
 		and compares the outcome with what Codeball would have done if it had been run on the PRs
 		originally.
