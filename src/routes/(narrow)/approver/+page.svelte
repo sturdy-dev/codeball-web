@@ -1,6 +1,4 @@
 <script lang="ts">
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import { AnalyzeForm } from '../../../lib/components/index';
 	import AuthButton from '../../../lib/components/auth/AuthButton.svelte';
 	import Hero from '../../../lib/components/index/Hero.svelte';
@@ -12,9 +10,9 @@
 	import armadilloCoffee from '../../../lib/armadillo/coffee-2.png';
 	import InstallAction from '../../../lib/components/InstallAction.svelte';
 
-	export let login: string | null;
+	export let data;
 
-	$: showDemoForm = clickedContinue || login;
+	$: showDemoForm = clickedContinue || data.login;
 
 	let repoURL = '';
 
