@@ -6,9 +6,9 @@
 
 	export let data;
 
-	let {subscriptions, organizations} = data
-	$: subscriptions =  data.subscriptions || []
-	$: organizations =  data.organizations || []
+	let { subscriptions, organizations } = data;
+	$: subscriptions = data.subscriptions || [];
+	$: organizations = data.organizations || [];
 
 	const subscribedOrgs = new Set(subscriptions.map((s) => s.github_organization));
 	const nonSubscribedOrganizations = organizations

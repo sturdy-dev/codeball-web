@@ -28,7 +28,6 @@
 	});
 </script>
 
-
 <svelte:head>
 	<title>{$page.data.meta.title}</title>
 	<meta name="description" content={$page.data.meta.description} />
