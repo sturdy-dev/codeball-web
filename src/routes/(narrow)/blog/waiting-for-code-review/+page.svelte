@@ -1,11 +1,10 @@
 <script context="module" lang="ts">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// import mergeTimesNoObjection from '$lib/assets/merge_times_no_objection.svg';
-	// import mergeTimesWithObjection from '$lib/assets/merge_times_with_objection.svg';
-	// import yearsWaited from '$lib/assets/years_waited.svg';
-	// import mergeTimesTrend from '$lib/assets/merge_times_trend.svg';
-	// import codeball from '$lib/assets/adopting_codeball.svg';
+	// throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
+	//
+	//
+	//
+	//
+	//
 	// export const load = () => ({
 	// 	stuff: {
 	// 		title: 'You are waiting for code review more than you should'
@@ -16,6 +15,12 @@
 <script lang="ts">
 	import Button from '../../../../lib/Button.svelte';
 	import ReadMore from '../../../../lib/blog/ReadMore.svelte';
+
+	import mergeTimesNoObjection from '$lib/assets/merge_times_no_objection.svg';
+	import mergeTimesWithObjection from '$lib/assets/merge_times_with_objection.svg';
+	import yearsWaited from '$lib/assets/years_waited.svg';
+	import mergeTimesTrend from '$lib/assets/merge_times_trend.svg';
+	import codeball from '$lib/assets/adopting_codeball.svg';
 </script>
 
 <div class="prose mb-4">

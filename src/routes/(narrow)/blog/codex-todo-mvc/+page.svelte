@@ -1,18 +1,18 @@
 <script lang="ts">
-	import Button from '../../../../lib/Button.svelte';
-	import Step from '../../../../lib/blog/todo/Step.svelte';
-	import ReadMore from '../../../../lib/blog/ReadMore.svelte';
+	import Button from '$lib/Button.svelte';
+	import Step from '$lib/blog/todo/Step.svelte';
+	import ReadMore from '$lib/blog/ReadMore.svelte';
 
-	import App0 from '../../../../lib/blog/todo/steps/app_0.py';
-	import App1 from '../../../../lib/blog/todo/steps/app_1.py';
-	import App2 from '../../../../lib/blog/todo/steps/app_2.py';
-	import App3 from '../../../../lib/blog/todo/steps/app_3.py';
-	import App4 from '../../../../lib/blog/todo/steps/app_4.py';
-	import App5 from '../../../../lib/blog/todo/steps/app_5.py';
-	import App6 from '../../../../lib/blog/todo/steps/app_6.py';
-	import App7 from '../../../../lib/blog/todo/steps/app_7.py';
-	import App8 from '../../../../lib/blog/todo/steps/app_8.py';
-	import App9 from '../../../../lib/blog/todo/steps/app_9.py';
+	import App0 from '$lib/blog/todo/steps/app_0.py?raw';
+	import App1 from '$lib/blog/todo/steps/app_1.py?raw';
+	import App2 from '$lib/blog/todo/steps/app_2.py?raw';
+	import App3 from '$lib/blog/todo/steps/app_3.py?raw';
+	import App4 from '$lib/blog/todo/steps/app_4.py?raw';
+	import App5 from '$lib/blog/todo/steps/app_5.py?raw';
+	import App6 from '$lib/blog/todo/steps/app_6.py?raw';
+	import App7 from '$lib/blog/todo/steps/app_7.py?raw';
+	import App8 from '$lib/blog/todo/steps/app_8.py?raw';
+	import App9 from '$lib/blog/todo/steps/app_9.py?raw';
 
 	const range = (start, stop) => Array.from({ length: stop - start + 1 }, (_, i) => start + i);
 
