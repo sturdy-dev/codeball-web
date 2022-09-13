@@ -1,17 +1,3 @@
-<script context="module" lang="ts">
-	// throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-	//
-	//
-	//
-	//
-	//
-	// export const load = () => ({
-	// 	stuff: {
-	// 		title: 'You are waiting for code review more than you should'
-	// 	}
-	// });
-</script>
-
 <script lang="ts">
 	import Button from '$lib/Button.svelte';
 	import ReadMore from '$lib/blog/ReadMore.svelte';
