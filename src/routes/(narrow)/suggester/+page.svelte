@@ -1,6 +1,4 @@
 <script lang="ts">
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import { Demo, examples, type Comment } from '../../../lib/demo';
 	import Button from '../../../lib/Button.svelte';
 	import Go from '../../../lib/icons/Go.svelte';
@@ -8,7 +6,7 @@
 	import JS from '../../../lib/icons/JS.svelte';
 	import { browser } from '$app/environment';
 
-	export let login: string;
+	export let data;
 
 	const options = [
 		...examples,
@@ -125,7 +123,7 @@
 		<Demo
 			file={{ ...selectedFile.file, comments: selectedPrompt.map(delay(1000)) }}
 			immutable={!!selectedFile.file.name}
-			{login}
+			login={data.login}
 		/>
 	</div>
 	<div class="mt-16">
