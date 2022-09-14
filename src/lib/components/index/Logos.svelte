@@ -6,17 +6,19 @@
 	import GogsLogo from '$lib/assets/logo-gogs.png';
 	import MasonLogo from '$lib/assets/logo-mason.svg';
 	import EMQXLogo from '$lib/assets/logo-emqx.png';
+	import VoiLogo from '$lib/assets/logo-voi.svg';
 	import SimplepollLogo from '$lib/assets/logo-simplepoll.svg';
 
 	const logos = [
 		{ src: TiktokLogo, alt: 'Tiktok', width: 82 },
+		{ src: VoiLogo, alt: 'Voi', width: 58 },
 		{ src: AthenianLogo, alt: 'Athenian', width: 155 },
 		{ src: OryLogo, alt: 'Ory', width: 47 },
 		{ src: KitemakerLogo, alt: 'Kitemaker', width: 110 },
 		{ src: GogsLogo, alt: 'Gogs', width: 68 },
 		{ src: MasonLogo, alt: 'Mason', width: 93 },
 		{ src: EMQXLogo, alt: 'EMQX', width: 80 },
-		{ src: SimplepollLogo, alt: 'Simplepoll', width: 133 }
+		{ src: SimplepollLogo, alt: 'Simplepoll', width: 113 }
 	];
 </script>
 
