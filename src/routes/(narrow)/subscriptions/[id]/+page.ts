@@ -1,4 +1,4 @@
-import type { PageLoad } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 import { upcoming } from '../../../../lib/subscriptions';
 
 export const prerender = false;
