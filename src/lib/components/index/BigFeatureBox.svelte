@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let img: string | undefined;
-	export let srcset: string | undefined;
+	export let img: string | undefined = undefined;
+	export let srcset: string | undefined = undefined;
 	export let title: string;
 	export let rainbow = false;
 	export let reverse = false;

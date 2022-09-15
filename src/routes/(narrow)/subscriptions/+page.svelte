@@ -3,8 +3,9 @@
 	import ManageButton from '$lib/components/subscriptions/ManageButton.svelte';
 	import SubscribeButton from '$lib/components/subscriptions/SubscribeButton.svelte';
 	import GitHubLoginButton from '$lib/components/index/GitHubLoginButton.svelte';
+	import type { PageData } from './$types';
 
-	export let data;
+	export let data: PageData;
 
 	let { subscriptions, organizations } = data;
 	$: subscriptions = data.subscriptions || [];

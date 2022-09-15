@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let srcset: string;
 	export let title: string;
-	export let pill: string;
+	export let pill: string | undefined = undefined;
 	export let showAction = true;
 </script>
 
