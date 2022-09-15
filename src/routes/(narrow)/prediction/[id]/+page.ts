@@ -1,4 +1,4 @@
-import type { PageLoad } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 import { get } from '../../../../lib/jobs';
 
 export const load: PageLoad = async ({ params }) => ({

@@ -1,6 +1,6 @@
 import { get } from '$lib/github';
 import { NotFoundError } from '$lib/api';
-import type { LayoutLoad } from '@sveltejs/kit';
+import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = async () =>
 	get()

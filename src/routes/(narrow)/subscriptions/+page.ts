@@ -1,5 +1,5 @@
 import { list } from '../../../lib/subscriptions';
-import type { PageLoad } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 import { listOrganizations } from '../../../lib/github';
 
 export const prerender = false;
