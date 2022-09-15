@@ -2,13 +2,14 @@
 	import Button from '$lib/Button.svelte';
 
 	import { FeatureList, BigFeatureBox, FeatureBox, Hero } from '$lib/components/index';
+	import type { PageData } from './$types';
 
 	import armadilloGraphHD from '$lib/armadillo/graph.png?preset=hd&srcset';
 	import armadilloPlug from '$lib/armadillo/plug.png?preset=thumbnail&srcset';
 	import armadilloDataScientist from '$lib/armadillo/data-scientist.png?preset=thumbnail&srcset';
 	import armadilloCoffee from '$lib/armadillo/coffee-2.png?preset=thumbnail&srcset';
 
-	export let data;
+	export let data: PageData;
 </script>
 
 <Hero>

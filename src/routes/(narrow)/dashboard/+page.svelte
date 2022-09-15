@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Dashboard } from '$lib/components/dashboard';
-	export let data;
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <Dashboard login={data.login} />

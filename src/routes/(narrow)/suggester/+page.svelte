@@ -5,8 +5,9 @@
 	import Java from '$lib/icons/Java.svelte';
 	import JS from '$lib/icons/JS.svelte';
 	import { browser } from '$app/environment';
+	import type { PageData } from './$types';
 
-	export let data;
+	export let data: PageData;
 
 	const options = [
 		...examples,

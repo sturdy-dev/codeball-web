@@ -6,6 +6,7 @@
 	import { webVitals } from '$lib/vitals';
 	import { onMount } from 'svelte';
 	import posthog from 'posthog-js';
+	import type { LayoutData } from './$types';
 
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 	$: if (!dev && browser && analyticsId) {
@@ -16,7 +17,7 @@
 		});
 	}
 
-	export let data;
+	export let data: LayoutData;
 
 	onMount(() => {
 		if (!dev) {
