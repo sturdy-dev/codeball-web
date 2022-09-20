@@ -1,0 +1,382 @@
+[
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-09-12T10:35:21.000Z",
+        "fix_commit_hash": "1133afb227e0ca42287fbc2ce96a9831d0eacc6f",
+        "inducing_commit_hash": [
+            "53d8810c9e37b0457209ebc6893c1a3b58fed0ba"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-09-06T12:23:14.000Z",
+        "fix_commit_hash": "918d6c37faa14bba032a71d4d856bd3cdd8aa16c",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-09-02T18:09:27.000Z",
+        "fix_commit_hash": "e80587754d960f45c6ec41f32d6365f95a150faf",
+        "inducing_commit_hash": [
+            "58104d3a4306589f5b70cda283507868b512f712"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-09-06T11:59:14.000Z",
+        "fix_commit_hash": "a063f602241eee92cee74eed00ce1c84703cb936",
+        "inducing_commit_hash": [
+            "4f1051512b418400514dd368da99c704aca15aa8"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-30T11:42:21.000Z",
+        "fix_commit_hash": "bf295c893d127977b112fc49725aa3dc910881a7",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-30T22:09:18.000Z",
+        "fix_commit_hash": "fe7787214d9010517b08b2c286e17365ec0e59a2",
+        "inducing_commit_hash": [
+            "a53a21cd9a701082cd563eafe7cd62a523d7856d"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-29T21:42:27.000Z",
+        "fix_commit_hash": "17a25011aa3e72671110e8ab4723ac6df7e880f5",
+        "inducing_commit_hash": [
+            "b7667f528fa1b26389553fac4d6f0805a64da9fd"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-30T08:09:58.000Z",
+        "fix_commit_hash": "168868f004454a1ab0e75f2af4cc59d0b03de117",
+        "inducing_commit_hash": [
+            "6a94e0d9b89d6e0c70a34efe0af8a7a58bb9ab10"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-09-04T14:30:15.000Z",
+        "fix_commit_hash": "487d80c45d1df37b1be4ab58f0702c33d3e91c75",
+        "inducing_commit_hash": [
+            "9bf86629dfae9cf32e9dba89f02f9a098478a65a"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-30T16:28:38.000Z",
+        "fix_commit_hash": "17a25011aa3e72671110e8ab4723ac6df7e880f5",
+        "inducing_commit_hash": [
+            "b7667f528fa1b26389553fac4d6f0805a64da9fd"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-26T14:59:32.000Z",
+        "fix_commit_hash": "5bc958dc31a32cdcf9c279f61a154477535a2e71",
+        "inducing_commit_hash": [
+            "0cdfb2531acb780f37fe0eb9b7bbcefabdb0f720"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-26T09:19:20.000Z",
+        "fix_commit_hash": "7f7dedcbb27b2c102b02aaf1c184334eb8eba95c",
+        "inducing_commit_hash": [
+            "8aa1e69c327efefafec6fbe7c952b85f3ba5a29a"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-23T22:20:34.000Z",
+        "fix_commit_hash": "1517997a2dfa20cbb1a3cd76f33e0c51fc941f16",
+        "inducing_commit_hash": [
+            "a50472f9d8548d297d73f3b87504c14eb1fb189e"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-23T14:29:10.000Z",
+        "fix_commit_hash": "0ecf0da079acbc8839358cd80a46fde1027d0423",
+        "inducing_commit_hash": [
+            "593679c0337599c182c87d7ad2255d79c8d3f6b8"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-19T10:35:45.000Z",
+        "fix_commit_hash": "14b420da0a5a12278dcf88086b1b3fd4927c1f58",
+        "inducing_commit_hash": [
+            "796d0ffd816ee98638da50d515b802717ac6a76e"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-22T10:26:16.000Z",
+        "fix_commit_hash": "b9b6e8f896ad8a81b4248b95418a3ad4b3a620ae",
+        "inducing_commit_hash": [
+            "f1ebaf9a949b00f89e5762a14aefd8adbeb8f8ad"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-19T11:04:59.000Z",
+        "fix_commit_hash": "16b198ca7946122bd0c14c356032989832803c70",
+        "inducing_commit_hash": [
+            "3bd18a7b710f714d582cffec4df62ff91357f78c"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-18T16:33:43.000Z",
+        "fix_commit_hash": "6cd5628562f217b66f20f2e04b714c386afa3ea2",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-15T19:31:26.000Z",
+        "fix_commit_hash": "b873bf2cff81b6676dccdaa6091740688af40f82",
+        "inducing_commit_hash": [
+            "b01a07b8d088bd239f0e6a0f81a9ff9da7c81b8c"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-16T21:27:35.000Z",
+        "fix_commit_hash": "b051578f0b1e4b2051df50f4afaf2b75bf892cbc",
+        "inducing_commit_hash": [
+            "4797857ec1afee4a48b249ad716aba850427431d"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-16T22:37:50.000Z",
+        "fix_commit_hash": "1623b954637ba30fd05498332d557cab31f2a818",
+        "inducing_commit_hash": [
+            "031099ff09967ad21df718104a7919edcb0da110"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-11T12:19:59.000Z",
+        "fix_commit_hash": "a53a21cd9a701082cd563eafe7cd62a523d7856d",
+        "inducing_commit_hash": [
+            "c2a97ee6455fe799357dfd8e43c6ad60c3ee7a91"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-05T10:35:54.000Z",
+        "fix_commit_hash": "dd82d54087c7c5d1ab7fcbac24092991a04fe1e5",
+        "inducing_commit_hash": [
+            "25332036a3e38366039a361f0af5422b94b5d7da"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-08T15:41:24.000Z",
+        "fix_commit_hash": "8929ea6feb4523c83316eb68483ca87098b096ec",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-10T16:13:35.000Z",
+        "fix_commit_hash": "54623f2561d4ba780608db28ecbfea18ffaf44b2",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-09T19:18:54.000Z",
+        "fix_commit_hash": "d14549113edc65c6efbdbf817946231c7fde4e4d",
+        "inducing_commit_hash": [
+            "53afdc7283c0ed1f9cac1910b1b8c333ad1548dd"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-05T10:49:57.000Z",
+        "fix_commit_hash": "84718c7beffa3dcd84c2feab79af5084a60fd9d9",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-09T11:48:41.000Z",
+        "fix_commit_hash": "3358992dd88640a42751cb8f43fbd1ad57278578",
+        "inducing_commit_hash": [
+            "663ac01baaeb3d3698dd1596f37d7f2676fe5881"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-04T20:46:58.000Z",
+        "fix_commit_hash": "eb91d31aa1781851178f8a90e2d3866d2e0841be",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-04T10:35:22.000Z",
+        "fix_commit_hash": "1517997a2dfa20cbb1a3cd76f33e0c51fc941f16",
+        "inducing_commit_hash": [
+            "6d6aefca4638e4a03159578fdb362964b4108064"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-02T22:31:41.000Z",
+        "fix_commit_hash": "8c190ca14f9fd0dbadd03c26db9209740a71f713",
+        "inducing_commit_hash": [
+            "e10ea61d633a490f02b33f8e3424d80d7a5186e2"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-03T09:51:12.000Z",
+        "fix_commit_hash": "6ad9cbb9ea77c8f7690601905fbf7236efcdf52a",
+        "inducing_commit_hash": [
+            "54ce0fbcd8c48fe1f73f286aad5d19e057547a28"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-04T07:14:40.000Z",
+        "fix_commit_hash": "9712f65111edcfb037edecfe36aa3ed2fcd5d70a",
+        "inducing_commit_hash": [
+            "07f9cc211837a1040c0ecda01839efa397c526b2"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-04T08:34:58.000Z",
+        "fix_commit_hash": "291f2754cdb011d8db0c26116261ff73529c183a",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-08-02T08:20:11.000Z",
+        "fix_commit_hash": "3c214a3df6a67be5549408d36ac6193acce486f9",
+        "inducing_commit_hash": []
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-27T17:03:12.000Z",
+        "fix_commit_hash": "a3922863aa041fef05be9c33f37bef3f48ccf0ac",
+        "inducing_commit_hash": [
+            "cb5c29008c44a2db612596133c76fa7ed16609a6"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-27T10:57:50.000Z",
+        "fix_commit_hash": "6bbc409b500b67efbc1d26e5bb24fd244e1520cf",
+        "inducing_commit_hash": [
+            "3d8f8dfe26ff75b8eb9ad971b6a3f952ab0f24e2"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-26T16:00:46.000Z",
+        "fix_commit_hash": "3ab12bae4505b813fe65752e7c9ab3dfbbb7ff89",
+        "inducing_commit_hash": [
+            "cc5d48c6fa9221f68c09742da91a83bf75fdd108"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-26T02:45:08.000Z",
+        "fix_commit_hash": "74c9e2ae16ba542035b4658ad50373eb45a807b9",
+        "inducing_commit_hash": [
+            "cd90919437b18f020328442f927a045f58a52456"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-21T16:03:16.000Z",
+        "fix_commit_hash": "aabe4a5377b31210ec9aeaf94ed9d53d1e46aa17",
+        "inducing_commit_hash": [
+            "1636121a0de88fcf1d1d0eb9c9a09af5c2d47973"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-21T15:24:28.000Z",
+        "fix_commit_hash": "135504963480ec5ef15d60d4bb94379a44b1d605",
+        "inducing_commit_hash": [
+            "1a15c219529b3d4174eae24df085a4786c24b04d"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-28T20:25:58.000Z",
+        "fix_commit_hash": "08e4489a2685ddcf65785adfe4af38286f3e27c1",
+        "inducing_commit_hash": [
+            "be7e634ae84c4c9a19384c6d55927298c2d8f9cd"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-18T14:04:08.000Z",
+        "fix_commit_hash": "4f1051512b418400514dd368da99c704aca15aa8",
+        "inducing_commit_hash": [
+            "2ede346e607b7e4c6a0e48d68e2af751899c7adb"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-18T09:50:17.000Z",
+        "fix_commit_hash": "d5f1d864eb9bbf0618153c212d57ee35070d54d4",
+        "inducing_commit_hash": [
+            "1dfaf539e583b973480110d8f4ae52850f8c2eec"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-14T10:24:44.000Z",
+        "fix_commit_hash": "9d699dde06012a427ecd618636205d05a6c5e3ae",
+        "inducing_commit_hash": [
+            "d482bb7dec68c4b704700d60df739916e7be5476"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-15T16:47:23.000Z",
+        "fix_commit_hash": "d5f1d864eb9bbf0618153c212d57ee35070d54d4",
+        "inducing_commit_hash": [
+            "1dfaf539e583b973480110d8f4ae52850f8c2eec"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-13T13:21:09.000Z",
+        "fix_commit_hash": "2d7f929aa6cdd7fec1165fd6d0ab2202e33efe19",
+        "inducing_commit_hash": [
+            "41dba0444385b28ce9f0537b111f86af8da61422"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-12T15:25:57.000Z",
+        "fix_commit_hash": "78b89ad93e7e9e64ea28983069ea8c23ace5faa2",
+        "inducing_commit_hash": [
+            "d6f3079bc0369642dd7fc2aafc82dacdb3fdc626"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-13T08:17:17.000Z",
+        "fix_commit_hash": "80b321289831f5f764d773c8bf571b015eb038f8",
+        "inducing_commit_hash": [
+            "fc8e864793458e68343882f638218d03c0905e33"
+        ]
+    },
+    {
+        "repo_name": "posthog/posthog",
+        "best_scenario_issue_date": "2022-07-13T10:39:35.000Z",
+        "fix_commit_hash": "addf3fdadbec949735a01d0171af88c1f201c2e4",
+        "inducing_commit_hash": []
+    }
+]
