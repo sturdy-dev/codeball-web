@@ -43,7 +43,7 @@
 	"type": "module",
 	"dependencies": {
 		"@bulatdashiev/svelte-slider": "^1.0.3",
-		"@fontsource/fira-mono": "^4.5.9",
+		"@fontsource/fira-mono": "^4.5.10",
 		"@lukeed/uuid": "^2.0.0",
 		"@rgossiaux/svelte-headlessui": "^1.0.2",
 		"@steeze-ui/heroicons": "^1.1.1",
