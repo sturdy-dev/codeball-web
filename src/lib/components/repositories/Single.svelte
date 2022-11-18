@@ -46,7 +46,7 @@
 
 <div class="flex flex-col items-center">
 	<div class="mt-8 space-y-2">
-		<Button color="white" href="/">Test another repository</Button>
+		<Button color="white" href="/approver">Test another repository</Button>
 		<AddAction {job} />
 	</div>
 </div>
