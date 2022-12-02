@@ -55,7 +55,7 @@
 		"date-fns": "^2.29.3",
 		"diff-match-patch": "^1.0.5",
 		"emoji-slider": "^0.2.0",
-		"posthog-js": "^1.32.2",
+		"posthog-js": "^1.36.1",
 		"prettier-plugin-tailwindcss": "^0.1.13"
 	}
 }
