@@ -56,6 +56,6 @@
 		"diff-match-patch": "^1.0.5",
 		"emoji-slider": "^0.2.0",
 		"posthog-js": "^1.36.1",
-		"prettier-plugin-tailwindcss": "^0.1.13"
+		"prettier-plugin-tailwindcss": "^0.2.4"
 	}
 }
